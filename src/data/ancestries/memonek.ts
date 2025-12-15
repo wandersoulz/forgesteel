@@ -1,8 +1,8 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { Ancestry } from '@/models/ancestry';
-import { ConditionType } from '@/enums/condition-type';
-import { CultureType } from '@/enums/culture-type';
-import { FactoryLogic } from '@/logic/factory-logic';
+import { Ancestry } from '@/core/models/ancestry';
+import { ConditionType } from '@/core/enums/condition-type';
+import { CultureType } from '@/core/enums/culture-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
 
 export const memonek: Ancestry = {
 	id: 'ancestry-memonek',

@@ -1,11 +1,11 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { Item } from '@/models/item';
-import { ItemType } from '@/enums/item-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { Item } from '@/core/models/item';
+import { ItemType } from '@/core/enums/item-type';
 
 export class LeveledImplementData {
 	static abjurersBastion: Item = FactoryLogic.createItem({

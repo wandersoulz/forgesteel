@@ -1,4 +1,4 @@
-import { Hero } from '@/models/hero';
+import { Hero } from '@/core/models/hero';
 
 export const highElfTactician = {
 	id: '7it9NqSWNlAo8JeB',

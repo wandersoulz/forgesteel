@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { SubClass } from '@/models/subclass';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { SubClass } from '@/core/models/subclass';
 
 export const fire: SubClass = {
 	id: 'elementalist-sub-2',

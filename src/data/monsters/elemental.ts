@@ -1,13 +1,13 @@
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { ConditionType } from '@/enums/condition-type';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { MonsterGroup } from '@/models/monster-group';
-import { MonsterOrganizationType } from '@/enums/monster-organization-type';
-import { MonsterRoleType } from '@/enums/monster-role-type';
-import { StatBlockIcon } from '@/enums/stat-block-icon';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { ConditionType } from '@/core/enums/condition-type';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { MonsterGroup } from '@/core/models/monster-group';
+import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
+import { MonsterRoleType } from '@/core/enums/monster-role-type';
+import { StatBlockIcon } from '@/core/enums/stat-block-icon';
 
 export const elemental: MonsterGroup = {
 	id: 'monster-group-elemental',

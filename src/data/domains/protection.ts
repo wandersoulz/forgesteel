@@ -1,7 +1,7 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Domain } from '@/models/domain';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { SkillList } from '@/enums/skill-list';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Domain } from '@/core/models/domain';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { SkillList } from '@/core/enums/skill-list';
 
 export const protection: Domain = {
 	id: 'domain-protection',

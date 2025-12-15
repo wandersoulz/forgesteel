@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { Item } from '@/models/item';
-import { ItemType } from '@/enums/item-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { Item } from '@/core/models/item';
+import { ItemType } from '@/core/enums/item-type';
 
 export class ConsumableData {
 	// #region Echelon 1

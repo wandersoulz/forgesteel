@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { SubClass } from '@/models/subclass';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { SubClass } from '@/core/models/subclass';
 
 export const reaver: SubClass = {
 	id: 'fury-sub-2',

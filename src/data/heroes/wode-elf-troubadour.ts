@@ -1,4 +1,4 @@
-import { Hero } from '@/models/hero';
+import { Hero } from '@/core/models/hero';
 
 export const wodeElfTroubadour = {
 	id: 'HVPFufs9Uv4PWrKi',

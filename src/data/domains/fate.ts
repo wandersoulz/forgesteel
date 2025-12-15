@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { Domain } from '@/models/domain';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { SkillList } from '@/enums/skill-list';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { Domain } from '@/core/models/domain';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { SkillList } from '@/core/enums/skill-list';
 
 export const fate: Domain = {
 	id: 'domain-fate',

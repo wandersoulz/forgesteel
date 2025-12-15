@@ -1,10 +1,10 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Ancestry } from '@/models/ancestry';
-import { Characteristic } from '@/enums/characteristic';
-import { ConditionType } from '@/enums/condition-type';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Ancestry } from '@/core/models/ancestry';
+import { Characteristic } from '@/core/enums/characteristic';
+import { ConditionType } from '@/core/enums/condition-type';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
 
 export const revenant: Ancestry = {
 	id: 'ancestry-revenant',

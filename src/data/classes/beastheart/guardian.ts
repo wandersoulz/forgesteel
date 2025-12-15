@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
 import { PerkData } from '@/data/perk-data';
-import { SubClass } from '@/models/subclass';
+import { SubClass } from '@/core/models/subclass';
 
 export const guardian: SubClass = {
 	id: 'beastheart-sub-1',

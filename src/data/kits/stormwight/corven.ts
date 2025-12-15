@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { Kit } from '@/models/kit';
-import { KitWeapon } from '@/enums/kit-weapon';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { Kit } from '@/core/models/kit';
+import { KitWeapon } from '@/core/enums/kit-weapon';
 
 export const corven: Kit = {
 	id: 'kit-corven',

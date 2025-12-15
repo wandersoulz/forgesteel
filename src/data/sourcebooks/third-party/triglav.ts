@@ -1,24 +1,24 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Ancestry } from '@/models/ancestry';
-import { Characteristic } from '@/enums/characteristic';
-import { ConditionType } from '@/enums/condition-type';
-import { CultureType } from '@/enums/culture-type';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { FeatureType } from '@/enums/feature-type';
-import { HeroClass } from '@/models/class';
-import { Kit } from '@/models/kit';
-import { KitArmor } from '@/enums/kit-armor';
-import { KitWeapon } from '@/enums/kit-weapon';
-import { Perk } from '@/models/perk';
-import { PerkList } from '@/enums/perk-list';
-import { SkillList } from '@/enums/skill-list';
-import { Sourcebook } from '@/models/sourcebook';
-import { SourcebookType } from '@/enums/sourcebook-type';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Ancestry } from '@/core/models/ancestry';
+import { Characteristic } from '@/core/enums/characteristic';
+import { ConditionType } from '@/core/enums/condition-type';
+import { CultureType } from '@/core/enums/culture-type';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { FeatureType } from '@/core/enums/feature-type';
+import { HeroClass } from '@/core/models/class';
+import { Kit } from '@/core/models/kit';
+import { KitArmor } from '@/core/enums/kit-armor';
+import { KitWeapon } from '@/core/enums/kit-weapon';
+import { Perk } from '@/core/models/perk';
+import { PerkList } from '@/core/enums/perk-list';
+import { SkillList } from '@/core/enums/skill-list';
+import { Sourcebook } from '@/core/models/sourcebook';
+import { SourcebookType } from '@/core/enums/sourcebook-type';
 
 const boggit: Ancestry = {
 	id: 'boggit',

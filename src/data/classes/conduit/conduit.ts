@@ -1,13 +1,13 @@
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { HeroClass } from '@/models/class';
-import { KitArmor } from '@/enums/kit-armor';
-import { KitWeapon } from '@/enums/kit-weapon';
-import { PerkList } from '@/enums/perk-list';
-import { SkillList } from '@/enums/skill-list';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { HeroClass } from '@/core/models/class';
+import { KitArmor } from '@/core/enums/kit-armor';
+import { KitWeapon } from '@/core/enums/kit-weapon';
+import { PerkList } from '@/core/enums/perk-list';
+import { SkillList } from '@/core/enums/skill-list';
 
 export const conduit: HeroClass = {
 	id: 'class-conduit',

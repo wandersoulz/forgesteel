@@ -1,8 +1,8 @@
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { Imbuement } from '@/models/imbuement';
-import { ItemType } from '@/enums/item-type';
+import { Characteristic } from '@/core/enums/characteristic';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { Imbuement } from '@/core/models/imbuement';
+import { ItemType } from '@/core/enums/item-type';
 
 export class ImbuedImplementData {
 	static berserking: Imbuement = FactoryLogic.createImbuement({

@@ -1,8 +1,8 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { Ancestry } from '@/models/ancestry';
-import { CultureType } from '@/enums/culture-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
+import { Ancestry } from '@/core/models/ancestry';
+import { CultureType } from '@/core/enums/culture-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
 
 export const human: Ancestry = {
 	id: 'ancestry-human',

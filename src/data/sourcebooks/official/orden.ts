@@ -1,9 +1,9 @@
 import { AncestryData } from '@/data/ancestry-data';
-import { LanguageType } from '@/enums/language-type';
+import { LanguageType } from '@/core/enums/language-type';
 import { MonsterData } from '@/data/monster-data';
-import { SkillList } from '@/enums/skill-list';
-import { Sourcebook } from '@/models/sourcebook';
-import { SourcebookType } from '@/enums/sourcebook-type';
+import { SkillList } from '@/core/enums/skill-list';
+import { Sourcebook } from '@/core/models/sourcebook';
+import { SourcebookType } from '@/core/enums/sourcebook-type';
 
 export const orden: Sourcebook = {
 	id: 'orden',

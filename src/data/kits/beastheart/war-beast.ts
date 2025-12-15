@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { Kit } from '@/models/kit';
-import { KitArmor } from '@/enums/kit-armor';
-import { KitWeapon } from '@/enums/kit-weapon';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { Kit } from '@/core/models/kit';
+import { KitArmor } from '@/core/enums/kit-armor';
+import { KitWeapon } from '@/core/enums/kit-weapon';
 
 export const warBeast: Kit = {
 	id: 'kit-war-beast',

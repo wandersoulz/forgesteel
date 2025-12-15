@@ -1,20 +1,20 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { AbilityDistanceType } from '@/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Ancestry } from '@/models/ancestry';
-import { Characteristic } from '@/enums/characteristic';
-import { CultureType } from '@/enums/culture-type';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
-import { HeroClass } from '@/models/class';
-import { KitArmor } from '@/enums/kit-armor';
-import { KitWeapon } from '@/enums/kit-weapon';
-import { PerkList } from '@/enums/perk-list';
-import { SkillList } from '@/enums/skill-list';
-import { Sourcebook } from '@/models/sourcebook';
-import { SourcebookType } from '@/enums/sourcebook-type';
+import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Ancestry } from '@/core/models/ancestry';
+import { Characteristic } from '@/core/enums/characteristic';
+import { CultureType } from '@/core/enums/culture-type';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
+import { HeroClass } from '@/core/models/class';
+import { KitArmor } from '@/core/enums/kit-armor';
+import { KitWeapon } from '@/core/enums/kit-weapon';
+import { PerkList } from '@/core/enums/perk-list';
+import { SkillList } from '@/core/enums/skill-list';
+import { Sourcebook } from '@/core/models/sourcebook';
+import { SourcebookType } from '@/core/enums/sourcebook-type';
 
 const aranox: Ancestry = {
 	id: 'aranox',

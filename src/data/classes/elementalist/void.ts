@@ -1,6 +1,6 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { SubClass } from '@/models/subclass';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { SubClass } from '@/core/models/subclass';
 
 export const voidSubclass: SubClass = {
 	id: 'elementalist-sub-4',

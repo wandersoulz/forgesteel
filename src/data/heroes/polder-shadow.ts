@@ -1,4 +1,4 @@
-import { Hero } from '@/models/hero';
+import { Hero } from '@/core/models/hero';
 
 export const polderShadow = {
 	id: 'DKm8hWT6X5PNSpVz',

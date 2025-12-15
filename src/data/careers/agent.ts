@@ -1,7 +1,7 @@
-import { Career } from '@/models/career';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { PerkList } from '@/enums/perk-list';
-import { SkillList } from '@/enums/skill-list';
+import { Career } from '@/core/models/career';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { PerkList } from '@/core/enums/perk-list';
+import { SkillList } from '@/core/enums/skill-list';
 
 export const agent: Career = {
 	id: 'career-agent',

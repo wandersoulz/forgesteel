@@ -1,12 +1,12 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Ancestry } from '@/models/ancestry';
-import { ConditionType } from '@/enums/condition-type';
-import { CultureType } from '@/enums/culture-type';
-import { DamageModifierType } from '@/enums/damage-modifier-type';
-import { DamageType } from '@/enums/damage-type';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureField } from '@/enums/feature-field';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { Ancestry } from '@/core/models/ancestry';
+import { ConditionType } from '@/core/enums/condition-type';
+import { CultureType } from '@/core/enums/culture-type';
+import { DamageModifierType } from '@/core/enums/damage-modifier-type';
+import { DamageType } from '@/core/enums/damage-type';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureField } from '@/core/enums/feature-field';
 
 export const polder: Ancestry = {
 	id: 'ancestry-polder',

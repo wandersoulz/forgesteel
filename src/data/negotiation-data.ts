@@ -1,6 +1,6 @@
-import { AttitudeType } from '@/enums/attitude-type';
-import { Negotiation } from '@/models/negotiation';
-import { NegotiationTrait } from '@/enums/negotiation-trait';
+import { AttitudeType } from '@/core/enums/attitude-type';
+import { Negotiation } from '@/core/models/negotiation';
+import { NegotiationTrait } from '@/core/enums/negotiation-trait';
 
 export class NegotiationData {
 	static banditChief: Negotiation = {

@@ -1,5 +1,5 @@
-import { FactoryLogic } from '@/logic/factory-logic';
-import { StatBlockIcon } from '@/enums/stat-block-icon';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { StatBlockIcon } from '@/core/enums/stat-block-icon';
 import { ajax } from '@/data/monsters/ajax';
 import { angulotl } from '@/data/monsters/angulotl';
 import { animal } from '@/data/monsters/animal';

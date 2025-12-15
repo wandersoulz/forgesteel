@@ -1,9 +1,9 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { FactoryLogic } from '@/logic/factory-logic';
-import { MonsterRoleType } from '@/enums/monster-role-type';
-import { Terrain } from '@/models/terrain';
-import { TerrainCategory } from '@/enums/terrain-category';
-import { TerrainRoleType } from '@/enums/terrain-role-type';
+import { AbilityKeyword } from '@/core/enums/ability-keyword';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { MonsterRoleType } from '@/core/enums/monster-role-type';
+import { Terrain } from '@/core/models/terrain';
+import { TerrainCategory } from '@/core/enums/terrain-category';
+import { TerrainRoleType } from '@/core/enums/terrain-role-type';
 
 export const archersStakes: Terrain = {
 	id: 'terrain-archers-stakes',

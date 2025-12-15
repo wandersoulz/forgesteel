@@ -1,7 +1,7 @@
-import { FactoryLogic } from '@/logic/factory-logic';
-import { FeatureType } from '@/enums/feature-type';
-import { Perk } from '@/models/perk';
-import { PerkList } from '@/enums/perk-list';
+import { FactoryLogic } from '@/core/logic/factory-logic';
+import { FeatureType } from '@/core/enums/feature-type';
+import { Perk } from '@/core/models/perk';
+import { PerkList } from '@/core/enums/perk-list';
 
 export class LorePerkData {
 	static butIKnowWhoDoes: Perk = {

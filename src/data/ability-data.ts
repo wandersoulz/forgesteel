@@ -1,6 +1,6 @@
-import { AbilityKeyword } from '@/enums/ability-keyword';
-import { Characteristic } from '@/enums/characteristic';
-import { FactoryLogic } from '@/logic/factory-logic';
+import { AbilityKeyword } from '../core/enums/ability-keyword';
+import { Characteristic } from '../core/enums/characteristic';
+import { FactoryLogic } from '../core/logic/factory-logic';
 
 export class AbilityData {
 	// #region Free Strikes
