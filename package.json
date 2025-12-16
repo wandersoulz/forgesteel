@@ -13,7 +13,8 @@
 		"fix": "eslint \"src/**/*.ts\" --fix",
 		"test": "vitest",
 		"check": "npm run lint && tsc && vitest run",
-		"build": "tsc"
+		"build": "tsc",
+		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
 	},
