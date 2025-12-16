@@ -1,8 +1,13 @@
 {
 	"name": "forgesteel",
-	"private": true,
+	"private": false,
 	"version": "12.48.0",
 	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": "./dist/index.js"
 	},
@@ -14,13 +19,14 @@
 		"build": "tsc",
 		"prepare": "npm run build"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@eslint/js": "^9.39.2",
 		"@stylistic/eslint-plugin": "^5.6.1",
 		"@vitest/coverage-v8": "^4.0.15",
 		"eslint": "^9.39.2",
 		"globals": "^16.5.0",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.49.0"
+		"typescript-eslint": "^8.49.0",
+		"vitest": "^4.0.15"
 	}
 }
