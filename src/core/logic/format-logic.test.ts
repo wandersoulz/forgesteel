@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { FormatLogic } from '@/core/logic/format-logic';
+import { FormatLogic } from '../../core/logic/format-logic';
 
 describe('getDice', () => {
 	test.each([

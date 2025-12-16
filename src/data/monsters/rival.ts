@@ -1,12 +1,12 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureAddOnType } from '@/core/enums/feature-addon-type';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { MonsterRoleType } from '@/core/enums/monster-role-type';
-import { StatBlockIcon } from '@/core/enums/stat-block-icon';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { FeatureAddOnType } from '../../core/enums/feature-addon-type';
+import { MonsterGroup } from '../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
+import { MonsterRoleType } from '../../core/enums/monster-role-type';
+import { StatBlockIcon } from '../../core/enums/stat-block-icon';
 
 export const rival: MonsterGroup = {
 	id: 'monster-group-rival',

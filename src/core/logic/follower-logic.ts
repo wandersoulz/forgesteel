@@ -1,8 +1,8 @@
-import { Characteristic } from '@/core/enums/characteristic';
-import { FollowerType } from '@/core/enums/follower-type';
-import { SkillList } from '@/core/enums/skill-list';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { SourcebookLogic } from '@/core/logic/sourcebook-logic';
+import { Characteristic } from '../../core/enums/characteristic';
+import { FollowerType } from '../../core/enums/follower-type';
+import { SkillList } from '../../core/enums/skill-list';
+import { Sourcebook } from '../../core/models/sourcebook';
+import { SourcebookLogic } from '../../core/logic/sourcebook-logic';
 
 export class FollowerLogic {
 	static getCharacteristicArrays = (type: FollowerType) => {

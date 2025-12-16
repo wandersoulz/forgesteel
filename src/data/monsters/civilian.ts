@@ -1,6 +1,6 @@
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { MonsterGroup } from '../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
 
 export const civilian: MonsterGroup = {
 	id: 'monster-group-civilian',

@@ -1,8 +1,8 @@
-import { Career } from '@/core/models/career';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
+import { Career } from '../../core/models/career';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { FeatureField } from '../../core/enums/feature-field';
+import { PerkList } from '../../core/enums/perk-list';
+import { SkillList } from '../../core/enums/skill-list';
 
 export const magesApprentice: Career = {
 	id: 'career-mages-apprentice',

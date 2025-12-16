@@ -1,8 +1,8 @@
-import { Collections } from '@/core/utils/collections';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { Hero } from '@/core/models/hero';
-import { Montage } from '@/core/models/montage';
-import { Options } from '@/core/models/options';
+import { Collections } from '../../core/utils/collections';
+import { EncounterDifficulty } from '../../core/enums/encounter-difficulty';
+import { Hero } from '../../core/models/hero';
+import { Montage } from '../../core/models/montage';
+import { Options } from '../../core/models/options';
 
 export class MontageLogic {
 	static getHeroCount = (heroes: Hero[], options: Options) => {

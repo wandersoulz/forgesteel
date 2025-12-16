@@ -1,11 +1,11 @@
-import { Ancestry } from '@/core/models/ancestry';
-import { Career } from '@/core/models/career';
-import { Characteristic } from '@/core/enums/characteristic';
-import { Complication } from '@/core/models/complication';
-import { Culture } from '@/core/models/culture';
-import { Feature } from '@/core/models/feature';
-import { HeroClass } from '@/core/models/class';
-import { HeroState } from '@/core/models/hero-state';
+import { Ancestry } from '../../core/models/ancestry';
+import { Career } from '../../core/models/career';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Complication } from '../../core/models/complication';
+import { Culture } from '../../core/models/culture';
+import { Feature } from '../../core/models/feature';
+import { HeroClass } from '../../core/models/class';
+import { HeroState } from '../../core/models/hero-state';
 
 export interface AbilityCustomization {
 	abilityID: string;

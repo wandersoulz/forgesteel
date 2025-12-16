@@ -1,6 +1,6 @@
-import { Ability } from '@/core/models/ability';
-import { AbilityUsage } from '@/core/enums/ability-usage';
-import { FactoryLogic } from '@/core/logic/factory-logic';
+import { Ability } from '../../../core/models/ability';
+import { AbilityUsage } from '../../../core/enums/ability-usage';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
 
 export class AbilityUpdateLogic {
 	static updateAbility = (ability: Ability) => {

@@ -1,14 +1,14 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { Complication } from '@/core/models/complication';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { ItemType } from '@/core/enums/item-type';
-import { LanguageType } from '@/core/enums/language-type';
-import { SkillList } from '@/core/enums/skill-list';
+import { AbilityDistanceType } from '../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../core/enums/ability-keyword';
+import { Characteristic } from '../core/enums/characteristic';
+import { Complication } from '../core/models/complication';
+import { DamageModifierType } from '../core/enums/damage-modifier-type';
+import { DamageType } from '../core/enums/damage-type';
+import { FactoryLogic } from '../core/logic/factory-logic';
+import { FeatureField } from '../core/enums/feature-field';
+import { ItemType } from '../core/enums/item-type';
+import { LanguageType } from '../core/enums/language-type';
+import { SkillList } from '../core/enums/skill-list';
 
 export class ComplicationData {
 	static advancedStudies: Complication = {

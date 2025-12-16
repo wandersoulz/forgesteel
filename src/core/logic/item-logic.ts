@@ -1,5 +1,5 @@
-import { Item } from '@/core/models/item';
-import { ItemType } from '@/core/enums/item-type';
+import { Item } from '../../core/models/item';
+import { ItemType } from '../../core/enums/item-type';
 
 export class ItemLogic {
 	static isTrinket = (item: Item): boolean => {

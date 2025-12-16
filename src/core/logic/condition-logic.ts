@@ -1,6 +1,6 @@
-import { ConditionEndType, ConditionType } from '@/core/enums/condition-type';
-import { Condition } from '@/core/models/condition';
-import { ConditionData } from '@/data/condition-data';
+import { ConditionEndType, ConditionType } from '../../core/enums/condition-type';
+import { Condition } from '../../core/models/condition';
+import { ConditionData } from '../../data/condition-data';
 
 export class ConditionLogic {
 	static getDescription = (condition: ConditionType) => {

@@ -1,4 +1,4 @@
-import { Options } from '@/core/models/options';
+import { Options } from '../../core/models/options';
 
 export class OptionsLogic {
 	static getPartyDescription = (options: Options) => {

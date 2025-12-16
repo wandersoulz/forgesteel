@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { SubClass } from '@/core/models/subclass';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { SubClass } from '../../../core/models/subclass';
 
 export const berserker: SubClass = {
 	id: 'fury-sub-1',

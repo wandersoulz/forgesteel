@@ -1,7 +1,7 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityUsage } from '@/core/enums/ability-usage';
-import { Element } from '@/core/models/element';
-import { PowerRoll } from '@/core/models/power-roll';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityUsage } from '../../core/enums/ability-usage';
+import { Element } from '../../core/models/element';
+import { PowerRoll } from '../../core/models/power-roll';
 
 export interface AbilityType {
 	usage: AbilityUsage;

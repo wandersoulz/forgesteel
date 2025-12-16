@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { SkillList } from '@/core/enums/skill-list';
-import { SubClass } from '@/core/models/subclass';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { SkillList } from '../../../core/enums/skill-list';
+import { SubClass } from '../../../core/models/subclass';
 
 export const insurgent: SubClass = {
 	id: 'tactician-sub-1',

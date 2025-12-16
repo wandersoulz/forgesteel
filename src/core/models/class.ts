@@ -1,8 +1,8 @@
-import { Ability } from '@/core/models/ability';
-import { Characteristic } from '@/core/enums/characteristic';
-import { Element } from '@/core/models/element';
-import { Feature } from '@/core/models/feature';
-import { SubClass } from '@/core/models/subclass';
+import { Ability } from '../../core/models/ability';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Element } from '../../core/models/element';
+import { Feature } from '../../core/models/feature';
+import { SubClass } from '../../core/models/subclass';
 
 export interface HeroClass extends Element {
 	type: 'standard' | 'master';

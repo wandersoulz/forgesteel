@@ -1,16 +1,16 @@
-import { AbilityUpdateLogic } from '@/core/logic/update/ability-update-logic';
-import { AttitudeType } from '@/core/enums/attitude-type';
-import { Collections } from '@/core/utils/collections';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { EncounterObjectiveData } from '@/data/encounter-objective-data';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureUpdateLogic } from '@/core/logic/update/feature-update-logic';
-import { ItemUpdateLogic } from '@/core/logic/update/item-update-logic';
-import { LanguageType } from '@/core/enums/language-type';
-import { MonsterUpdateLogic } from '@/core/logic/update/monster-update-logic';
-import { PlotContentReference } from '@/core/models/plot';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { CoreUtils } from '@/core/utils/core-utils';
+import { AbilityUpdateLogic } from '../../../core/logic/update/ability-update-logic';
+import { AttitudeType } from '../../../core/enums/attitude-type';
+import { Collections } from '../../../core/utils/collections';
+import { EncounterDifficulty } from '../../../core/enums/encounter-difficulty';
+import { EncounterObjectiveData } from '../../../data/encounter-objective-data';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureUpdateLogic } from '../../../core/logic/update/feature-update-logic';
+import { ItemUpdateLogic } from '../../../core/logic/update/item-update-logic';
+import { LanguageType } from '../../../core/enums/language-type';
+import { MonsterUpdateLogic } from '../../../core/logic/update/monster-update-logic';
+import { PlotContentReference } from '../../../core/models/plot';
+import { Sourcebook } from '../../../core/models/sourcebook';
+import { CoreUtils } from '../../../core/utils/core-utils';
 
 export class SourcebookUpdateLogic {
 	static updateSourcebook = (sourcebook: Sourcebook) => {

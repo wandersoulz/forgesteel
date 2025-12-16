@@ -1,9 +1,9 @@
-import { DamageModifier, Modifier } from '@/core/models/damage-modifier';
-import { Plot, PlotLink } from '@/core/models/plot';
-import { AbilityType } from '@/core/models/ability';
-import { AbilityUsage } from '@/core/enums/ability-usage';
-import { Size } from '@/core/models/size';
-import { Speed } from '@/core/models/speed';
+import { DamageModifier, Modifier } from '../../core/models/damage-modifier';
+import { Plot, PlotLink } from '../../core/models/plot';
+import { AbilityType } from '../../core/models/ability';
+import { AbilityUsage } from '../../core/enums/ability-usage';
+import { Size } from '../../core/models/size';
+import { Speed } from '../../core/models/speed';
 
 export class FormatLogic {
 	static getAbilityType = (type: AbilityType) => {

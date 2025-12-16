@@ -1,15 +1,15 @@
-import { Characteristic } from '@/core/enums/characteristic';
-import { Collections } from '@/core/utils/collections';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { FeatureField } from '@/core/enums/feature-field';
-import { FeatureType } from '@/core/enums/feature-type';
-import { Hero } from '@/core/models/hero';
-import { HeroLogic } from '@/core/logic/hero-logic';
-import { ModifierLogic } from '@/core/logic/modifier-logic';
-import { Monster } from '@/core/models/monster';
-import { MonsterLogic } from '@/core/logic/monster-logic';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { Summon } from '@/core/models/summon';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Collections } from '../../core/utils/collections';
+import { DamageModifierType } from '../../core/enums/damage-modifier-type';
+import { FeatureField } from '../../core/enums/feature-field';
+import { FeatureType } from '../../core/enums/feature-type';
+import { Hero } from '../../core/models/hero';
+import { HeroLogic } from '../../core/logic/hero-logic';
+import { ModifierLogic } from '../../core/logic/modifier-logic';
+import { Monster } from '../../core/models/monster';
+import { MonsterLogic } from '../../core/logic/monster-logic';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
+import { Summon } from '../../core/models/summon';
 
 export class CreatureLogic {
 	static getCharacteristic = (creature: Hero | Monster | undefined, characteristic: Characteristic) => {

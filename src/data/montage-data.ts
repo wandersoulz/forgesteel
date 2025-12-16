@@ -1,7 +1,7 @@
-import { Characteristic } from '@/core/enums/characteristic';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Montage } from '@/core/models/montage';
+import { Characteristic } from '../core/enums/characteristic';
+import { EncounterDifficulty } from '../core/enums/encounter-difficulty';
+import { FactoryLogic } from '../core/logic/factory-logic';
+import { Montage } from '../core/models/montage';
 
 export class MontageData {
 	static fightFire: Montage = {

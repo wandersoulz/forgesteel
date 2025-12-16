@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { FactoryLogic } from '../factory-logic';
-import { MergeDuplicateBehavior } from '@/core/enums/merge-duplicate-behavior';
-import { Sourcebook } from '@/core/models/sourcebook';
+import { MergeDuplicateBehavior } from '../../../core/enums/merge-duplicate-behavior';
+import { Sourcebook } from '../../../core/models/sourcebook';
 import { SourcebookMergeLogic } from './sourcebook-merge-logic';
 
 describe('merge', () => {

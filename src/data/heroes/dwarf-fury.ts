@@ -1,4 +1,4 @@
-import { Hero } from '@/core/models/hero';
+import { Hero } from '../../core/models/hero';
 
 export const dwarfFury = {
 	id: 'ojZeuF7Jjqw66Di1',

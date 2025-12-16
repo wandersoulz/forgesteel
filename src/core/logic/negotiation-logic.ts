@@ -1,5 +1,5 @@
-import { AttitudeType } from '@/core/enums/attitude-type';
-import { NegotiationTrait } from '@/core/enums/negotiation-trait';
+import { AttitudeType } from '../../core/enums/attitude-type';
+import { NegotiationTrait } from '../../core/enums/negotiation-trait';
 
 export class NegotiationLogic {
 	static getInterest = (attitude: AttitudeType) => {

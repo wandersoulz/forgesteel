@@ -1,19 +1,19 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { ConditionType } from '@/core/enums/condition-type';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { KitArmor } from '@/core/enums/kit-armor';
-import { KitWeapon } from '@/core/enums/kit-weapon';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { chronopathy } from '@/data/classes/talent/chronopathy';
-import { telekinesis } from '@/data/classes/talent/telekinesis';
-import { telepathy } from '@/data/classes/talent/telepathy';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { ConditionType } from '../../../core/enums/condition-type';
+import { DamageModifierType } from '../../../core/enums/damage-modifier-type';
+import { DamageType } from '../../../core/enums/damage-type';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { KitArmor } from '../../../core/enums/kit-armor';
+import { KitWeapon } from '../../../core/enums/kit-weapon';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { chronopathy } from '../../../data/classes/talent/chronopathy';
+import { telekinesis } from '../../../data/classes/talent/telekinesis';
+import { telepathy } from '../../../data/classes/talent/telepathy';
 
 export const talent: HeroClass = {
 	id: 'class-talent',

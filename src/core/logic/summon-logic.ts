@@ -1,11 +1,11 @@
-import { AbilityLogic } from '@/core/logic/ability-logic';
-import { FeatureType } from '@/core/enums/feature-type';
-import { Hero } from '@/core/models/hero';
-import { Modifier } from '@/core/models/damage-modifier';
-import { ModifierLogic } from '@/core/logic/modifier-logic';
-import { Monster } from '@/core/models/monster';
-import { MonsterLogic } from '@/core/logic/monster-logic';
-import { CoreUtils } from '@/core/utils/core-utils';
+import { AbilityLogic } from '../../core/logic/ability-logic';
+import { FeatureType } from '../../core/enums/feature-type';
+import { Hero } from '../../core/models/hero';
+import { Modifier } from '../../core/models/damage-modifier';
+import { ModifierLogic } from '../../core/logic/modifier-logic';
+import { Monster } from '../../core/models/monster';
+import { MonsterLogic } from '../../core/logic/monster-logic';
+import { CoreUtils } from '../../core/utils/core-utils';
 
 export class SummonLogic {
 	static getSummonedMonster = (monster: Monster, controller: Hero) => {

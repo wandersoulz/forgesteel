@@ -1,24 +1,24 @@
 import { afterEach, assert, describe, expect, it, test, vi } from 'vitest';
-import { Ability } from '@/core/models/ability';
-import { AbilityData } from '@/data/ability-data';
-import { AbilityLogic } from '@/core/logic/ability-logic';
-import { Characteristic } from '@/core/enums/characteristic';
-import { CreatureLogic } from '@/core/logic/creature-logic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Hero } from '@/core/models/hero';
-import { HeroLogic } from '@/core/logic/hero-logic';
+import { Ability } from '../../core/models/ability';
+import { AbilityData } from '../../data/ability-data';
+import { AbilityLogic } from '../../core/logic/ability-logic';
+import { Characteristic } from '../../core/enums/characteristic';
+import { CreatureLogic } from '../../core/logic/creature-logic';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Hero } from '../../core/models/hero';
+import { HeroLogic } from '../../core/logic/hero-logic';
 
 describe('getPowerRollCharacteristics', () => {
 	afterEach(() => {
 		vi.resetAllMocks();
 	});
 
-	vi.mock('@/core/logic/creature-logic', () => {
+	vi.mock('../../core/logic/creature-logic', () => {
 		const CreatureLogic = vi.fn();
 		return { CreatureLogic: CreatureLogic };
 	});
 
-	vi.mock('@/core/logic/hero-logic', () => {
+	vi.mock('../../core/logic/hero-logic', () => {
 		const HeroLogic = vi.fn();
 		return { HeroLogic: HeroLogic };
 	});
@@ -69,7 +69,7 @@ describe('getTextEffect', () => {
 		vi.resetAllMocks();
 	});
 
-	vi.mock('@/core/logic/hero-logic', () => {
+	vi.mock('../../core/logic/hero-logic', () => {
 		const HeroLogic = vi.fn();
 		return { HeroLogic: HeroLogic };
 	});

@@ -1,6 +1,6 @@
-import { AttitudeType } from '@/core/enums/attitude-type';
-import { Element } from '@/core/models/element';
-import { NegotiationTrait } from '@/core/enums/negotiation-trait';
+import { AttitudeType } from '../../core/enums/attitude-type';
+import { Element } from '../../core/models/element';
+import { NegotiationTrait } from '../../core/enums/negotiation-trait';
 
 export interface Negotiation extends Element {
 	attitude: AttitudeType;

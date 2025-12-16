@@ -1,6 +1,6 @@
-import { MergeDuplicateBehavior } from '@/core/enums/merge-duplicate-behavior';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { CoreUtils } from '@/core/utils/core-utils';
+import { MergeDuplicateBehavior } from '../../../core/enums/merge-duplicate-behavior';
+import { Sourcebook } from '../../../core/models/sourcebook';
+import { CoreUtils } from '../../../core/utils/core-utils';
 
 export class SourcebookMergeLogic {
 	static merge = (source: Sourcebook[], target: Sourcebook[], onDuplicate: MergeDuplicateBehavior = MergeDuplicateBehavior.Skip): Sourcebook[] => {

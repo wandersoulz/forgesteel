@@ -1,6 +1,6 @@
-import { Characteristic } from '@/core/enums/characteristic';
-import { Element } from '@/core/models/element';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Element } from '../../core/models/element';
+import { EncounterDifficulty } from '../../core/enums/encounter-difficulty';
 
 export interface MontageChallenge extends Element {
 	characteristics: Characteristic[];

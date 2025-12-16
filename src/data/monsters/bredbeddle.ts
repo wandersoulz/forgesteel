@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { StatBlockIcon } from '@/core/enums/stat-block-icon';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { MonsterGroup } from '../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
+import { StatBlockIcon } from '../../core/enums/stat-block-icon';
 
 export const bredbeddle: MonsterGroup = {
 	id: 'monster-group-bredbeddle',

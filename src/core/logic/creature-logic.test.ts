@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'vitest';
-import { CreatureLogic } from '@/core/logic/creature-logic';
-import { FeatureSummonChoice } from '@/core/models/feature';
-import { Summon } from '@/core/models/summon';
-import { beastheart } from '@/data/classes/beastheart/beastheart';
-import { circleOfGraves } from '@/data/classes/summoner/graves';
+import { CreatureLogic } from '../../core/logic/creature-logic';
+import { FeatureSummonChoice } from '../../core/models/feature';
+import { Summon } from '../../core/models/summon';
+import { beastheart } from '../../data/classes/beastheart/beastheart';
+import { circleOfGraves } from '../../data/classes/summoner/graves';
 
 describe('isSummon', () => {
 	test('returns true for Summoner minions', () => {

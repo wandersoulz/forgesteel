@@ -1,9 +1,9 @@
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Kit } from '@/core/models/kit';
-import { KitArmor } from '@/core/enums/kit-armor';
-import { KitWeapon } from '@/core/enums/kit-weapon';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Kit } from '../../core/models/kit';
+import { KitArmor } from '../../core/enums/kit-armor';
+import { KitWeapon } from '../../core/enums/kit-weapon';
 
 export const battlemind: Kit = {
 	id: 'kit-battlemind',

@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { PerkData } from '@/data/perk-data';
-import { SubClass } from '@/core/models/subclass';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { PerkData } from '../../../data/perk-data';
+import { SubClass } from '../../../core/models/subclass';
 
 export const spark: SubClass = {
 	id: 'beastheart-sub-4',

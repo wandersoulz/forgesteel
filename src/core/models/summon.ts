@@ -1,6 +1,6 @@
-import { Element } from '@/core/models/element';
-import { Feature } from '@/core/models/feature';
-import { Monster } from '@/core/models/monster';
+import { Element } from '../../core/models/element';
+import { Feature } from '../../core/models/feature';
+import { Monster } from '../../core/models/monster';
 
 export interface SummoningInfo {
 	isSignature: boolean;

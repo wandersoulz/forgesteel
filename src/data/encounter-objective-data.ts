@@ -1,4 +1,4 @@
-import { EncounterObjective } from '@/core/models/encounter';
+import { EncounterObjective } from '../core/models/encounter';
 
 export class EncounterObjectiveData {
 	static diminishNumbers: EncounterObjective = {

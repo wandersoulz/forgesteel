@@ -1,12 +1,12 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { StatBlockIcon } from '@/core/enums/stat-block-icon';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { DamageModifierType } from '../../core/enums/damage-modifier-type';
+import { DamageType } from '../../core/enums/damage-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { MonsterGroup } from '../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
+import { StatBlockIcon } from '../../core/enums/stat-block-icon';
 
 export const dragonGloom: MonsterGroup = {
 	id: 'monster-group-dragon-gloom',

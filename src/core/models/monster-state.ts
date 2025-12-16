@@ -1,4 +1,4 @@
-import { Condition } from '@/core/models/condition';
+import { Condition } from '../../core/models/condition';
 
 export interface MonsterState {
 	staminaDamage: number;

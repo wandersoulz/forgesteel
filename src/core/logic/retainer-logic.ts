@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Feature } from '@/core/models/feature';
-import { MonsterRoleType } from '@/core/enums/monster-role-type';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Feature } from '../../core/models/feature';
+import { MonsterRoleType } from '../../core/enums/monster-role-type';
 
 export class RetainerLogic {
 	static getRetainerAdvancementFeatures = (level: number, role: MonsterRoleType, level4?: Feature, level7?: Feature, level10?: Feature): { level: number, feature: Feature }[] => {

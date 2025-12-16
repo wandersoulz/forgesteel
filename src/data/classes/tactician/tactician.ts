@@ -1,14 +1,14 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { insurgent } from '@/data/classes/tactician/insurgent';
-import { mastermind } from '@/data/classes/tactician/mastermind';
-import { vanguard } from '@/data/classes/tactician/vanguard';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { insurgent } from '../../../data/classes/tactician/insurgent';
+import { mastermind } from '../../../data/classes/tactician/mastermind';
+import { vanguard } from '../../../data/classes/tactician/vanguard';
 
 export const tactician: HeroClass = {
 	id: 'class-tactician',

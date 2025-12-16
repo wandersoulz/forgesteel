@@ -1,9 +1,9 @@
-import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Ancestry } from '@/core/models/ancestry';
-import { Characteristic } from '@/core/enums/characteristic';
-import { CultureType } from '@/core/enums/culture-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
+import { EnvironmentData, OrganizationData, UpbringingData } from '../../data/culture-data';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Ancestry } from '../../core/models/ancestry';
+import { Characteristic } from '../../core/enums/characteristic';
+import { CultureType } from '../../core/enums/culture-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
 
 export const wodeElf: Ancestry = {
 	id: 'ancestry-wode-elf',

@@ -1,6 +1,6 @@
-import { FeatureType } from '@/core/enums/feature-type';
-import { Perk } from '@/core/models/perk';
-import { PerkList } from '@/core/enums/perk-list';
+import { FeatureType } from '../../core/enums/feature-type';
+import { Perk } from '../../core/models/perk';
+import { PerkList } from '../../core/enums/perk-list';
 
 export class CraftingPerkData {
 	static areaOfExpertise: Perk = {

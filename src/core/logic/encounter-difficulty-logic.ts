@@ -1,11 +1,11 @@
-import { Encounter, EncounterGroup, TerrainSlot } from '@/core/models/encounter';
-import { Collections } from '@/core/utils/collections';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { EncounterLogic } from '@/core/logic/encounter-logic';
-import { Hero } from '@/core/models/hero';
-import { Options } from '@/core/models/options';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { SourcebookLogic } from '@/core/logic/sourcebook-logic';
+import { Encounter, EncounterGroup, TerrainSlot } from '../../core/models/encounter';
+import { Collections } from '../../core/utils/collections';
+import { EncounterDifficulty } from '../../core/enums/encounter-difficulty';
+import { EncounterLogic } from '../../core/logic/encounter-logic';
+import { Hero } from '../../core/models/hero';
+import { Options } from '../../core/models/options';
+import { Sourcebook } from '../../core/models/sourcebook';
+import { SourcebookLogic } from '../../core/logic/sourcebook-logic';
 
 export class EncounterDifficultyLogic {
 	static getStrength = (encounter: Encounter, sourcebooks: Sourcebook[]) => {

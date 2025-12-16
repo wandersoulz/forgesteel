@@ -1,5 +1,5 @@
-import { AbilityDistance } from '@/core/models/ability';
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
+import { AbilityDistance } from '../../core/models/ability';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
 
 export class FactoryDistanceLogic {
 	create = (data: { type: AbilityDistanceType, value: number, value2?: number, within?: number, qualifier?: string, special?: string }): AbilityDistance => {

@@ -1,10 +1,10 @@
-import { FeatureAbility, FeatureText } from '@/core/models/feature';
-import { DamageModifier } from '@/core/models/damage-modifier';
-import { Element } from '@/core/models/element';
-import { MonsterRoleType } from '@/core/enums/monster-role-type';
-import { Size } from '@/core/models/size';
-import { TerrainCategory } from '@/core/enums/terrain-category';
-import { TerrainRoleType } from '@/core/enums/terrain-role-type';
+import { FeatureAbility, FeatureText } from '../../core/models/feature';
+import { DamageModifier } from '../../core/models/damage-modifier';
+import { Element } from '../../core/models/element';
+import { MonsterRoleType } from '../../core/enums/monster-role-type';
+import { Size } from '../../core/models/size';
+import { TerrainCategory } from '../../core/enums/terrain-category';
+import { TerrainRoleType } from '../../core/enums/terrain-role-type';
 
 export interface TerrainRole {
 	type: MonsterRoleType;

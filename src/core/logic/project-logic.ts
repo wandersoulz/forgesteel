@@ -1,4 +1,4 @@
-import { Project } from '@/core/models/project';
+import { Project } from '../../core/models/project';
 
 export class ProjectLogic {
 	static getPrerequisitesMet = (project: Project) => {

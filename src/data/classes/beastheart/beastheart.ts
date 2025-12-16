@@ -1,18 +1,18 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { guardian } from '@/data/classes/beastheart/guardian';
-import { prowler } from '@/data/classes/beastheart/prowler';
-import { punisher } from '@/data/classes/beastheart/punisher';
-import { spark } from '@/data/classes/beastheart/spark';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { DamageModifierType } from '../../../core/enums/damage-modifier-type';
+import { DamageType } from '../../../core/enums/damage-type';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { MonsterOrganizationType } from '../../../core/enums/monster-organization-type';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { guardian } from '../../../data/classes/beastheart/guardian';
+import { prowler } from '../../../data/classes/beastheart/prowler';
+import { punisher } from '../../../data/classes/beastheart/punisher';
+import { spark } from '../../../data/classes/beastheart/spark';
 
 export const beastheart: HeroClass = {
 	id: 'class-beastheart',

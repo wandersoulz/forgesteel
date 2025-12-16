@@ -1,9 +1,9 @@
-import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { Ancestry } from '@/core/models/ancestry';
-import { ConditionType } from '@/core/enums/condition-type';
-import { CultureType } from '@/core/enums/culture-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
+import { EnvironmentData, OrganizationData, UpbringingData } from '../../data/culture-data';
+import { Ancestry } from '../../core/models/ancestry';
+import { ConditionType } from '../../core/enums/condition-type';
+import { CultureType } from '../../core/enums/culture-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { FeatureField } from '../../core/enums/feature-field';
 
 export const dwarf: Ancestry = {
 	id: 'ancestry-dwarf',

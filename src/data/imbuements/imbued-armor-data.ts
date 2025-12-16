@@ -1,12 +1,12 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { Imbuement } from '@/core/models/imbuement';
-import { ItemType } from '@/core/enums/item-type';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { DamageModifierType } from '../../core/enums/damage-modifier-type';
+import { DamageType } from '../../core/enums/damage-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { FeatureField } from '../../core/enums/feature-field';
+import { Imbuement } from '../../core/models/imbuement';
+import { ItemType } from '../../core/enums/item-type';
 
 export class ImbuedArmorData {
 	static aweCharming: Imbuement = FactoryLogic.createImbuement({

@@ -1,9 +1,9 @@
-import { LeveledImplementData } from '@/data/items/leveled-implement-data';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { SourcebookType } from '@/core/enums/sourcebook-type';
-import { TitleData } from '@/data/title-data';
-import { TrinketData } from '@/data/items/trinket-data';
-import { summoner } from '@/data/classes/summoner/summoner';
+import { LeveledImplementData } from '../../../data/items/leveled-implement-data';
+import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookType } from '../../../core/enums/sourcebook-type';
+import { TitleData } from '../../../data/title-data';
+import { TrinketData } from '../../../data/items/trinket-data';
+import { summoner } from '../../../data/classes/summoner/summoner';
 
 export const summonerSourcebook: Sourcebook = {
 	id: 'summoner',

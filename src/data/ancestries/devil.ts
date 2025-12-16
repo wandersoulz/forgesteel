@@ -1,8 +1,8 @@
-import { EnvironmentData, OrganizationData, UpbringingData } from '@/data/culture-data';
-import { Ancestry } from '@/core/models/ancestry';
-import { CultureType } from '@/core/enums/culture-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { SkillList } from '@/core/enums/skill-list';
+import { EnvironmentData, OrganizationData, UpbringingData } from '../../data/culture-data';
+import { Ancestry } from '../../core/models/ancestry';
+import { CultureType } from '../../core/enums/culture-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { SkillList } from '../../core/enums/skill-list';
 
 export const devil: Ancestry = {
 	id: 'ancestry-devil',

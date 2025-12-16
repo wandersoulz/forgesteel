@@ -1,16 +1,16 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Ancestry } from '@/core/models/ancestry';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { Item } from '@/core/models/item';
-import { ItemType } from '@/core/enums/item-type';
-import { Kit } from '@/core/models/kit';
-import { KitArmor } from '@/core/enums/kit-armor';
-import { KitWeapon } from '@/core/enums/kit-weapon';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { SourcebookType } from '@/core/enums/sourcebook-type';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Ancestry } from '../../../core/models/ancestry';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { Item } from '../../../core/models/item';
+import { ItemType } from '../../../core/enums/item-type';
+import { Kit } from '../../../core/models/kit';
+import { KitArmor } from '../../../core/enums/kit-armor';
+import { KitWeapon } from '../../../core/enums/kit-weapon';
+import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookType } from '../../../core/enums/sourcebook-type';
 
 // #region Ancestries
 

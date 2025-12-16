@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { SkillList } from '@/core/enums/skill-list';
-import { SubClass } from '@/core/models/subclass';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { SkillList } from '../../../core/enums/skill-list';
+import { SubClass } from '../../../core/models/subclass';
 
 export const mastermind: SubClass = {
 	id: 'tactician-sub-2',

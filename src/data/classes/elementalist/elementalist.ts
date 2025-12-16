@@ -1,19 +1,19 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { KitArmor } from '@/core/enums/kit-armor';
-import { KitWeapon } from '@/core/enums/kit-weapon';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { earth } from '@/data/classes/elementalist/earth';
-import { fire } from '@/data/classes/elementalist/fire';
-import { green } from '@/data/classes/elementalist/green';
-import { voidSubclass } from '@/data/classes/elementalist/void';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { DamageModifierType } from '../../../core/enums/damage-modifier-type';
+import { DamageType } from '../../../core/enums/damage-type';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { KitArmor } from '../../../core/enums/kit-armor';
+import { KitWeapon } from '../../../core/enums/kit-weapon';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { earth } from '../../../data/classes/elementalist/earth';
+import { fire } from '../../../data/classes/elementalist/fire';
+import { green } from '../../../data/classes/elementalist/green';
+import { voidSubclass } from '../../../data/classes/elementalist/void';
 
 export const elementalist: HeroClass = {
 	id: 'class-elementalist',

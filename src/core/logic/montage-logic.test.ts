@@ -1,10 +1,10 @@
-import { Montage, MontageChallenge, MontageSection } from '@/core/models/montage';
+import { Montage, MontageChallenge, MontageSection } from '../../core/models/montage';
 import { describe, expect, test } from 'vitest';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Hero } from '@/core/models/hero';
-import { MontageLogic } from '@/core/logic/montage-logic';
-import { Options } from '@/core/models/options';
+import { EncounterDifficulty } from '../../core/enums/encounter-difficulty';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Hero } from '../../core/models/hero';
+import { MontageLogic } from '../../core/logic/montage-logic';
+import { Options } from '../../core/models/options';
 
 describe('getHeroCount', () => {
 	test('returns the correct hero count when defined in options', () => {

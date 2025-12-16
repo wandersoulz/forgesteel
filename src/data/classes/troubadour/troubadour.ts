@@ -1,14 +1,14 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { auteur } from '@/data/classes/troubadour/auteur';
-import { duelist } from '@/data/classes/troubadour/duelist';
-import { virtuoso } from '@/data/classes/troubadour/virtuoso';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { auteur } from '../../../data/classes/troubadour/auteur';
+import { duelist } from '../../../data/classes/troubadour/duelist';
+import { virtuoso } from '../../../data/classes/troubadour/virtuoso';
 
 export const troubadour: HeroClass = {
 	id: '9y3Jx3koKZipiPh1',

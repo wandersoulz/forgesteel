@@ -1,5 +1,5 @@
-import { Characteristic } from '@/core/enums/characteristic';
-import { Element } from '@/core/models/element';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Element } from '../../core/models/element';
 
 export interface ProjectProgress {
 	prerequisites: boolean;

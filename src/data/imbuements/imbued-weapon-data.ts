@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Imbuement } from '@/core/models/imbuement';
-import { ItemType } from '@/core/enums/item-type';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Imbuement } from '../../core/models/imbuement';
+import { ItemType } from '../../core/enums/item-type';
 
 export class ImbuedWeaponData {
 	static bloodBargain: Imbuement = FactoryLogic.createImbuement({

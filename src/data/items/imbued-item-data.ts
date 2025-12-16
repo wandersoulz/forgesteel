@@ -1,6 +1,6 @@
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Item } from '@/core/models/item';
-import { ItemType } from '@/core/enums/item-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Item } from '../../core/models/item';
+import { ItemType } from '../../core/enums/item-type';
 
 export class ImbuedItemData {
 	static imbuedArmor: Item = FactoryLogic.createItem({

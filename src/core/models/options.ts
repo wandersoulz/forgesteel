@@ -1,4 +1,4 @@
-import { PanelWidth } from '@/core/enums/panel-width';
+import { PanelWidth } from '../../core/enums/panel-width';
 
 
 export interface Options {

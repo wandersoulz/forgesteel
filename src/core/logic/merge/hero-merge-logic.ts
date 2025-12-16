@@ -1,6 +1,6 @@
-import { Hero } from '@/core/models/hero';
-import { MergeDuplicateBehavior } from '@/core/enums/merge-duplicate-behavior';
-import { CoreUtils } from '@/core/utils/core-utils';
+import { Hero } from '../../../core/models/hero';
+import { MergeDuplicateBehavior } from '../../../core/enums/merge-duplicate-behavior';
+import { CoreUtils } from '../../../core/utils/core-utils';
 
 export class HeroMergeLogic {
 	static merge = (source: Hero[], target: Hero[], onDuplicate: MergeDuplicateBehavior = MergeDuplicateBehavior.Skip): Hero[] => {

@@ -1,5 +1,5 @@
-import { Collections } from '@/core/utils/collections';
-import { RollState } from '@/core/enums/roll-state';
+import { Collections } from '../../core/utils/collections';
+import { RollState } from '../../core/enums/roll-state';
 
 export class RollLogic {
 	static getOdds = (modifiers: number[], rollState: RollState, rollType: string = 'Power Roll') => {

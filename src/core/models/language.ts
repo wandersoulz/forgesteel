@@ -1,4 +1,4 @@
-import { LanguageType } from '@/core/enums/language-type';
+import { LanguageType } from '../../core/enums/language-type';
 
 export interface Language {
 	name: string;

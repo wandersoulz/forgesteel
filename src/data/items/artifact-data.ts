@@ -1,8 +1,8 @@
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { Item } from '@/core/models/item';
-import { ItemType } from '@/core/enums/item-type';
-import { KitWeapon } from '@/core/enums/kit-weapon';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { Item } from '../../core/models/item';
+import { ItemType } from '../../core/enums/item-type';
+import { KitWeapon } from '../../core/enums/kit-weapon';
 
 export class ArtifactData {
 	static bladeOfAThousandYears: Item = FactoryLogic.createItem({

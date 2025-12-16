@@ -1,8 +1,8 @@
-import { AttitudeType } from '@/core/enums/attitude-type';
-import { EncounterDifficulty } from '@/core/enums/encounter-difficulty';
-import { EncounterObjectiveData } from '@/data/encounter-objective-data';
-import { MonsterUpdateLogic } from '@/core/logic/update/monster-update-logic';
-import { Session } from '@/core/models/session';
+import { AttitudeType } from '../../../core/enums/attitude-type';
+import { EncounterDifficulty } from '../../../core/enums/encounter-difficulty';
+import { EncounterObjectiveData } from '../../../data/encounter-objective-data';
+import { MonsterUpdateLogic } from '../../../core/logic/update/monster-update-logic';
+import { Session } from '../../../core/models/session';
 
 export class SessionUpdateLogic {
 	static updateSession = (session: Session) => {

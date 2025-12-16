@@ -1,13 +1,13 @@
-import { AbilityUpdateLogic } from '@/core/logic/update/ability-update-logic';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureMaliceAbilityData } from '@/core/models/feature';
-import { FeatureType } from '@/core/enums/feature-type';
-import { FeatureUpdateLogic } from '@/core/logic/update/feature-update-logic';
-import { Monster } from '@/core/models/monster';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { CoreUtils } from '@/core/utils/core-utils';
+import { AbilityUpdateLogic } from '../../../core/logic/update/ability-update-logic';
+import { DamageType } from '../../../core/enums/damage-type';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureMaliceAbilityData } from '../../../core/models/feature';
+import { FeatureType } from '../../../core/enums/feature-type';
+import { FeatureUpdateLogic } from '../../../core/logic/update/feature-update-logic';
+import { Monster } from '../../../core/models/monster';
+import { MonsterGroup } from '../../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../../core/enums/monster-organization-type';
+import { CoreUtils } from '../../../core/utils/core-utils';
 
 export class MonsterUpdateLogic {
 	static updateMonsterGroup = (monsterGroup: MonsterGroup) => {

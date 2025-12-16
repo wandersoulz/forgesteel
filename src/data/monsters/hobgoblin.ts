@@ -1,13 +1,13 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { MonsterGroup } from '@/core/models/monster-group';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { MonsterRoleType } from '@/core/enums/monster-role-type';
-import { StatBlockIcon } from '@/core/enums/stat-block-icon';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { DamageModifierType } from '../../core/enums/damage-modifier-type';
+import { DamageType } from '../../core/enums/damage-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { MonsterGroup } from '../../core/models/monster-group';
+import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
+import { MonsterRoleType } from '../../core/enums/monster-role-type';
+import { StatBlockIcon } from '../../core/enums/stat-block-icon';
 
 export const hobgoblin: MonsterGroup = {
 	id: 'monster-group-hobgoblin',

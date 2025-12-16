@@ -1,5 +1,5 @@
-import { Plot } from '@/core/models/plot';
-import { Session } from '@/core/models/session';
+import { Plot } from '../../core/models/plot';
+import { Session } from '../../core/models/session';
 
 export class AdventureLogic {
 	static getContentIDs = (plot: Plot) => {

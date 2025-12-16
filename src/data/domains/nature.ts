@@ -1,9 +1,9 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { Domain } from '@/core/models/domain';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { SkillList } from '@/core/enums/skill-list';
+import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { Domain } from '../../core/models/domain';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { SkillList } from '../../core/enums/skill-list';
 
 export const nature: Domain = {
 	id: 'domain-nature',

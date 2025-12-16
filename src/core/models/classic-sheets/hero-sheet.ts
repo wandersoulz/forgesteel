@@ -1,15 +1,15 @@
-import { AbilitySheet } from '@/core/models/classic-sheets/ability-sheet';
-import { CharacteristicsSheet } from '@/core/models/classic-sheets/classic-sheets';
-import { Condition } from '@/core/models/condition';
-import { ConditionType } from '@/core/enums/condition-type';
-import { Culture } from '@/core/models/culture';
-import { Element } from '@/core/models/element';
-import { Feature } from '@/core/models/feature';
-import { Hero } from '@/core/models/hero';
-import { Item } from '@/core/models/item';
-import { MonsterSheet } from '@/core/models/classic-sheets/monster-sheet';
-import { Perk } from '@/core/models/perk';
-import { Title } from '@/core/models/title';
+import { AbilitySheet } from '../../../core/models/classic-sheets/ability-sheet';
+import { CharacteristicsSheet } from '../../../core/models/classic-sheets/classic-sheets';
+import { Condition } from '../../../core/models/condition';
+import { ConditionType } from '../../../core/enums/condition-type';
+import { Culture } from '../../../core/models/culture';
+import { Element } from '../../../core/models/element';
+import { Feature } from '../../../core/models/feature';
+import { Hero } from '../../../core/models/hero';
+import { Item } from '../../../core/models/item';
+import { MonsterSheet } from '../../../core/models/classic-sheets/monster-sheet';
+import { Perk } from '../../../core/models/perk';
+import { Title } from '../../../core/models/title';
 
 // #region Character
 export interface HeroSheet {

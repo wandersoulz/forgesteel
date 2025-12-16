@@ -1,8 +1,8 @@
-import { KitData } from '@/data/kit-data';
-import { PerkData } from '@/data/perk-data';
-import { Sourcebook } from '@/core/models/sourcebook';
-import { SourcebookType } from '@/core/enums/sourcebook-type';
-import { beastheart } from '@/data/classes/beastheart/beastheart';
+import { KitData } from '../../../data/kit-data';
+import { PerkData } from '../../../data/perk-data';
+import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookType } from '../../../core/enums/sourcebook-type';
+import { beastheart } from '../../../data/classes/beastheart/beastheart';
 
 export const patreon: Sourcebook = {
 	id: 'patreon',

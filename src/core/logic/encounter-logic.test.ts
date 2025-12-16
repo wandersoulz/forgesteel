@@ -1,9 +1,9 @@
-import { FeatureMalice, FeatureMaliceAbility } from '@/core/models/feature';
+import { FeatureMalice, FeatureMaliceAbility } from '../../core/models/feature';
 import { afterEach, describe, expect, test, vi } from 'vitest';
-import { Encounter } from '@/core/models/encounter';
-import { EncounterLogic } from '@/core/logic/encounter-logic';
-import { MonsterData } from '@/data/monster-data';
-import { MonsterGroup } from '@/core/models/monster-group';
+import { Encounter } from '../../core/models/encounter';
+import { EncounterLogic } from '../../core/logic/encounter-logic';
+import { MonsterData } from '../../data/monster-data';
+import { MonsterGroup } from '../../core/models/monster-group';
 
 describe('getAllMaliceFeatures', () => {
 	afterEach(() => {

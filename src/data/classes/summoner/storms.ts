@@ -1,14 +1,14 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { MonsterOrganizationType } from '@/core/enums/monster-organization-type';
-import { MonsterRoleType } from '@/core/enums/monster-role-type';
-import { SubClass } from '@/core/models/subclass';
-import { TerrainRoleType } from '@/core/enums/terrain-role-type';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { DamageModifierType } from '../../../core/enums/damage-modifier-type';
+import { DamageType } from '../../../core/enums/damage-type';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { MonsterOrganizationType } from '../../../core/enums/monster-organization-type';
+import { MonsterRoleType } from '../../../core/enums/monster-role-type';
+import { SubClass } from '../../../core/models/subclass';
+import { TerrainRoleType } from '../../../core/enums/terrain-role-type';
 
 export const circleofStorms: SubClass = {
 	id: 'summoner-sub-2',

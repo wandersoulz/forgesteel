@@ -1,14 +1,14 @@
-import { AbilityDistanceType } from '@/core/enums/abiity-distance-type';
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { HeroClass } from '@/core/models/class';
-import { PerkList } from '@/core/enums/perk-list';
-import { SkillList } from '@/core/enums/skill-list';
-import { blackAsh } from '@/data/classes/shadow/black-ash';
-import { causticAlchemy } from '@/data/classes/shadow/caustic-alchemy';
-import { harlequinMask } from '@/data/classes/shadow/harlequin-mask';
+import { AbilityDistanceType } from '../../../core/enums/abiity-distance-type';
+import { AbilityKeyword } from '../../../core/enums/ability-keyword';
+import { Characteristic } from '../../../core/enums/characteristic';
+import { FactoryLogic } from '../../../core/logic/factory-logic';
+import { FeatureField } from '../../../core/enums/feature-field';
+import { HeroClass } from '../../../core/models/class';
+import { PerkList } from '../../../core/enums/perk-list';
+import { SkillList } from '../../../core/enums/skill-list';
+import { blackAsh } from '../../../data/classes/shadow/black-ash';
+import { causticAlchemy } from '../../../data/classes/shadow/caustic-alchemy';
+import { harlequinMask } from '../../../data/classes/shadow/harlequin-mask';
 
 export const shadow: HeroClass = {
 	id: 'class-shadow',

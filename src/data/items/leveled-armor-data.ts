@@ -1,12 +1,12 @@
-import { AbilityKeyword } from '@/core/enums/ability-keyword';
-import { Characteristic } from '@/core/enums/characteristic';
-import { DamageModifierType } from '@/core/enums/damage-modifier-type';
-import { DamageType } from '@/core/enums/damage-type';
-import { FactoryLogic } from '@/core/logic/factory-logic';
-import { FeatureField } from '@/core/enums/feature-field';
-import { Item } from '@/core/models/item';
-import { ItemType } from '@/core/enums/item-type';
-import { KitArmor } from '@/core/enums/kit-armor';
+import { AbilityKeyword } from '../../core/enums/ability-keyword';
+import { Characteristic } from '../../core/enums/characteristic';
+import { DamageModifierType } from '../../core/enums/damage-modifier-type';
+import { DamageType } from '../../core/enums/damage-type';
+import { FactoryLogic } from '../../core/logic/factory-logic';
+import { FeatureField } from '../../core/enums/feature-field';
+import { Item } from '../../core/models/item';
+import { ItemType } from '../../core/enums/item-type';
+import { KitArmor } from '../../core/enums/kit-armor';
 
 export class LeveledArmorData {
 	static adaptiveSecondSkin: Item = FactoryLogic.createItem({

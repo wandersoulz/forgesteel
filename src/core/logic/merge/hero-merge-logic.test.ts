@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { FactoryLogic } from '../factory-logic';
-import { Hero } from '@/core/models/hero';
+import { Hero } from '../../../core/models/hero';
 import { HeroMergeLogic } from './hero-merge-logic';
-import { MergeDuplicateBehavior } from '@/core/enums/merge-duplicate-behavior';
+import { MergeDuplicateBehavior } from '../../../core/enums/merge-duplicate-behavior';
 
 describe('merge', () => {
 	const byId = (arr: Hero[], id: string): Hero | undefined => {

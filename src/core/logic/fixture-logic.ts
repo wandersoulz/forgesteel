@@ -1,4 +1,4 @@
-import { Fixture } from '@/core/models/fixture';
+import { Fixture } from '../../core/models/fixture';
 
 export class FixtureLogic {
 	static getFixtureDescription = (fixture: Fixture) => {

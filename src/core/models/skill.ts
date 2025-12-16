@@ -1,4 +1,4 @@
-import { SkillList } from '@/core/enums/skill-list';
+import { SkillList } from '../../core/enums/skill-list';
 
 export interface Skill {
 	name: string;

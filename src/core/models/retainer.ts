@@ -1,4 +1,4 @@
-import { Feature } from '@/core/models/feature';
+import { Feature } from '../../core/models/feature';
 
 export interface RetainerInfo {
 	level: number;

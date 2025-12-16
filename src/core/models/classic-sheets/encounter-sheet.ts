@@ -1,7 +1,7 @@
-import { FeatureMalice, FeatureMaliceAbility } from '@/core/models/feature';
-import { Monster } from '@/core/models/monster';
-import { MonsterSheet } from '@/core/models/classic-sheets/monster-sheet';
-import { Terrain } from '@/core/models/terrain';
+import { FeatureMalice, FeatureMaliceAbility } from '../../../core/models/feature';
+import { Monster } from '../../../core/models/monster';
+import { MonsterSheet } from '../../../core/models/classic-sheets/monster-sheet';
+import { Terrain } from '../../../core/models/terrain';
 
 export interface EncounterSheet {
 	id: string;

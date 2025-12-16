@@ -1,5 +1,5 @@
-import { Element } from '@/core/models/element';
-import { Plot } from '@/core/models/plot';
+import { Element } from '../../core/models/element';
+import { Plot } from '../../core/models/plot';
 
 export interface Adventure extends Element {
 	party: {
