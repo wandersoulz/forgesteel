@@ -14,7 +14,7 @@
 		"test": "vitest",
 		"check": "npm run lint && tsc && vitest run",
 		"build": "tsc",
-		"prepublishOnly": "npm run build"
+		"prepare": "npm run build"
 	},
 	"dependencies": {
 	},
