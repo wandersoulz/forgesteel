@@ -3,6 +3,7 @@ export * from './adventure';
 export * from './ancestry';
 export * from './career';
 export * from './class';
+export * from './classic-sheets';
 export * from './complication';
 export * from './condition';
 export * from './connection-settings';
