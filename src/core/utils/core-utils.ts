@@ -1,9 +1,6 @@
-import { Converter } from 'showdown';
 import { Random } from './random'; // Updated import path
 
 export class CoreUtils {
-    static showdownConverter = new Converter({ simpleLineBreaks: true, tables: true });
-
     static guid = () => {
         const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
         let id = '';
