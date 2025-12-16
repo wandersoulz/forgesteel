@@ -1,5 +1,6 @@
 export * from './ability-logic';
 export * from './adventure-logic';
+export * from './classic-sheet';
 export * from './condition-logic';
 export * from './creature-logic';
 export * from './encounter-difficulty-logic';
