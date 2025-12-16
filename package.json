@@ -6,8 +6,6 @@
 	"exports": {
 		".": "./dist/index.js"
 	},
-	"repository": "https://github.com/andyaiken/forgesteel.git",
-	"homepage": "https://andyaiken.github.io/forgesteel/",
 	"scripts": {
 		"lint": "eslint \"src/**/*.ts\"",
 		"fix": "eslint \"src/**/*.ts\" --fix",
@@ -17,8 +15,6 @@
 		"prepare": "npm run build"
 	},
 	"dependencies": {
-	},
-	"devDependencies": {
 		"@eslint/js": "^9.39.2",
 		"@stylistic/eslint-plugin": "^5.6.1",
 		"@vitest/coverage-v8": "^4.0.15",
