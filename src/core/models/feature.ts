@@ -1,100 +1,111 @@
-import { DamageModifier, Modifier } from '../../core/models/damage-modifier';
-import { Ability } from '../../core/models/ability';
+import { DamageModifierInterface, ModifierInterface } from '../../core/models/damage-modifier';
+import { AbilityInterface } from '../../core/models/ability';
 import { AbilityKeyword } from '../../core/enums/ability-keyword';
-import { Ancestry } from '../../core/models/ancestry';
+import { AncestryInterface } from '../../core/models/ancestry';
 import { Characteristic } from '../../core/enums/characteristic';
 import { ConditionType } from '../../core/enums/condition-type';
 import { DamageType } from '../../core/enums/damage-type';
-import { Domain } from '../../core/models/domain';
-import { Element } from '../../core/models/element';
+import { DomainInterface } from '../../core/models/domain';
+import { ElementInterface } from '../../core/models/element';
 import { FeatureAddOnType } from '../../core/enums/feature-addon-type';
 import { FeatureField } from '../../core/enums/feature-field';
 import { FeatureType } from '../../core/enums/feature-type';
-import { Fixture } from '../../core/models/fixture';
-import { Follower } from '../../core/models/follower';
-import { Item } from '../../core/models/item';
+import { FixtureInterface } from '../../core/models/fixture';
+import { FollowerInterface } from '../../core/models/follower';
+import { ItemInterface } from '../../core/models/item';
 import { ItemType } from '../../core/enums/item-type';
-import { Kit } from '../../core/models/kit';
+import { KitInterface } from '../../core/models/kit';
 import { KitArmor } from '../../core/enums/kit-armor';
 import { KitWeapon } from '../../core/enums/kit-weapon';
-import { Monster } from '../../core/models/monster';
-import { Perk } from '../../core/models/perk';
+import { MonsterInterface } from '../../core/models/monster';
+import { PerkInterface } from '../../core/models/perk';
 import { PerkList } from '../../core/enums/perk-list';
-import { PowerRoll } from '../../core/models/power-roll';
-import { Size } from '../../core/models/size';
+import { PowerRollInterface } from '../../core/models/power-roll';
+import { SizeInterface } from '../../core/models/size';
 import { SkillList } from '../../core/enums/skill-list';
 import { StatBlockIcon } from '../../core/enums/stat-block-icon';
-import { Summon } from '../../core/models/summon';
-import { Title } from '../../core/models/title';
+import { SummonInterface } from '../../core/models/summon';
+import { TitleInterface } from '../../core/models/title';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface _FeatureData { }
+interface _FeatureDataInterface {}
 
-type FeatureOf<Type extends FeatureType, Data extends _FeatureData | null = null> = Element & { type: Type, data: Data };
-
-export interface FeatureAbilityData extends _FeatureData {
-	ability: Ability;
+type FeatureOf<Type extends FeatureType, Data extends _FeatureDataInterface | null = null> = ElementInterface & {
+	type: Type;
+	data: Data;
 };
-export type FeatureAbility = FeatureOf<FeatureType.Ability, FeatureAbilityData>;
 
-export interface FeatureAbilityCostData extends _FeatureData {
+export interface FeatureAbilityDataInterface extends _FeatureDataInterface {
+	ability: AbilityInterface;
+}
+export type FeatureAbilityInterface = FeatureOf<FeatureType.Ability, FeatureAbilityDataInterface>;
+
+export interface FeatureAbilityCostDataInterface extends _FeatureDataInterface {
 	keywords: AbilityKeyword[];
 	modifier: number;
-};
-export type FeatureAbilityCost = FeatureOf<FeatureType.AbilityCost, FeatureAbilityCostData>;
+}
+export type FeatureAbilityCostInterface = FeatureOf<FeatureType.AbilityCost, FeatureAbilityCostDataInterface>;
 
-export interface FeatureAbilityDamageData extends _FeatureData, Modifier {
+export interface FeatureAbilityDamageDataInterface extends _FeatureDataInterface, ModifierInterface {
 	keywords: AbilityKeyword[];
 	damageType: DamageType;
-};
-export type FeatureAbilityDamage = FeatureOf<FeatureType.AbilityDamage, FeatureAbilityDamageData>;
+}
+export type FeatureAbilityDamageInterface = FeatureOf<FeatureType.AbilityDamage, FeatureAbilityDamageDataInterface>;
 
-export interface FeatureAbilityDistanceData extends _FeatureData, Modifier {
+export interface FeatureAbilityDistanceDataInterface extends _FeatureDataInterface, ModifierInterface {
 	keywords: AbilityKeyword[];
-};
-export type FeatureAbilityDistance = FeatureOf<FeatureType.AbilityDistance, FeatureAbilityDistanceData>;
+}
+export type FeatureAbilityDistanceInterface = FeatureOf<
+	FeatureType.AbilityDistance,
+	FeatureAbilityDistanceDataInterface
+>;
 
-export interface FeatureAddOnData extends _FeatureData {
+export interface FeatureAddOnDataInterface extends _FeatureDataInterface {
 	category: FeatureAddOnType;
 	cost: number;
-};
-export type FeatureAddOn = FeatureOf<FeatureType.AddOn, FeatureAddOnData>;
+}
+export type FeatureAddOnInterface = FeatureOf<FeatureType.AddOn, FeatureAddOnDataInterface>;
 
-export interface FeatureAncestryChoiceData extends _FeatureData {
-	selected: Ancestry | null;
-};
-export type FeatureAncestryChoice = FeatureOf<FeatureType.AncestryChoice, FeatureAncestryChoiceData>;
+export interface FeatureAncestryChoiceDataInterface extends _FeatureDataInterface {
+	selected: AncestryInterface | null;
+}
+export type FeatureAncestryChoiceInterface = FeatureOf<FeatureType.AncestryChoice, FeatureAncestryChoiceDataInterface>;
 
-export interface FeatureAncestryFeatureChoiceData extends _FeatureData {
+export interface FeatureAncestryFeatureChoiceDataInterface extends _FeatureDataInterface {
 	source: {
 		current: boolean;
 		former: boolean;
 		customID: string;
 	};
 	value: number;
-	selected: Feature | null;
-};
-export type FeatureAncestryFeatureChoice = FeatureOf<FeatureType.AncestryFeatureChoice, FeatureAncestryFeatureChoiceData>;
+	selected: FeatureInterface | null;
+}
+export type FeatureAncestryFeatureChoiceInterface = FeatureOf<
+	FeatureType.AncestryFeatureChoice,
+	FeatureAncestryFeatureChoiceDataInterface
+>;
 
-export interface FeatureBonusData extends _FeatureData, Modifier {
+export interface FeatureBonusDataInterface extends _FeatureDataInterface, ModifierInterface {
 	field: FeatureField;
-};
-export type FeatureBonus = FeatureOf<FeatureType.Bonus, FeatureBonusData>;
+}
+export type FeatureBonusInterface = FeatureOf<FeatureType.Bonus, FeatureBonusDataInterface>;
 
-export interface FeatureCharacteristicBonusData extends _FeatureData {
+export interface FeatureCharacteristicBonusDataInterface extends _FeatureDataInterface {
 	characteristic: Characteristic;
 	value: number;
-};
-export type FeatureCharacteristicBonus = FeatureOf<FeatureType.CharacteristicBonus, FeatureCharacteristicBonusData>;
-
-export interface FeatureChoiceData extends _FeatureData {
-	options: { feature: Feature, value: number }[];
-	count: number | 'ancestry';
-	selected: Feature[];
 }
-export type FeatureChoice = FeatureOf<FeatureType.Choice, FeatureChoiceData>;
+export type FeatureCharacteristicBonusInterface = FeatureOf<
+	FeatureType.CharacteristicBonus,
+	FeatureCharacteristicBonusDataInterface
+>;
 
-export interface FeatureClassAbilityData extends _FeatureData {
+export interface FeatureChoiceDataInterface extends _FeatureDataInterface {
+	options: { feature: FeatureInterface; value: number }[];
+	count: number | 'ancestry';
+	selected: FeatureInterface[];
+}
+export type FeatureChoiceInterface = FeatureOf<FeatureType.Choice, FeatureChoiceDataInterface>;
+
+export interface FeatureClassAbilityDataInterface extends _FeatureDataInterface {
 	classID: string | undefined;
 	cost: number | 'signature';
 	source: {
@@ -104,249 +115,258 @@ export interface FeatureClassAbilityData extends _FeatureData {
 		fromClassLevels: boolean;
 		fromSelectedSubclassLevels: boolean;
 		fromUnselectedSubclassLevels: boolean;
-	}
+	};
 	minLevel: number;
 	count: number;
 	selectedIDs: string[];
 }
-export type FeatureClassAbility = FeatureOf<FeatureType.ClassAbility, FeatureClassAbilityData>;
+export type FeatureClassAbilityInterface = FeatureOf<FeatureType.ClassAbility, FeatureClassAbilityDataInterface>;
 
-export interface FeatureConditionImmunityData extends _FeatureData {
+export interface FeatureConditionImmunityDataInterface extends _FeatureDataInterface {
 	conditions: ConditionType[];
 }
-export type FeatureConditionImmunity = FeatureOf<FeatureType.ConditionImmunity, FeatureConditionImmunityData>;
+export type FeatureConditionImmunityInterface = FeatureOf<
+	FeatureType.ConditionImmunity,
+	FeatureConditionImmunityDataInterface
+>;
 
-export interface FeatureCompanionData extends _FeatureData {
-	selected: Monster | null;
+export interface FeatureCompanionDataInterface extends _FeatureDataInterface {
+	selected: MonsterInterface | null;
 }
-export type FeatureCompanion = FeatureOf<FeatureType.Companion, FeatureCompanionData>;
+export type FeatureCompanionInterface = FeatureOf<FeatureType.Companion, FeatureCompanionDataInterface>;
 
-export interface FeatureDamageModifierData extends _FeatureData {
-	modifiers: DamageModifier[];
+export interface FeatureDamageModifierDataInterface extends _FeatureDataInterface {
+	modifiers: DamageModifierInterface[];
 }
-export type FeatureDamageModifier = FeatureOf<FeatureType.DamageModifier, FeatureDamageModifierData>;
+export type FeatureDamageModifierInterface = FeatureOf<FeatureType.DamageModifier, FeatureDamageModifierDataInterface>;
 
-export interface FeatureDomainData extends _FeatureData {
+export interface FeatureDomainDataInterface extends _FeatureDataInterface {
 	characteristic: Characteristic;
 	levels: number[];
 	count: number;
-	selected: Domain[];
-};
-export type FeatureDomain = FeatureOf<FeatureType.Domain, FeatureDomainData>;
+	selected: DomainInterface[];
+}
+export type FeatureDomainInterface = FeatureOf<FeatureType.Domain, FeatureDomainDataInterface>;
 
-export interface FeatureDomainFeatureData extends _FeatureData {
+export interface FeatureDomainFeatureDataInterface extends _FeatureDataInterface {
 	level: number;
 	count: number;
-	selected: Feature[];
-};
-export type FeatureDomainFeature = FeatureOf<FeatureType.DomainFeature, FeatureDomainFeatureData>;
+	selected: FeatureInterface[];
+}
+export type FeatureDomainFeatureInterface = FeatureOf<FeatureType.DomainFeature, FeatureDomainFeatureDataInterface>;
 
-export interface FeatureFixtureData extends _FeatureData {
-	fixture: Fixture;
-};
-export type FeatureFixture = FeatureOf<FeatureType.Fixture, FeatureFixtureData>;
+export interface FeatureFixtureDataInterface extends _FeatureDataInterface {
+	fixture: FixtureInterface;
+}
+export type FeatureFixtureInterface = FeatureOf<FeatureType.Fixture, FeatureFixtureDataInterface>;
 
-export interface FeatureFollowerData extends _FeatureData {
-	follower: Follower;
-};
-export type FeatureFollower = FeatureOf<FeatureType.Follower, FeatureFollowerData>;
+export interface FeatureFollowerDataInterface extends _FeatureDataInterface {
+	follower: FollowerInterface;
+}
+export type FeatureFollowerInterface = FeatureOf<FeatureType.Follower, FeatureFollowerDataInterface>;
 
-export interface FeatureHeroicResourceData extends _FeatureData {
+export interface FeatureHeroicResourceDataInterface extends _FeatureDataInterface {
 	type: 'heroic' | 'epic';
-	gains: { tag: string, trigger: string, value: string }[];
+	gains: { tag: string; trigger: string; value: string }[];
 	details: string;
 	canBeNegative: boolean;
 	value: number;
-};
-export type FeatureHeroicResource = FeatureOf<FeatureType.HeroicResource, FeatureHeroicResourceData>;
+}
+export type FeatureHeroicResourceInterface = FeatureOf<FeatureType.HeroicResource, FeatureHeroicResourceDataInterface>;
 
-export interface FeatureHeroicResourceGainData extends _FeatureData {
+export interface FeatureHeroicResourceGainDataInterface extends _FeatureDataInterface {
 	tag: string;
 	trigger: string;
 	value: string;
 	replacesTags: string[];
-};
-export type FeatureHeroicResourceGain = FeatureOf<FeatureType.HeroicResourceGain, FeatureHeroicResourceGainData>;
+}
+export type FeatureHeroicResourceGainInterface = FeatureOf<
+	FeatureType.HeroicResourceGain,
+	FeatureHeroicResourceGainDataInterface
+>;
 
-export interface FeatureItemChoiceData extends _FeatureData {
+export interface FeatureItemChoiceDataInterface extends _FeatureDataInterface {
 	types: ItemType[];
 	count: number;
-	selected: Item[];
-};
-export type FeatureItemChoice = FeatureOf<FeatureType.ItemChoice, FeatureItemChoiceData>;
+	selected: ItemInterface[];
+}
+export type FeatureItemChoiceInterface = FeatureOf<FeatureType.ItemChoice, FeatureItemChoiceDataInterface>;
 
-export interface FeatureKitData extends _FeatureData {
+export interface FeatureKitDataInterface extends _FeatureDataInterface {
 	types: string[];
 	count: number;
-	selected: Kit[];
-};
-export type FeatureKit = FeatureOf<FeatureType.Kit, FeatureKitData>;
+	selected: KitInterface[];
+}
+export type FeatureKitInterface = FeatureOf<FeatureType.Kit, FeatureKitDataInterface>;
 
-export interface FeatureLanguageData extends _FeatureData {
+export interface FeatureLanguageDataInterface extends _FeatureDataInterface {
 	language: string;
-};
-export type FeatureLanguage = FeatureOf<FeatureType.Language, FeatureLanguageData>;
+}
+export type FeatureLanguageInterface = FeatureOf<FeatureType.Language, FeatureLanguageDataInterface>;
 
-export interface FeatureLanguageChoiceData extends _FeatureData {
+export interface FeatureLanguageChoiceDataInterface extends _FeatureDataInterface {
 	options: string[];
 	count: number;
 	selected: string[];
-};
-export type FeatureLanguageChoice = FeatureOf<FeatureType.LanguageChoice, FeatureLanguageChoiceData>;
+}
+export type FeatureLanguageChoiceInterface = FeatureOf<FeatureType.LanguageChoice, FeatureLanguageChoiceDataInterface>;
 
-export interface FeatureMaliceData extends _FeatureData {
+export interface FeatureMaliceDataInterface extends _FeatureDataInterface {
 	cost: number;
 	repeatable?: boolean;
-	sections: (string | PowerRoll)[];
+	sections: (string | PowerRollInterface)[];
 	echelon: number;
 	icon?: StatBlockIcon;
-};
-export type FeatureMalice = FeatureOf<FeatureType.Malice, FeatureMaliceData>;
+}
+export type FeatureMaliceInterface = FeatureOf<FeatureType.Malice, FeatureMaliceDataInterface>;
 
-export interface FeatureMaliceAbilityData extends _FeatureData {
-	ability: Ability;
+export interface FeatureMaliceAbilityDataInterface extends _FeatureDataInterface {
+	ability: AbilityInterface;
 	echelon: number;
-};
-export type FeatureMaliceAbility = FeatureOf<FeatureType.MaliceAbility, FeatureMaliceAbilityData>;
+}
+export type FeatureMaliceAbilityInterface = FeatureOf<FeatureType.MaliceAbility, FeatureMaliceAbilityDataInterface>;
 
-export interface FeatureMovementModeData extends _FeatureData {
+export interface FeatureMovementModeDataInterface extends _FeatureDataInterface {
 	mode: string;
-};
-export type FeatureMovementMode = FeatureOf<FeatureType.MovementMode, FeatureMovementModeData>;
+}
+export type FeatureMovementModeInterface = FeatureOf<FeatureType.MovementMode, FeatureMovementModeDataInterface>;
 
-export interface FeatureMultipleData extends _FeatureData {
-	features: Feature[];
-};
-export type FeatureMultiple = FeatureOf<FeatureType.Multiple, FeatureMultipleData>;
+export interface FeatureMultipleDataInterface extends _FeatureDataInterface {
+	features: FeatureInterface[];
+}
+export type FeatureMultipleInterface = FeatureOf<FeatureType.Multiple, FeatureMultipleDataInterface>;
 
-export interface FeaturePackageData extends _FeatureData {
+export interface FeaturePackageDataInterface extends _FeatureDataInterface {
 	tag: string;
-};
-export type FeaturePackage = FeatureOf<FeatureType.Package, FeaturePackageData>;
+}
+export type FeaturePackageInterface = FeatureOf<FeatureType.Package, FeaturePackageDataInterface>;
 
-export interface FeaturePackageContentData extends _FeatureData {
+export interface FeaturePackageContentDataInterface extends _FeatureDataInterface {
 	tag: string;
-};
-export type FeaturePackageContent = FeatureOf<FeatureType.PackageContent, FeaturePackageContentData>;
+}
+export type FeaturePackageContentInterface = FeatureOf<FeatureType.PackageContent, FeaturePackageContentDataInterface>;
 
-export interface FeaturePerkData extends _FeatureData {
+export interface FeaturePerkDataInterface extends _FeatureDataInterface {
 	lists: PerkList[];
 	count: number;
-	selected: Perk[];
-};
-export type FeaturePerk = FeatureOf<FeatureType.Perk, FeaturePerkData>;
+	selected: PerkInterface[];
+}
+export type FeaturePerkInterface = FeatureOf<FeatureType.Perk, FeaturePerkDataInterface>;
 
-export interface FeatureProficiencyData extends _FeatureData {
+export interface FeatureProficiencyDataInterface extends _FeatureDataInterface {
 	weapons: KitWeapon[];
 	armor: KitArmor[];
-};
-export type FeatureProficiency = FeatureOf<FeatureType.Proficiency, FeatureProficiencyData>;
-
-export interface FeatureRetainerData extends _FeatureData {
-	selected: Monster | null;
 }
-export type FeatureRetainer = FeatureOf<FeatureType.Retainer, FeatureRetainerData>;
+export type FeatureProficiencyInterface = FeatureOf<FeatureType.Proficiency, FeatureProficiencyDataInterface>;
 
-export interface FeatureSaveThresholdData extends _FeatureData {
+export interface FeatureRetainerDataInterface extends _FeatureDataInterface {
+	selected: MonsterInterface | null;
+}
+export type FeatureRetainerInterface = FeatureOf<FeatureType.Retainer, FeatureRetainerDataInterface>;
+
+export interface FeatureSaveThresholdDataInterface extends _FeatureDataInterface {
 	value: number;
-};
-export type FeatureSaveThreshold = FeatureOf<FeatureType.SaveThreshold, FeatureSaveThresholdData>;
+}
+export type FeatureSaveThresholdInterface = FeatureOf<FeatureType.SaveThreshold, FeatureSaveThresholdDataInterface>;
 
-export interface FeatureSizeData extends _FeatureData {
-	size: Size;
-};
-export type FeatureSize = FeatureOf<FeatureType.Size, FeatureSizeData>;
+export interface FeatureSizeDataInterface extends _FeatureDataInterface {
+	size: SizeInterface;
+}
+export type FeatureSizeInterface = FeatureOf<FeatureType.Size, FeatureSizeDataInterface>;
 
-export interface FeatureSkillChoiceData extends _FeatureData {
+export interface FeatureSkillChoiceDataInterface extends _FeatureDataInterface {
 	options: string[];
 	listOptions: SkillList[];
 	count: number;
 	selected: string[];
-};
-export type FeatureSkillChoice = FeatureOf<FeatureType.SkillChoice, FeatureSkillChoiceData>;
+}
+export type FeatureSkillChoiceInterface = FeatureOf<FeatureType.SkillChoice, FeatureSkillChoiceDataInterface>;
 
-export interface FeatureSpeedData extends _FeatureData {
+export interface FeatureSpeedDataInterface extends _FeatureDataInterface {
 	speed: number;
-};
-export type FeatureSpeed = FeatureOf<FeatureType.Speed, FeatureSpeedData>;
+}
+export type FeatureSpeedInterface = FeatureOf<FeatureType.Speed, FeatureSpeedDataInterface>;
 
-export interface FeatureSummonData extends _FeatureData {
-	summons: Summon[];
-};
-export type FeatureSummon = FeatureOf<FeatureType.Summon, FeatureSummonData>;
+export interface FeatureSummonDataInterface extends _FeatureDataInterface {
+	summons: SummonInterface[];
+}
+export type FeatureSummonInterface = FeatureOf<FeatureType.Summon, FeatureSummonDataInterface>;
 
-export interface FeatureSummonChoiceData extends _FeatureData {
-	options: Summon[];
+export interface FeatureSummonChoiceDataInterface extends _FeatureDataInterface {
+	options: SummonInterface[];
 	count: number;
-	selected: Summon[];
-};
-export type FeatureSummonChoice = FeatureOf<FeatureType.SummonChoice, FeatureSummonChoiceData>;
+	selected: SummonInterface[];
+}
+export type FeatureSummonChoiceInterface = FeatureOf<FeatureType.SummonChoice, FeatureSummonChoiceDataInterface>;
 
-export interface FeatureTaggedFeatureData extends _FeatureData {
+export interface FeatureTaggedFeatureDataInterface extends _FeatureDataInterface {
 	tag: string;
-	feature: Feature;
-};
-export type FeatureTaggedFeature = FeatureOf<FeatureType.TaggedFeature, FeatureTaggedFeatureData>;
+	feature: FeatureInterface;
+}
+export type FeatureTaggedFeatureInterface = FeatureOf<FeatureType.TaggedFeature, FeatureTaggedFeatureDataInterface>;
 
-export interface FeatureTaggedFeatureChoiceData extends _FeatureData {
+export interface FeatureTaggedFeatureChoiceDataInterface extends _FeatureDataInterface {
 	tag: string;
 	count: number;
-	selected: Feature[];
-};
-export type FeatureTaggedFeatureChoice = FeatureOf<FeatureType.TaggedFeatureChoice, FeatureTaggedFeatureChoiceData>;
+	selected: FeatureInterface[];
+}
+export type FeatureTaggedFeatureChoiceInterface = FeatureOf<
+	FeatureType.TaggedFeatureChoice,
+	FeatureTaggedFeatureChoiceDataInterface
+>;
 
-export type FeatureText = FeatureOf<FeatureType.Text>;
+export type FeatureTextInterface = FeatureOf<FeatureType.Text>;
 
-export interface FeatureTitleChoiceData extends _FeatureData {
+export interface FeatureTitleChoiceDataInterface extends _FeatureDataInterface {
 	echelon: number;
 	count: number;
-	selected: Title[];
-};
-export type FeatureTitleChoice = FeatureOf<FeatureType.TitleChoice, FeatureTitleChoiceData>;
+	selected: TitleInterface[];
+}
+export type FeatureTitleChoiceInterface = FeatureOf<FeatureType.TitleChoice, FeatureTitleChoiceDataInterface>;
 
-export type Feature =
-	| FeatureAbility
-	| FeatureAbilityCost
-	| FeatureAbilityDamage
-	| FeatureAbilityDistance
-	| FeatureAddOn
-	| FeatureAncestryChoice
-	| FeatureAncestryFeatureChoice
-	| FeatureBonus
-	| FeatureCharacteristicBonus
-	| FeatureChoice
-	| FeatureClassAbility
-	| FeatureCompanion
-	| FeatureConditionImmunity
-	| FeatureDamageModifier
-	| FeatureDomain
-	| FeatureDomainFeature
-	| FeatureFixture
-	| FeatureFollower
-	| FeatureHeroicResource
-	| FeatureHeroicResourceGain
-	| FeatureItemChoice
-	| FeatureKit
-	| FeatureLanguage
-	| FeatureLanguageChoice
-	| FeatureMalice
-	| FeatureMaliceAbility
-	| FeatureMovementMode
-	| FeatureMultiple
-	| FeaturePackage
-	| FeaturePackageContent
-	| FeaturePerk
-	| FeatureProficiency
-	| FeatureRetainer
-	| FeatureSaveThreshold
-	| FeatureSize
-	| FeatureSkillChoice
-	| FeatureSpeed
-	| FeatureSummon
-	| FeatureSummonChoice
-	| FeatureText
-	| FeatureTaggedFeature
-	| FeatureTaggedFeatureChoice
-	| FeatureTitleChoice;
+export type FeatureInterface =
+	| FeatureAbilityInterface
+	| FeatureAbilityCostInterface
+	| FeatureAbilityDamageInterface
+	| FeatureAbilityDistanceInterface
+	| FeatureAddOnInterface
+	| FeatureAncestryChoiceInterface
+	| FeatureAncestryFeatureChoiceInterface
+	| FeatureBonusInterface
+	| FeatureCharacteristicBonusInterface
+	| FeatureChoiceInterface
+	| FeatureClassAbilityInterface
+	| FeatureCompanionInterface
+	| FeatureConditionImmunityInterface
+	| FeatureDamageModifierInterface
+	| FeatureDomainInterface
+	| FeatureDomainFeatureInterface
+	| FeatureFixtureInterface
+	| FeatureFollowerInterface
+	| FeatureHeroicResourceInterface
+	| FeatureHeroicResourceGainInterface
+	| FeatureItemChoiceInterface
+	| FeatureKitInterface
+	| FeatureLanguageInterface
+	| FeatureLanguageChoiceInterface
+	| FeatureMaliceInterface
+	| FeatureMaliceAbilityInterface
+	| FeatureMovementModeInterface
+	| FeatureMultipleInterface
+	| FeaturePackageInterface
+	| FeaturePackageContentInterface
+	| FeaturePerkInterface
+	| FeatureProficiencyInterface
+	| FeatureRetainerInterface
+	| FeatureSaveThresholdInterface
+	| FeatureSizeInterface
+	| FeatureSkillChoiceInterface
+	| FeatureSpeedInterface
+	| FeatureSummonInterface
+	| FeatureSummonChoiceInterface
+	| FeatureTextInterface
+	| FeatureTaggedFeatureInterface
+	| FeatureTaggedFeatureChoiceInterface
+	| FeatureTitleChoiceInterface;
 
-export type FeatureData = Feature['data'];
+export type FeatureDataInterface = FeatureInterface['data'];

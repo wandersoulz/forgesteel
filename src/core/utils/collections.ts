@@ -4,8 +4,8 @@ export class Collections {
 	static sort = <T>(collection: T[], key: (item: T) => string) => {
 		const getText = (item: T) => {
 			let k = key(item);
-			const starts = [ 'a ', 'the ' ];
-			starts.forEach(start => {
+			const starts = ['a ', 'the '];
+			starts.forEach((start) => {
 				if (k.toLowerCase().startsWith(start)) {
 					k = k.substring(start.length);
 				}
@@ -13,7 +13,7 @@ export class Collections {
 			return k;
 		};
 
-		return [ ...collection ].sort((a, b) => {
+		return [...collection].sort((a, b) => {
 			const strA = getText(a);
 			const strB = getText(b);
 			return strA.localeCompare(strB);
@@ -41,7 +41,7 @@ export class Collections {
 
 	static distinct = <T, U>(collection: T[], key: (item: T) => U) => {
 		const seen = new Set<U>();
-		return collection.filter(item => {
+		return collection.filter((item) => {
 			const k = key(item);
 			return seen.has(k) ? false : seen.add(k);
 		});
@@ -63,7 +63,7 @@ export class Collections {
 		let item = null;
 		let min = Number.MAX_VALUE;
 
-		collection.forEach(i => {
+		collection.forEach((i) => {
 			const value = callback(i);
 			if (value < min) {
 				item = i;
@@ -78,7 +78,7 @@ export class Collections {
 		let item = null;
 		let max = -Number.MAX_VALUE;
 
-		collection.forEach(i => {
+		collection.forEach((i) => {
 			const value = callback(i);
 			if (value > max) {
 				item = i;
@@ -112,14 +112,14 @@ export class Collections {
 	static move = <T>(collection: T[], index: number, direction: 'up' | 'down') => {
 		switch (direction) {
 			case 'up':
-				if ((index >= 1) && (index <= collection.length - 1)) {
+				if (index >= 1 && index <= collection.length - 1) {
 					const temp = collection[index - 1];
 					collection[index - 1] = collection[index];
 					collection[index] = temp;
 				}
 				break;
 			case 'down':
-				if ((index >= 0) && (index <= collection.length - 2)) {
+				if (index >= 0 && index <= collection.length - 2) {
 					const temp = collection[index + 1];
 					collection[index + 1] = collection[index];
 					collection[index] = temp;

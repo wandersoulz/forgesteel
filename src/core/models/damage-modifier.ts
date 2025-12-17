@@ -3,7 +3,7 @@ import { DamageModifierType } from '../../core/enums/damage-modifier-type';
 import { DamageType } from '../../core/enums/damage-type';
 import { FeatureField } from '../../core/enums/feature-field';
 
-export interface Modifier {
+export interface ModifierInterface {
 	value: number;
 	valueFromController: FeatureField | null;
 	valueCharacteristics: Characteristic[];
@@ -12,7 +12,7 @@ export interface Modifier {
 	valuePerEchelon: number;
 }
 
-export interface DamageModifier extends Modifier {
+export interface DamageModifierInterface extends ModifierInterface {
 	damageType: DamageType;
 	type: DamageModifierType;
 }

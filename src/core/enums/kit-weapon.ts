@@ -6,5 +6,5 @@ export enum KitWeapon {
 	Medium = 'Medium Weapon',
 	Polearm = 'Polearm',
 	Unarmed = 'Unarmed Strike',
-	Whip = 'Whip'
+	Whip = 'Whip',
 }

@@ -1,21 +1,21 @@
 import { Characteristic } from '../../core/enums/characteristic';
 import { DamageType } from '../../core/enums/damage-type';
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
-import { MonsterRole } from '../../core/models/monster-role';
-import { MonsterState } from '../../core/models/monster-state';
-import { RetainerInfo } from '../../core/models/retainer';
-import { Size } from '../../core/models/size';
-import { Speed } from '../../core/models/speed';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
+import { MonsterRoleInterface } from '../../core/models/monster-role';
+import { MonsterStateInterface } from '../../core/models/monster-state';
+import { RetainerInfoInterface } from '../../core/models/retainer';
+import { SizeInterface } from '../../core/models/size';
+import { SpeedInterface } from '../../core/models/speed';
 
-export interface Monster extends Element {
+export interface MonsterInterface extends ElementInterface {
 	picture: string | null;
 	level: number;
-	role: MonsterRole;
+	role: MonsterRoleInterface;
 	keywords: string[];
 	encounterValue: number;
-	size: Size;
-	speed: Speed;
+	size: SizeInterface;
+	speed: SpeedInterface;
 	stamina: number;
 	stability: number;
 	freeStrikeDamage: number;
@@ -25,7 +25,7 @@ export interface Monster extends Element {
 		value: number;
 	}[];
 	withCaptain: string;
-	features: Feature[];
-	retainer: RetainerInfo | null;
-	state: MonsterState;
-};
+	features: FeatureInterface[];
+	retainer: RetainerInfoInterface | null;
+	state: MonsterStateInterface;
+}

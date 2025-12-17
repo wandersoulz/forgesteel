@@ -1,10 +1,10 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 
-export interface Domain extends Element {
+export interface DomainInterface extends ElementInterface {
 	featuresByLevel: {
 		level: number;
-		features: Feature[];
+		features: FeatureInterface[];
 	}[];
 	resourceGains: {
 		resource: string;
@@ -12,5 +12,5 @@ export interface Domain extends Element {
 		trigger: string;
 		value: string;
 	}[];
-	defaultFeatures: Feature[];
+	defaultFeatures: FeatureInterface[];
 }

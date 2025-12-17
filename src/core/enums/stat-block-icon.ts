@@ -10,5 +10,5 @@ export enum StatBlockIcon {
 	Target = 'Target',
 	Trait = 'Trait',
 	Trigger = 'Trigger',
-	Villain = 'Villain'
+	Villain = 'Villain',
 }

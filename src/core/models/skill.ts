@@ -1,7 +1,7 @@
 import { SkillList } from '../../core/enums/skill-list';
 
-export interface Skill {
+export interface SkillInterface {
 	name: string;
 	description: string;
-	list: SkillList
+	list: SkillList;
 }

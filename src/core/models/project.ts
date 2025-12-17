@@ -1,18 +1,18 @@
 import { Characteristic } from '../../core/enums/characteristic';
-import { Element } from '../../core/models/element';
+import { ElementInterface } from '../../core/models/element';
 
-export interface ProjectProgress {
+export interface ProjectProgressInterface {
 	prerequisites: boolean;
 	source: boolean;
 	followerID: string | null;
 	points: number;
 }
 
-export interface Project extends Element {
+export interface ProjectInterface extends ElementInterface {
 	itemPrerequisites: string;
 	source: string;
 	characteristic: Characteristic[];
 	goal: number;
 	isCustom: boolean;
-	progress: ProjectProgress | null;
+	progress: ProjectProgressInterface | null;
 }

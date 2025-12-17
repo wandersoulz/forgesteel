@@ -1,4 +1,4 @@
-export interface AbilitySheet {
+export interface AbilitySheetInterface {
 	id: string;
 	name: string;
 	cost: number;
@@ -20,10 +20,10 @@ export interface AbilitySheet {
 	rollT2Effect?: string;
 	rollT3Effect?: string;
 	rollBonuses?: {
-		name: string,
-		type: 'melee' | 'ranged',
-		tier1: string,
-		tier2: string,
-		tier3: string
+		name: string;
+		type: 'melee' | 'ranged';
+		tier1: string;
+		tier2: string;
+		tier3: string;
 	}[];
 }

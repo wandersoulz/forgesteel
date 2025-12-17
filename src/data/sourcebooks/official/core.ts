@@ -1,34 +1,33 @@
-import { EnvironmentData, OrganizationData, UpbringingData } from '../../../data/culture-data';
-import { AncestryData } from '../../../data/ancestry-data';
-import { ArtifactData } from '../../../data/items/artifact-data';
-import { CareerData } from '../../../data/career-data';
-import { ClassData } from '../../../data/class-data';
-import { ComplicationData } from '../../../data/complication-data';
-import { ConsumableData } from '../../../data/items/consumable-data';
+import { EnvironmentData, OrganizationData, UpbringingData } from '../../culture-data';
+import { AncestryData } from '../../ancestry-data';
+import { ArtifactData } from '../../items/artifact-data';
+import { CareerData } from '../../career-data';
+import { ClassData } from '../../class-data';
+import { ComplicationData } from '../../complication-data';
+import { ConsumableData } from '../../items/consumable-data';
 import { CultureType } from '../../../core/enums/culture-type';
-import { DomainData } from '../../../data/domain-data';
-import { FactoryLogic } from '../../../core/logic/factory-logic';
-import { ImbuedArmorData } from '../../../data/imbuements/imbued-armor-data';
-import { ImbuedImplementData } from '../../../data/imbuements/imbued-implement-data';
-import { ImbuedWeaponData } from '../../../data/imbuements/imbued-weapon-data';
-import { KitData } from '../../../data/kit-data';
-import { LeveledArmorData } from '../../../data/items/leveled-armor-data';
-import { LeveledImplementData } from '../../../data/items/leveled-implement-data';
-import { LeveledItemData } from '../../../data/items/leveled-item-data';
-import { LeveledWeaponData } from '../../../data/items/leveled-weapon-data';
-import { MonsterData } from '../../../data/monster-data';
-import { MontageData } from '../../../data/montage-data';
-import { NegotiationData } from '../../../data/negotiation-data';
-import { PerkData } from '../../../data/perk-data';
-import { ProjectData } from '../../../data/project-data';
+import { DomainData } from '../../domain-data';
+import { ElementFactory } from '../../../core/factory/element-factory';
+import { ImbuedArmorData } from '../../imbuements/imbued-armor-data';
+import { ImbuedImplementData } from '../../imbuements/imbued-implement-data';
+import { ImbuedWeaponData } from '../../imbuements/imbued-weapon-data';
+import { KitData } from '../../kit-data';
+import { LeveledArmorData } from '../../items/leveled-armor-data';
+import { LeveledImplementData } from '../../items/leveled-implement-data';
+import { LeveledItemData } from '../../items/leveled-item-data';
+import { LeveledWeaponData } from '../../items/leveled-weapon-data';
+import { MonsterData } from '../../monster-data';
+import { MontageData } from '../../montage-data';
+import { NegotiationData } from '../../negotiation-data';
+import { PerkData } from '../../perk-data';
+import { ProjectData } from '../../project-data';
 import { SkillList } from '../../../core/enums/skill-list';
-import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookInterface } from '../../../core/models/sourcebook';
 import { SourcebookType } from '../../../core/enums/sourcebook-type';
-import { TerrainData } from '../../../data/terrain-data';
-import { TitleData } from '../../../data/title-data';
-import { TrinketData } from '../../../data/items/trinket-data';
+import { TrinketData } from '../../items/trinket-data';
+import { TitleData } from 'src/data/title-data';
 
-export const core: Sourcebook = {
+export const core: SourcebookInterface = {
 	id: 'core',
 	name: 'Core',
 	description: 'Core game elements.',
@@ -43,7 +42,7 @@ export const core: Sourcebook = {
 		AncestryData.human,
 		AncestryData.orc,
 		AncestryData.polder,
-		AncestryData.revenant
+		AncestryData.revenant,
 	],
 	careers: [
 		CareerData.agent,
@@ -63,7 +62,7 @@ export const core: Sourcebook = {
 		CareerData.sailor,
 		CareerData.soldier,
 		CareerData.warden,
-		CareerData.watchOfficer
+		CareerData.watchOfficer,
 	],
 	classes: [
 		ClassData.censor,
@@ -74,7 +73,7 @@ export const core: Sourcebook = {
 		ClassData.shadow,
 		ClassData.tactician,
 		ClassData.talent,
-		ClassData.troubadour
+		ClassData.troubadour,
 	],
 	complications: [
 		ComplicationData.advancedStudies,
@@ -176,25 +175,137 @@ export const core: Sourcebook = {
 		ComplicationData.waterborn,
 		ComplicationData.wodewalker,
 		ComplicationData.wrathfulSpirit,
-		ComplicationData.wronglyImprisoned
+		ComplicationData.wronglyImprisoned,
 	],
 	cultures: [
-		FactoryLogic.createCulture('Artisan Guild', 'Urban, bureaucratic, creative.', CultureType.Professional, EnvironmentData.urban, OrganizationData.bureaucratic, UpbringingData.creative),
-		FactoryLogic.createCulture('Borderland Homestead', 'Wilderness, communal, labor.', CultureType.Professional, EnvironmentData.wilderness, OrganizationData.communal, UpbringingData.labor),
-		FactoryLogic.createCulture('College Conclave', 'Urban, bureaucratic, academic.', CultureType.Professional, EnvironmentData.urban, OrganizationData.bureaucratic, UpbringingData.academic),
-		FactoryLogic.createCulture('Criminal Gang', 'Urban, communal, lawless.', CultureType.Professional, EnvironmentData.urban, OrganizationData.communal, UpbringingData.lawless),
-		FactoryLogic.createCulture('Farming Village', 'Rural, bureaucratic, labor.', CultureType.Professional, EnvironmentData.rural, OrganizationData.bureaucratic, UpbringingData.labor),
-		FactoryLogic.createCulture('Herding Community', 'Nomadic, communal, labor.', CultureType.Professional, EnvironmentData.nomadic, OrganizationData.communal, UpbringingData.labor),
-		FactoryLogic.createCulture('Knightly Order', 'Secluded, bureaucratic, martial.', CultureType.Professional, EnvironmentData.secluded, OrganizationData.bureaucratic, UpbringingData.martial),
-		FactoryLogic.createCulture('Mercenary Band', 'Nomadic, bureaucratic, martial.', CultureType.Professional, EnvironmentData.nomadic, OrganizationData.bureaucratic, UpbringingData.martial),
-		FactoryLogic.createCulture('Merchant Caravan', 'Nomadic, bureaucratic, creative.', CultureType.Professional, EnvironmentData.nomadic, OrganizationData.bureaucratic, UpbringingData.creative),
-		FactoryLogic.createCulture('Monastic Order', 'Secluded, bureaucratic, academic.', CultureType.Professional, EnvironmentData.secluded, OrganizationData.bureaucratic, UpbringingData.academic),
-		FactoryLogic.createCulture('Noble House', 'Urban, bureaucratic, noble.', CultureType.Professional, EnvironmentData.urban, OrganizationData.bureaucratic, UpbringingData.noble),
-		FactoryLogic.createCulture('Outlaw Band', 'Wilderness, communal, lawless.', CultureType.Professional, EnvironmentData.wilderness, OrganizationData.communal, UpbringingData.lawless),
-		FactoryLogic.createCulture('Pauper Neighborhood', 'Urban, communal, labor.', CultureType.Professional, EnvironmentData.urban, OrganizationData.communal, UpbringingData.labor),
-		FactoryLogic.createCulture('Pirate Crew', 'Nomadic, communal, lawless.', CultureType.Professional, EnvironmentData.nomadic, OrganizationData.communal, UpbringingData.lawless),
-		FactoryLogic.createCulture('Telepathic Hive', 'Secluded, communal, creative.', CultureType.Professional, EnvironmentData.secluded, OrganizationData.communal, UpbringingData.creative),
-		FactoryLogic.createCulture('Traveling Entertainers', 'Nomadic, communal, creative.', CultureType.Professional, EnvironmentData.nomadic, OrganizationData.communal, UpbringingData.creative)
+		ElementFactory.createCulture(
+			'Artisan Guild',
+			'Urban, bureaucratic, creative.',
+			CultureType.Professional,
+			EnvironmentData.urban,
+			OrganizationData.bureaucratic,
+			UpbringingData.creative
+		),
+		ElementFactory.createCulture(
+			'Borderland Homestead',
+			'Wilderness, communal, labor.',
+			CultureType.Professional,
+			EnvironmentData.wilderness,
+			OrganizationData.communal,
+			UpbringingData.labor
+		),
+		ElementFactory.createCulture(
+			'College Conclave',
+			'Urban, bureaucratic, academic.',
+			CultureType.Professional,
+			EnvironmentData.urban,
+			OrganizationData.bureaucratic,
+			UpbringingData.academic
+		),
+		ElementFactory.createCulture(
+			'Criminal Gang',
+			'Urban, communal, lawless.',
+			CultureType.Professional,
+			EnvironmentData.urban,
+			OrganizationData.communal,
+			UpbringingData.lawless
+		),
+		ElementFactory.createCulture(
+			'Farming Village',
+			'Rural, bureaucratic, labor.',
+			CultureType.Professional,
+			EnvironmentData.rural,
+			OrganizationData.bureaucratic,
+			UpbringingData.labor
+		),
+		ElementFactory.createCulture(
+			'Herding Community',
+			'Nomadic, communal, labor.',
+			CultureType.Professional,
+			EnvironmentData.nomadic,
+			OrganizationData.communal,
+			UpbringingData.labor
+		),
+		ElementFactory.createCulture(
+			'Knightly Order',
+			'Secluded, bureaucratic, martial.',
+			CultureType.Professional,
+			EnvironmentData.secluded,
+			OrganizationData.bureaucratic,
+			UpbringingData.martial
+		),
+		ElementFactory.createCulture(
+			'Mercenary Band',
+			'Nomadic, bureaucratic, martial.',
+			CultureType.Professional,
+			EnvironmentData.nomadic,
+			OrganizationData.bureaucratic,
+			UpbringingData.martial
+		),
+		ElementFactory.createCulture(
+			'Merchant Caravan',
+			'Nomadic, bureaucratic, creative.',
+			CultureType.Professional,
+			EnvironmentData.nomadic,
+			OrganizationData.bureaucratic,
+			UpbringingData.creative
+		),
+		ElementFactory.createCulture(
+			'Monastic Order',
+			'Secluded, bureaucratic, academic.',
+			CultureType.Professional,
+			EnvironmentData.secluded,
+			OrganizationData.bureaucratic,
+			UpbringingData.academic
+		),
+		ElementFactory.createCulture(
+			'Noble House',
+			'Urban, bureaucratic, noble.',
+			CultureType.Professional,
+			EnvironmentData.urban,
+			OrganizationData.bureaucratic,
+			UpbringingData.noble
+		),
+		ElementFactory.createCulture(
+			'Outlaw Band',
+			'Wilderness, communal, lawless.',
+			CultureType.Professional,
+			EnvironmentData.wilderness,
+			OrganizationData.communal,
+			UpbringingData.lawless
+		),
+		ElementFactory.createCulture(
+			'Pauper Neighborhood',
+			'Urban, communal, labor.',
+			CultureType.Professional,
+			EnvironmentData.urban,
+			OrganizationData.communal,
+			UpbringingData.labor
+		),
+		ElementFactory.createCulture(
+			'Pirate Crew',
+			'Nomadic, communal, lawless.',
+			CultureType.Professional,
+			EnvironmentData.nomadic,
+			OrganizationData.communal,
+			UpbringingData.lawless
+		),
+		ElementFactory.createCulture(
+			'Telepathic Hive',
+			'Secluded, communal, creative.',
+			CultureType.Professional,
+			EnvironmentData.secluded,
+			OrganizationData.communal,
+			UpbringingData.creative
+		),
+		ElementFactory.createCulture(
+			'Traveling Entertainers',
+			'Nomadic, communal, creative.',
+			CultureType.Professional,
+			EnvironmentData.nomadic,
+			OrganizationData.communal,
+			UpbringingData.creative
+		),
 	],
 	domains: [
 		DomainData.creation,
@@ -208,7 +319,7 @@ export const core: Sourcebook = {
 		DomainData.storm,
 		DomainData.sun,
 		DomainData.trickery,
-		DomainData.war
+		DomainData.war,
 	],
 	encounters: [],
 	imbuements: [
@@ -297,7 +408,7 @@ export const core: Sourcebook = {
 		ImbuedWeaponData.terrifyingIII,
 		ImbuedWeaponData.thunderingIII,
 		ImbuedWeaponData.vengeanceIII,
-		ImbuedWeaponData.windcutting
+		ImbuedWeaponData.windcutting,
 	],
 	items: [
 		ConsumableData.blackAshDart,
@@ -401,7 +512,7 @@ export const core: Sourcebook = {
 		LeveledItemData.thiefOfJoy,
 		ArtifactData.bladeOfAThousandYears,
 		ArtifactData.encepter,
-		ArtifactData.mortalCoil
+		ArtifactData.mortalCoil,
 	],
 	kits: [
 		KitData.arcaneArcher,
@@ -428,7 +539,7 @@ export const core: Sourcebook = {
 		KitData.boren,
 		KitData.corven,
 		KitData.raden,
-		KitData.vuken
+		KitData.vuken,
 	],
 	monsterGroups: [
 		MonsterData.angulotl,
@@ -482,14 +593,14 @@ export const core: Sourcebook = {
 		MonsterData.valok,
 		MonsterData.voicelessTalker,
 		MonsterData.werewolf,
-		MonsterData.wyvern
+		MonsterData.wyvern,
 	],
 	montages: [
 		MontageData.fightFire,
 		MontageData.infiltrateThePalace,
 		MontageData.prepareForBattle,
 		MontageData.trackTheFugitive,
-		MontageData.wildernessRace
+		MontageData.wildernessRace,
 	],
 	negotiations: [
 		NegotiationData.banditChief,
@@ -503,7 +614,7 @@ export const core: Sourcebook = {
 		NegotiationData.dragon,
 		NegotiationData.monarch,
 		NegotiationData.lich,
-		NegotiationData.deity
+		NegotiationData.deity,
 	],
 	perks: [
 		PerkData.areaOfExpertise,
@@ -552,7 +663,7 @@ export const core: Sourcebook = {
 		PerkData.invisibleForce,
 		PerkData.psychicWhisper,
 		PerkData.thingspeaker,
-		PerkData.ritualist
+		PerkData.ritualist,
 	],
 	projects: [
 		ProjectData.buildAirship,
@@ -568,47 +679,9 @@ export const core: Sourcebook = {
 		ProjectData.perfectNewRecipe,
 		ProjectData.communityService,
 		ProjectData.fishing,
-		ProjectData.spendTimeWithLovedOnes
+		ProjectData.spendTimeWithLovedOnes,
 	],
 	subclasses: [],
-	tacticalMaps: [],
-	terrain: [
-		TerrainData.angryBeehive,
-		TerrainData.brambles,
-		TerrainData.corrosivePool,
-		TerrainData.frozenPond,
-		TerrainData.lava,
-		TerrainData.quicksand,
-		TerrainData.archersStakes,
-		TerrainData.bearTrap,
-		TerrainData.flammableOil,
-		TerrainData.hideyHole,
-		TerrainData.paviseShield,
-		TerrainData.snareTrap,
-		TerrainData.spikeTrap,
-		TerrainData.columnOfBlades,
-		TerrainData.dartTrap,
-		TerrainData.hiddenPortcullis,
-		TerrainData.pillar,
-		TerrainData.pressurePlate,
-		TerrainData.pulley,
-		TerrainData.ram,
-		TerrainData.switch,
-		TerrainData.arrowLauncher,
-		TerrainData.boilingOilCauldron,
-		TerrainData.catapult,
-		TerrainData.explodingMillWheel,
-		TerrainData.fieldBallista,
-		TerrainData.ironDragon,
-		TerrainData.watchtower,
-		TerrainData.theBlackObelisk,
-		TerrainData.theChronalHypercube,
-		TerrainData.theThroneOfAAn,
-		TerrainData.psionicShard,
-		TerrainData.holyIdol,
-		TerrainData.treeOfMight,
-		TerrainData.toxicPlants
-	],
 	titles: [
 		// Echelon 1
 		TitleData.ancientLoremaster,
@@ -675,7 +748,7 @@ export const core: Sourcebook = {
 		// Special
 		TitleData.angler,
 		TitleData.goldenrod,
-		TitleData.masterOfReels
+		TitleData.masterOfReels,
 	],
 	skills: [
 		{ name: 'Alchemy', description: 'Make bombs and potions.', list: SkillList.Crafting },
@@ -685,55 +758,144 @@ export const core: Sourcebook = {
 		{ name: 'Cooking', description: 'Create delicious dishes.', list: SkillList.Crafting },
 		{ name: 'Fletching', description: 'Make ranged weapons and ammunition.', list: SkillList.Crafting },
 		{ name: 'Forgery', description: 'Create false badges, documents, and other items.', list: SkillList.Crafting },
-		{ name: 'Jewelry', description: 'Create bracelets, crowns, rings, and other jewelry.', list: SkillList.Crafting },
+		{
+			name: 'Jewelry',
+			description: 'Create bracelets, crowns, rings, and other jewelry.',
+			list: SkillList.Crafting,
+		},
 		{ name: 'Mechanics', description: 'Build machines and clockwork items.', list: SkillList.Crafting },
 		{ name: 'Tailoring', description: 'Craft cloth and leather clothing.', list: SkillList.Crafting },
 		{ name: 'Climb', description: 'Move up vertical surfaces.', list: SkillList.Exploration },
 		{ name: 'Drive', description: 'Control vehicles.', list: SkillList.Exploration },
-		{ name: 'Endurance', description: 'Remain engaged in strenuous activity over a long period of time.', list: SkillList.Exploration },
-		{ name: 'Gymnastics', description: 'Move across unsteady or narrow surfaces, and tumble.', list: SkillList.Exploration },
+		{
+			name: 'Endurance',
+			description: 'Remain engaged in strenuous activity over a long period of time.',
+			list: SkillList.Exploration,
+		},
+		{
+			name: 'Gymnastics',
+			description: 'Move across unsteady or narrow surfaces, and tumble.',
+			list: SkillList.Exploration,
+		},
 		{ name: 'Heal', description: 'Use mundane first aid.', list: SkillList.Exploration },
 		{ name: 'Jump', description: 'Leap vertical and horizontal distances.', list: SkillList.Exploration },
 		{ name: 'Lift', description: 'Pick up, carry, and throw heavy objects.', list: SkillList.Exploration },
 		{ name: 'Navigate', description: 'Read a map and travel without becoming lost.', list: SkillList.Exploration },
-		{ name: 'Ride', description: 'Ride and control a mount who isn’t sapient, such as a horse.', list: SkillList.Exploration },
+		{
+			name: 'Ride',
+			description: 'Ride and control a mount who isn’t sapient, such as a horse.',
+			list: SkillList.Exploration,
+		},
 		{ name: 'Swim', description: 'Move through deep liquid.', list: SkillList.Exploration },
 		{ name: 'Brag', description: 'Impress others with stories of your deeds.', list: SkillList.Interpersonal },
 		{ name: 'Empathize', description: 'Relate to someone on a personal level.', list: SkillList.Interpersonal },
 		{ name: 'Flirt', description: 'Attract romantic attention from someone.', list: SkillList.Interpersonal },
 		{ name: 'Gamble', description: 'Make bets with others.', list: SkillList.Interpersonal },
-		{ name: 'Handle Animals', description: 'Interact with animal wildlife that isn’t sapient.', list: SkillList.Interpersonal },
-		{ name: 'Interrogate', description: 'Obtain information from a creature withholding it.', list: SkillList.Interpersonal },
+		{
+			name: 'Handle Animals',
+			description: 'Interact with animal wildlife that isn’t sapient.',
+			list: SkillList.Interpersonal,
+		},
+		{
+			name: 'Interrogate',
+			description: 'Obtain information from a creature withholding it.',
+			list: SkillList.Interpersonal,
+		},
 		{ name: 'Intimidate', description: 'Awe or scare a creature.', list: SkillList.Interpersonal },
 		{ name: 'Lead', description: 'Inspire people to action.', list: SkillList.Interpersonal },
 		{ name: 'Lie', description: 'Convince someone that a falsehood is true.', list: SkillList.Interpersonal },
 		{ name: 'Music', description: 'Perform music vocally or with an instrument.', list: SkillList.Interpersonal },
-		{ name: 'Perform', description: 'Engage in dance, oratory, acting, or some other physical performance.', list: SkillList.Interpersonal },
-		{ name: 'Persuade', description: 'Convince someone to agree with you through use of your charms and grace.', list: SkillList.Interpersonal },
-		{ name: 'Read Person', description: 'Read the emotions and body language of other creatures.', list: SkillList.Interpersonal },
-		{ name: 'Alertness', description: 'Intuitively sense the details of your surroundings.', list: SkillList.Intrigue },
-		{ name: 'Conceal Object', description: 'Hide an object on your person or in your environment.', list: SkillList.Intrigue },
-		{ name: 'Disguise', description: 'Change your appearance to look like a different person.', list: SkillList.Intrigue },
-		{ name: 'Eavesdrop', description: 'Actively listen to something that is hard to hear, such as a whispered conversation through a door.', list: SkillList.Intrigue },
+		{
+			name: 'Perform',
+			description: 'Engage in dance, oratory, acting, or some other physical performance.',
+			list: SkillList.Interpersonal,
+		},
+		{
+			name: 'Persuade',
+			description: 'Convince someone to agree with you through use of your charms and grace.',
+			list: SkillList.Interpersonal,
+		},
+		{
+			name: 'Read Person',
+			description: 'Read the emotions and body language of other creatures.',
+			list: SkillList.Interpersonal,
+		},
+		{
+			name: 'Alertness',
+			description: 'Intuitively sense the details of your surroundings.',
+			list: SkillList.Intrigue,
+		},
+		{
+			name: 'Conceal Object',
+			description: 'Hide an object on your person or in your environment.',
+			list: SkillList.Intrigue,
+		},
+		{
+			name: 'Disguise',
+			description: 'Change your appearance to look like a different person.',
+			list: SkillList.Intrigue,
+		},
+		{
+			name: 'Eavesdrop',
+			description:
+				'Actively listen to something that is hard to hear, such as a whispered conversation through a door.',
+			list: SkillList.Intrigue,
+		},
 		{ name: 'Escape Artist', description: 'Escape from bonds such as rope or manacles.', list: SkillList.Intrigue },
 		{ name: 'Hide', description: 'Conceal yourself from others’ observation.', list: SkillList.Intrigue },
 		{ name: 'Pick Lock', description: 'Open a lock without using the key.', list: SkillList.Intrigue },
-		{ name: 'Pick Pocket', description: 'Steal an item that another person wears or carries without them noticing.', list: SkillList.Intrigue },
+		{
+			name: 'Pick Pocket',
+			description: 'Steal an item that another person wears or carries without them noticing.',
+			list: SkillList.Intrigue,
+		},
 		{ name: 'Sabotage', description: 'Disable a mechanical device such as a trap.', list: SkillList.Intrigue },
-		{ name: 'Search', description: 'Actively search an environment for important details and items.', list: SkillList.Intrigue },
+		{
+			name: 'Search',
+			description: 'Actively search an environment for important details and items.',
+			list: SkillList.Intrigue,
+		},
 		{ name: 'Sneak', description: 'Move silently.', list: SkillList.Intrigue },
-		{ name: 'Track', description: 'Follow a trail that another creature has left behind.', list: SkillList.Intrigue },
-		{ name: 'Culture', description: 'Knowing about a culture’s customs, folktales, and taboos.', list: SkillList.Lore },
-		{ name: 'Criminal Underworld', description: 'Knowing about criminal organizations, their crimes, their relationships, and their leaders.', list: SkillList.Lore },
+		{
+			name: 'Track',
+			description: 'Follow a trail that another creature has left behind.',
+			list: SkillList.Intrigue,
+		},
+		{
+			name: 'Culture',
+			description: 'Knowing about a culture’s customs, folktales, and taboos.',
+			list: SkillList.Lore,
+		},
+		{
+			name: 'Criminal Underworld',
+			description: 'Knowing about criminal organizations, their crimes, their relationships, and their leaders.',
+			list: SkillList.Lore,
+		},
 		{ name: 'History', description: 'Knowing about significant past events.', list: SkillList.Lore },
-		{ name: 'Magic', description: 'Knowing about magical places, spells, rituals, items, and phenomena.', list: SkillList.Lore },
+		{
+			name: 'Magic',
+			description: 'Knowing about magical places, spells, rituals, items, and phenomena.',
+			list: SkillList.Lore,
+		},
 		{ name: 'Monsters', description: 'Knowing monster ecology, strengths, and weaknesses.', list: SkillList.Lore },
 		{ name: 'Nature', description: 'Knowing about natural flora, fauna, and weather.', list: SkillList.Lore },
-		{ name: 'Psionics', description: 'Knowing about psionic places, spells, rituals, items, and phenomena.', list: SkillList.Lore },
-		{ name: 'Religion', description: 'Knowing about religious mythology, practices, and rituals.', list: SkillList.Lore },
+		{
+			name: 'Psionics',
+			description: 'Knowing about psionic places, spells, rituals, items, and phenomena.',
+			list: SkillList.Lore,
+		},
+		{
+			name: 'Religion',
+			description: 'Knowing about religious mythology, practices, and rituals.',
+			list: SkillList.Lore,
+		},
 		{ name: 'Rumors', description: 'Knowing gossip, legends, and uncertain truths.', list: SkillList.Lore },
-		{ name: 'Society', description: 'Knowing noble etiquette and the leadership and power dynamics of noble families.', list: SkillList.Lore },
-		{ name: 'Strategy', description: 'Knowing about battle tactics and logistics.', list: SkillList.Lore }
+		{
+			name: 'Society',
+			description: 'Knowing noble etiquette and the leadership and power dynamics of noble families.',
+			list: SkillList.Lore,
+		},
+		{ name: 'Strategy', description: 'Knowing about battle tactics and logistics.', list: SkillList.Lore },
 	],
-	languages: []
+	languages: [],
 };

@@ -1,8 +1,8 @@
 import { Characteristic } from '../core/enums/characteristic';
-import { FactoryLogic } from '../core/logic/factory-logic';
+import { ElementFactory } from '../core/factory/element-factory';
 
 export class ProjectData {
-	static buildAirship = FactoryLogic.createProject({
+	static buildAirship = ElementFactory.createProject({
 		id: 'project-build-airship',
 		name: 'Build Airship',
 		description: `
@@ -13,11 +13,11 @@ When the project is completed, you have an airship. You and any creatures you de
 An airship is an object (giving it damage immunity all to poison and psychic damage) and can take 200 damage before it is destroyed. If the damage the ship takes is not too severe (as the Director determines), as long as you have access to materials that can repair the ship, you can restore it back to its original condition as a respite activity.`,
 		prerequisites: 'Wind Crystal of Quintessence',
 		source: 'Texts or lore in Low Rhyvian',
-		characteristic: [ Characteristic.Might, Characteristic.Reason, Characteristic.Presence ],
-		goal: 3000
+		characteristic: [Characteristic.Might, Characteristic.Reason, Characteristic.Presence],
+		goal: 3000,
 	});
 
-	static buildRoad = FactoryLogic.createProject({
+	static buildRoad = ElementFactory.createProject({
 		id: 'project-build-road',
 		name: 'Build or Repair Road',
 		description: `
@@ -34,12 +34,12 @@ When you complete the project, you earn Renown among people in the area where th
 | More than 100 Miles | 3             |
 
 Time spent traveling between locations on the road is cut in half. Access to resources and knowledge is improved in locations along the road, giving you and your allies an edge on project rolls to discover lore while you are in those areas.`,
-		prerequisites: 'Three writs of approval, from an engineers\' guild, a masons\' guild, and a guards\' guild',
+		prerequisites: "Three writs of approval, from an engineers' guild, a masons' guild, and a guards' guild",
 		source: 'Texts or lore in Caelian',
-		characteristic: [ Characteristic.Might, Characteristic.Reason, Characteristic.Presence ]
+		characteristic: [Characteristic.Might, Characteristic.Reason, Characteristic.Presence],
 	});
 
-	static craftTeleportationPlatform = FactoryLogic.createProject({
+	static craftTeleportationPlatform = ElementFactory.createProject({
 		id: 'project-craft-teleportation-platform',
 		name: 'Craft Teleportation Platform',
 		description: `
@@ -48,11 +48,11 @@ When you complete this project, you end up with a 3-square-by-3-square teleporta
 Each time the teleportation platform is used, the chance of it malfunctioning and teleporting creatures or objects on it to a random platform increases by 1 percent (to a maximum of 50 percent). You can restore the platform back to its original condition and reset this chance of malfunction as a respite activity.`,
 		prerequisites: 'One spatial navigator',
 		source: 'Texts or lore in Voll',
-		characteristic: [ Characteristic.Reason ],
-		goal: 1500
+		characteristic: [Characteristic.Reason],
+		goal: 1500,
 	});
 
-	static findCure = FactoryLogic.createProject({
+	static findCure = ElementFactory.createProject({
 		id: 'project-find-cure',
 		name: 'Find a Cure',
 		description: `
@@ -62,10 +62,10 @@ The number of project points it takes to complete this project is equal to 50 ti
 
 When you complete this project, you craft one dose of an alchemical cure for the affliction. Once the project is completed, you can craft subsequent doses for the same affliction for half the number of project points required for the initial project.`,
 		prerequisites: 'Varies (see description)',
-		characteristic: [ Characteristic.Reason, Characteristic.Intuition ]
+		characteristic: [Characteristic.Reason, Characteristic.Intuition],
 	});
 
-	static discoverLore = FactoryLogic.createProject({
+	static discoverLore = ElementFactory.createProject({
 		id: 'project-discover-lore',
 		name: 'Discover Lore',
 		description: `
@@ -88,10 +88,10 @@ When you start a downtime project to discover lore, you choose the lore you want
 
 **Forbidden Knowledge**: Forbidden knowledge is lore that a powerful individual or organization is attempting to keep secret. Those who know the secrets speak of them in whispered codes after passwords are exchanged, and write texts using ciphers. Hunting down leads and making sense of them typically takes weeks. The location of the dagger that slit the throat of the god of death is hidden behind layers of encoded text and written in a dead language known only to that god's most devout followers.`,
 		source: 'Texts or knowledge related to the subject you wish to research',
-		characteristic: [ Characteristic.Reason ]
+		characteristic: [Characteristic.Reason],
 	});
 
-	static goUndercover = FactoryLogic.createProject({
+	static goUndercover = ElementFactory.createProject({
 		id: 'project-go-undercover',
 		name: 'Go Undercover',
 		description: `
@@ -103,22 +103,22 @@ At the Director's discretion, you must have a disguise, a signet ring, a special
 
 Additionally, while you work to complete this project, you might be called upon by the organization to complete a task you might not want to do. Failure to complete the task leads to you being caught. You can avoid the task by fleeing the organization, but this prevents you from completing the project and makes it impossible for you to undertake this project again with the same organization.`,
 		prerequisites: 'Special',
-		characteristic: [ Characteristic.Intuition, Characteristic.Presence ],
-		goal: 15
+		characteristic: [Characteristic.Intuition, Characteristic.Presence],
+		goal: 15,
 	});
 
-	static honeCareerSkills = FactoryLogic.createProject({
+	static honeCareerSkills = ElementFactory.createProject({
 		id: 'project-home-career-skills',
 		name: 'Hone Career Skills',
 		description: `
 You revisit your previous life to freshen up on the experience it provided you. When this project is complete, you gain an edge on tests made using the skills provided by your career.
 
 Project goal is 240 if your career granted you two skills, or 360 if your career granted you three skills.`,
-		characteristic: [ Characteristic.Intuition ],
-		goal: 0
+		characteristic: [Characteristic.Intuition],
+		goal: 0,
 	});
 
-	static learnFromMaster = FactoryLogic.createProject({
+	static learnFromMaster = ElementFactory.createProject({
 		id: 'project-learn-from-a-master',
 		name: 'Learn from a Master',
 		description: `
@@ -135,29 +135,37 @@ When you seek to learn from a master, you choose the goal you wish to work on as
 **Hone Ability**: You sharpen the effectiveness of one of your abilities of your choice. Choose between adding a +1/+1/+1 damage bonus to the ability, or improving the distance of a ranged ability by 2. An ability can be honed only once this way.
 
 **Improve Control**: You learn to use one of your heroic abilities more efficiently, reducing its baseline Heroic Resource cost by 1 (to a minimum of 1). An ability can only be improved this way once.`,
-		source: 'An NPC of a higher level, or records of such an NPC\'s teachings in a language you know',
-		characteristic: [ Characteristic.Might, Characteristic.Agility, Characteristic.Reason, Characteristic.Intuition, Characteristic.Presence ]
+		source: "An NPC of a higher level, or records of such an NPC's teachings in a language you know",
+		characteristic: [
+			Characteristic.Might,
+			Characteristic.Agility,
+			Characteristic.Reason,
+			Characteristic.Intuition,
+			Characteristic.Presence,
+		],
 	});
 
-	static learnNewLanguage = FactoryLogic.createProject({
+	static learnNewLanguage = ElementFactory.createProject({
 		id: 'project-learn-new-language',
 		name: 'Learn New Language',
-		description: 'When you start this project, choose a language taught by the project source. When the project is complete, you understand the language.',
+		description:
+			'When you start this project, choose a language taught by the project source. When the project is complete, you understand the language.',
 		source: 'Texts or instruction that teaches the language you want to learn',
-		characteristic: [ Characteristic.Reason, Characteristic.Intuition ],
-		goal: 120
+		characteristic: [Characteristic.Reason, Characteristic.Intuition],
+		goal: 120,
 	});
 
-	static learnNewSkill = FactoryLogic.createProject({
+	static learnNewSkill = ElementFactory.createProject({
 		id: 'project-learn-new-skill',
 		name: 'Learn New Skill',
-		description: 'When you start this project, choose a skill taught by the project source. When the project is complete, you have that skill.',
+		description:
+			'When you start this project, choose a skill taught by the project source. When the project is complete, you have that skill.',
 		source: 'Texts or instruction that teaches the skill you want to learn',
-		characteristic: [ Characteristic.Reason, Characteristic.Intuition ],
-		goal: 120
+		characteristic: [Characteristic.Reason, Characteristic.Intuition],
+		goal: 120,
 	});
 
-	static perfectNewRecipe = FactoryLogic.createProject({
+	static perfectNewRecipe = ElementFactory.createProject({
 		id: 'project-learn-new-recipe',
 		name: 'Perfect New Recipe',
 		description: `
@@ -174,22 +182,28 @@ A creature who eats a serving of food from a particular type of recipe gains the
 | Ancient or lost | Rare or extinct ingredients (honeylilies, steel apples, and so forth) | Supernatural Power: The creature temporarily increases one of their characteristic scores by 1 (to a maximum of 6). |`,
 		prerequisites: 'Varies',
 		source: 'A recipe in a language you know, or someone who can tutor you in that recipe',
-		characteristic: [ Characteristic.Reason, Characteristic.Intuition ],
-		goal: 100
+		characteristic: [Characteristic.Reason, Characteristic.Intuition],
+		goal: 100,
 	});
 
-	static communityService = FactoryLogic.createProject({
+	static communityService = ElementFactory.createProject({
 		id: 'project-community-service',
 		name: 'Community Service',
 		description: `
 When you start this project, you must be in a settlement or other location where people gather, and you must be in that same place each time you make a project roll for the project. You can undertake several Community Service projects at the same time, but each one must be in a different community.
 
 While undertaking this project, you provide help to people in need, doing odd jobs, tutoring life skills, cleaning streets or public spaces, finding lost valuables, and the like. The Director determines the characteristic that applies to the project roll based on the activities you undertake. When you complete this project, you receive a random consumable treasure of the Director's choice from someone in the community as thanks for your hard work.`,
-		characteristic: [ Characteristic.Might, Characteristic.Agility, Characteristic.Reason, Characteristic.Intuition, Characteristic.Presence ],
-		goal: 75
+		characteristic: [
+			Characteristic.Might,
+			Characteristic.Agility,
+			Characteristic.Reason,
+			Characteristic.Intuition,
+			Characteristic.Presence,
+		],
+		goal: 75,
 	});
 
-	static fishing = FactoryLogic.createProject({
+	static fishing = ElementFactory.createProject({
 		id: 'project-fishing',
 		name: 'Fishing',
 		description: `
@@ -224,14 +238,15 @@ Whether for sustenance, relaxation, or bragging rights, you've gone fishing, pro
 | 8    | While fishing, the hero engages in relaxing meditation that grants an automatic breakthrough on another project they’re working on. Alternatively, they gain insight that grants an automatic breakthrough on another hero’s project of their choice. 																																																																																																																   |
 | 9    | While fishing, the hero is pulled into the water by an ancient fish and must make a hard Might test. On a success, the hero reels in a humongous fish worth 100 points. On a failure, they end the current respite with 1 fewer Recoveries than usual. On a success with a complication, the hero obtains both outcomes. 																																																																																															   |
 | 10   | While fishing, the hero notes what appears to be an underwater cavern. If the cavern is explored, it reveals a treasure of the Director’s choice guarded by a revenant knight fulfilling their duty until their captain returns. 																																																																																																																					   |`,
-		characteristic: [ Characteristic.Agility, Characteristic.Reason, Characteristic.Intuition ]
+		characteristic: [Characteristic.Agility, Characteristic.Reason, Characteristic.Intuition],
 	});
 
-	static spendTimeWithLovedOnes = FactoryLogic.createProject({
+	static spendTimeWithLovedOnes = ElementFactory.createProject({
 		id: 'project-spend-time-with-loved-ones',
 		name: 'Spend Time With Loved Ones',
-		description: 'You revitalize your spirit by spending time with people you love who you haven\'t seen in a long while. You must be able to communicate with those people to undertake this project or make project rolls for it. When you complete this project, your Stamina maximum increases by 12 + your level until the end of your next respite, and you can\'t start another Spend Time With Loved Ones project for a month.',
-		characteristic: [ Characteristic.Presence ],
-		goal: 60
+		description:
+			"You revitalize your spirit by spending time with people you love who you haven't seen in a long while. You must be able to communicate with those people to undertake this project or make project rolls for it. When you complete this project, your Stamina maximum increases by 12 + your level until the end of your next respite, and you can't start another Spend Time With Loved Ones project for a month.",
+		characteristic: [Characteristic.Presence],
+		goal: 60,
 	});
 }

@@ -1,12 +1,12 @@
-import { Feature } from '../../core/models/feature';
+import { FeatureInterface } from '../../core/models/feature';
 
-export interface RetainerInfo {
+export interface RetainerInfoInterface {
 	level: number;
-	level4?: Feature;
-	level7?: Feature;
-	level10?: Feature;
+	level4?: FeatureInterface;
+	level7?: FeatureInterface;
+	level10?: FeatureInterface;
 	featuresByLevel: {
-		level: number,
-		feature: Feature;
+		level: number;
+		feature: FeatureInterface;
 	}[];
 }

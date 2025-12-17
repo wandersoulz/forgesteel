@@ -1,11 +1,11 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 import { ItemType } from '../../core/enums/item-type';
-import { Project } from '../../core/models/project';
+import { ProjectInterface } from '../../core/models/project';
 
-export interface Imbuement extends Element {
+export interface ImbuementInterface extends ElementInterface {
 	type: ItemType;
-	crafting: Project | null;
+	crafting: ProjectInterface | null;
 	level: number;
-	feature: Feature;
+	feature: FeatureInterface;
 }

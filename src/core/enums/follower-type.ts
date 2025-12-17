@@ -1,4 +1,4 @@
 export enum FollowerType {
 	Artisan = 'Artisan',
-	Sage = 'Sage'
+	Sage = 'Sage',
 }

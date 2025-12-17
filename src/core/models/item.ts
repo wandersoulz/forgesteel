@@ -1,29 +1,21 @@
 import { AbilityKeyword } from '../../core/enums/ability-keyword';
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
-import { Imbuement } from '../../core/models/imbuement';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
+import { ImbuementInterface } from '../../core/models/imbuement';
 import { ItemType } from '../../core/enums/item-type';
 import { KitArmor } from '../../core/enums/kit-armor';
 import { KitWeapon } from '../../core/enums/kit-weapon';
-import { Project } from '../../core/models/project';
+import { ProjectInterface } from '../../core/models/project';
 
-export interface Item extends Element {
+export interface ItemInterface extends ElementInterface {
 	type: ItemType;
 	keywords: (AbilityKeyword | KitArmor | KitWeapon)[];
-	crafting: Project | null;
+	crafting: ProjectInterface | null;
 	effect: string;
 	featuresByLevel: {
 		level: number;
-		features: Feature[];
+		features: FeatureInterface[];
 	}[];
-	imbuements: Imbuement[];
+	imbuements: ImbuementInterface[];
 	count: number;
-
-	/**
-	 * @deprecated This field has been subsumed into the imbuements field.
-	 */
-	customizationsByLevel: {
-		level: number;
-		features: { feature: Feature, selected: boolean }[];
-	}[],
 }

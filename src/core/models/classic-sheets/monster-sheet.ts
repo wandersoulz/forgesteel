@@ -1,16 +1,16 @@
-import { AbilitySheet } from '../../../core/models/classic-sheets/ability-sheet';
-import { CharacteristicsSheet } from '../../../core/models/classic-sheets/classic-sheets';
-import { Feature } from '../../../core/models/feature';
+import { AbilitySheetInterface } from '../../../core/models/classic-sheets/ability-sheet';
+import { CharacteristicsSheetInterface } from '../../../core/models/classic-sheets/classic-sheets';
+import { FeatureInterface } from '../../../core/models/feature';
 
 // #region Monster
-export interface MonsterSheet {
+export interface MonsterSheetInterface {
 	id: string;
 	name: string;
 	type: string;
 	role: string;
 	cost?: string;
 
-	characteristics: CharacteristicsSheet;
+	characteristics: CharacteristicsSheetInterface;
 
 	keywords: string;
 
@@ -27,7 +27,7 @@ export interface MonsterSheet {
 
 	withCaptain: string;
 
-	features?: Feature[];
-	abilities?: AbilitySheet[];
-};
+	features?: FeatureInterface[];
+	abilities?: AbilitySheetInterface[];
+}
 // #endregion

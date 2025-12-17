@@ -1,23 +1,21 @@
-import { DamageModifier, Modifier } from '../../core/models/damage-modifier';
-import { Plot, PlotLink } from '../../core/models/plot';
-import { AbilityType } from '../../core/models/ability';
+import { DamageModifierInterface, ModifierInterface } from '../../core/models/damage-modifier';
+import { PlotInterface, PlotLinkInterface } from '../../core/models/plot';
+import { AbilityTypeInterface } from '../../core/models/ability';
 import { AbilityUsage } from '../../core/enums/ability-usage';
-import { Size } from '../../core/models/size';
-import { Speed } from '../../core/models/speed';
+import { SizeInterface } from '../../core/models/size';
+import { SpeedInterface } from '../../core/models/speed';
 
 export class FormatLogic {
-	static getAbilityType = (type: AbilityType) => {
+	static getAbilityType = (type: AbilityTypeInterface): string => {
 		if (type.usage === AbilityUsage.Other) {
 			return type.time;
 		}
-		const qualifiers = (type.qualifiers ?? []).map(q => `(${q})`);
+		const qualifiers = (type.qualifiers ?? []).map((q) => `(${q})`);
 
-		return [ type.free ? 'Free' : undefined, type.usage, type.order, ...qualifiers ]
-			.filter(x => x)
-			.join(' ');
+		return [type.free ? 'Free' : undefined, type.usage, type.order, ...qualifiers].filter((x) => x).join(' ');
 	};
 
-	static getSize = (size: Size) => {
+	static getSize = (size: SizeInterface): string => {
 		if (size.value > 1) {
 			return size.value.toString();
 		}
@@ -25,7 +23,7 @@ export class FormatLogic {
 		return `1${size.mod}`;
 	};
 
-	static getSpeed = (speed: Speed) => {
+	static getSpeed = (speed: SpeedInterface): string => {
 		const modes = FormatLogic.getSpeedModes(speed.modes);
 		if (!modes) {
 			return `${speed.value}`;
@@ -34,7 +32,7 @@ export class FormatLogic {
 		return `${speed.value} (${modes})`;
 	};
 
-	static getSpeedModes = (modes: string | string[]) => {
+	static getSpeedModes = (modes: string | string[]): string => {
 		if (typeof modes === 'string') {
 			return modes;
 		}
@@ -42,13 +40,13 @@ export class FormatLogic {
 		return modes.join(', ');
 	};
 
-	static getDamageModifier = (mod: DamageModifier) => {
+	static getDamageModifier = (mod: DamageModifierInterface) => {
 		return `${mod.damageType} ${mod.type} ${FormatLogic.getModifier(mod)}`;
 	};
 
-	static getModifier = (mod: Modifier) => {
+	static getModifier = (mod: ModifierInterface) => {
 		const sections: string[] = [];
-		if (mod.value && mod.valuePerLevel && (mod.value === mod.valuePerLevel)) {
+		if (mod.value && mod.valuePerLevel && mod.value === mod.valuePerLevel) {
 			sections.push(`${mod.value >= 0 ? '+' : ''}${mod.value} per level`);
 		} else {
 			if (mod.value) {
@@ -65,7 +63,10 @@ export class FormatLogic {
 		}
 
 		if (mod.valueCharacteristics.length > 0) {
-			const ch = (mod.valueCharacteristics.length === 5) ? 'highest characteristic' : mod.valueCharacteristics.join(' or ');
+			const ch =
+				mod.valueCharacteristics.length === 5
+					? 'highest characteristic'
+					: mod.valueCharacteristics.join(' or ');
 			if (mod.valueCharacteristicMultiplier === 1) {
 				sections.push(`+ ${ch}`);
 			} else {
@@ -76,11 +77,11 @@ export class FormatLogic {
 		return sections.join(' ') || '+0';
 	};
 
-	static getPlotLinkTitle = (link: PlotLink, parentPlot: Plot) => {
+	static getPlotLinkTitle = (link: PlotLinkInterface, parentPlot: PlotInterface) => {
 		let plotPointName = 'Link';
 
 		if (parentPlot) {
-			const plot = parentPlot.plots.find(p => p.id === link.plotID);
+			const plot = parentPlot.plots.find((p) => p.id === link.plotID);
 			if (plot && plot.name) {
 				plotPointName = plot.name;
 			}
@@ -117,110 +118,50 @@ export class FormatLogic {
 
 	static getMultiplier = (text: string) => {
 		let multiplier = 1;
-		const x: { n: number, words: string[] }[] = [
+		const x: { n: number; words: string[] }[] = [
 			{
 				n: 0.5,
-				words: [
-					'half'
-				]
+				words: ['half'],
 			},
 			{
 				n: 2,
-				words: [
-					'twice',
-					'two times',
-					'2x',
-					'2 x',
-					'2×',
-					'2 ×',
-					'2 times'
-				]
+				words: ['twice', 'two times', '2x', '2 x', '2×', '2 ×', '2 times'],
 			},
 			{
 				n: 3,
-				words: [
-					'thrice',
-					'three times',
-					'3x',
-					'3 x',
-					'3×',
-					'3 ×'
-				]
+				words: ['thrice', 'three times', '3x', '3 x', '3×', '3 ×'],
 			},
 			{
 				n: 4,
-				words: [
-					'four times',
-					'4x',
-					'4 x',
-					'4×',
-					'4 ×'
-				]
+				words: ['four times', '4x', '4 x', '4×', '4 ×'],
 			},
 			{
 				n: 5,
-				words: [
-					'five times',
-					'5x',
-					'5 x',
-					'5×',
-					'5 ×',
-					'5 times'
-				]
+				words: ['five times', '5x', '5 x', '5×', '5 ×', '5 times'],
 			},
 			{
 				n: 6,
-				words: [
-					'six times',
-					'6x',
-					'6 x',
-					'6×',
-					'6 ×'
-				]
+				words: ['six times', '6x', '6 x', '6×', '6 ×'],
 			},
 			{
 				n: 7,
-				words: [
-					'seven times',
-					'7x',
-					'7 x',
-					'7×',
-					'7 ×'
-				]
+				words: ['seven times', '7x', '7 x', '7×', '7 ×'],
 			},
 			{
 				n: 8,
-				words: [
-					'eight times',
-					'8x',
-					'8 x',
-					'8×',
-					'8 ×'
-				]
+				words: ['eight times', '8x', '8 x', '8×', '8 ×'],
 			},
 			{
 				n: 9,
-				words: [
-					'nine times',
-					'9x',
-					'9 x',
-					'9×',
-					'9 ×'
-				]
+				words: ['nine times', '9x', '9 x', '9×', '9 ×'],
 			},
 			{
 				n: 10,
-				words: [
-					'ten times',
-					'10x',
-					'10 x',
-					'10×',
-					'10 ×'
-				]
-			}
+				words: ['ten times', '10x', '10 x', '10×', '10 ×'],
+			},
 		];
-		x.forEach(set => {
-			if (set.words.some(w => text.toLowerCase().includes(w))) {
+		x.forEach((set) => {
+			if (set.words.some((w) => text.toLowerCase().includes(w))) {
 				multiplier = set.n;
 			}
 		});

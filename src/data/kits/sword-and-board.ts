@@ -1,47 +1,48 @@
 import { AbilityKeyword } from '../../core/enums/ability-keyword';
 import { Characteristic } from '../../core/enums/characteristic';
-import { FactoryLogic } from '../../core/logic/factory-logic';
-import { Kit } from '../../core/models/kit';
+import { ElementFactory } from '../../core/factory/element-factory';
+import { KitInterface } from '../../core/models/kit';
 import { KitArmor } from '../../core/enums/kit-armor';
 import { KitWeapon } from '../../core/enums/kit-weapon';
 
-export const swordAndBoard: Kit = {
+export const swordAndBoard: KitInterface = {
 	id: 'kit-sword-and-board',
 	name: 'Sword and Board',
-	description: 'The Sword and Board kit doesn\'t just give you a shield—it makes the shield part of your offensive arsenal. With a medium weapon in one hand and a block of steel or solid oak in the other, you protect yourself while you control the battlefield.',
+	description:
+		"The Sword and Board kit doesn't just give you a shield—it makes the shield part of your offensive arsenal. With a medium weapon in one hand and a block of steel or solid oak in the other, you protect yourself while you control the battlefield.",
 	type: '',
-	armor: [ KitArmor.Medium, KitArmor.Shield ],
-	weapon: [ KitWeapon.Medium ],
+	armor: [KitArmor.Medium, KitArmor.Shield],
+	weapon: [KitWeapon.Medium],
 	stamina: 9,
 	speed: 0,
 	stability: 1,
-	meleeDamage: FactoryLogic.createKitDamageBonus(2, 2, 2),
+	meleeDamage: ElementFactory.createKitDamageBonus(2, 2, 2),
 	rangedDamage: null,
 	meleeDistance: 0,
 	rangedDistance: 0,
 	disengage: 1,
 	features: [
-		FactoryLogic.feature.createAbility({
-			ability: FactoryLogic.createAbility({
+		ElementFactory.FeatureFactory.createAbility({
+			ability: ElementFactory.createAbility({
 				id: 'kit-sword-and-board-signature',
 				name: 'Shield Bash',
-				description: 'In your hands, a shield isn\'t just for protection.',
-				type: FactoryLogic.type.createMain(),
-				keywords: [ AbilityKeyword.Melee, AbilityKeyword.Strike, AbilityKeyword.Weapon ],
-				distance: [ FactoryLogic.distance.createMelee() ],
+				description: "In your hands, a shield isn't just for protection.",
+				type: ElementFactory.AbilityTypeFactory.createMain(),
+				keywords: [AbilityKeyword.Melee, AbilityKeyword.Strike, AbilityKeyword.Weapon],
+				distance: [ElementFactory.DistanceFactory.createMelee()],
 				target: 'One creature',
 				cost: 'signature',
 				sections: [
-					FactoryLogic.createAbilitySectionRoll(
-						FactoryLogic.createPowerRoll({
-							characteristic: [ Characteristic.Might, Characteristic.Agility ],
+					ElementFactory.createAbilitySectionRoll(
+						ElementFactory.createPowerRoll({
+							characteristic: [Characteristic.Might, Characteristic.Agility],
 							tier1: '2 + M or A damage; push 1',
 							tier2: '5 + M or A damage; push 2',
-							tier3: '7 + M or A damage; push 3; M < [strong] prone'
+							tier3: '7 + M or A damage; push 3; M < [strong] prone',
 						})
-					)
-				]
-			})
-		})
-	]
+					),
+				],
+			}),
+		}),
+	],
 };

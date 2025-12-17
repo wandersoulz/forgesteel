@@ -1,19 +1,19 @@
-import { Element } from '../../core/models/element';
-import { Plot } from '../../core/models/plot';
+import { ElementInterface } from '../../core/models/element';
+import { PlotInterface } from '../../core/models/plot';
 
-export interface Adventure extends Element {
+export interface AdventureInterface extends ElementInterface {
 	party: {
 		count: number;
 		level: number;
 	};
-	introduction: Element[];
-	plot: Plot;
+	introduction: ElementInterface[];
+	plot: PlotInterface;
 }
 
-export interface AdventurePackage {
-	adventure: Adventure;
+export interface AdventurePackageInterface {
+	adventure: AdventureInterface;
 	elements: {
-		type: 'encounter' | 'montage' | 'negotiation' | 'map',
-		data: Element
+		type: 'encounter' | 'montage' | 'negotiation' | 'map';
+		data: ElementInterface;
 	}[];
 }

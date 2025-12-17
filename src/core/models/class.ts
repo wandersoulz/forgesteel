@@ -1,10 +1,10 @@
-import { Ability } from '../../core/models/ability';
+import { AbilityInterface } from '../../core/models/ability';
 import { Characteristic } from '../../core/enums/characteristic';
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
-import { SubClass } from '../../core/models/subclass';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
+import { SubClassInterface } from '../../core/models/subclass';
 
-export interface HeroClass extends Element {
+export interface HeroClassInterface extends ElementInterface {
 	type: 'standard' | 'master';
 	subclassName: string;
 	subclassCount: number;
@@ -14,10 +14,10 @@ export interface HeroClass extends Element {
 
 	featuresByLevel: {
 		level: number;
-		features: Feature[];
+		features: FeatureInterface[];
 	}[];
-	abilities: Ability[];
-	subclasses: SubClass[];
+	abilities: AbilityInterface[];
+	subclasses: SubClassInterface[];
 
 	level: number;
 	characteristics: {

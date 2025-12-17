@@ -1,9 +1,9 @@
 import { AttitudeType } from '../core/enums/attitude-type';
-import { Negotiation } from '../core/models/negotiation';
+import { NegotiationInterface } from '../core/models/negotiation';
 import { NegotiationTrait } from '../core/enums/negotiation-trait';
 
 export class NegotiationData {
-	static banditChief: Negotiation = {
+	static banditChief: NegotiationInterface = {
 		id: 'negotiation-bandit-chief',
 		name: 'Bandit Chief',
 		description: `
@@ -17,44 +17,50 @@ The bandit chief archetype can be used for any other local big shot, such as the
 		motivations: [
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'No one tells me what to do—not if they want to keep their head on their shoulders. And no one tells my toughs what to do, except ME!'
+				description:
+					'No one tells me what to do—not if they want to keep their head on their shoulders. And no one tells my toughs what to do, except ME!',
 			},
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Gold! I love the feel of shining, clinking coins running between my fingers. I never found something to spend it on that I like as much as just *having* gold.'
+				description:
+					'Gold! I love the feel of shining, clinking coins running between my fingers. I never found something to spend it on that I like as much as just *having* gold.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'I want a stronger hideout, more toughs, and a bigger share of the loot. Get me that, and I’ll do your dirty work for you.'
+				description:
+					'I want a stronger hideout, more toughs, and a bigger share of the loot. Get me that, and I’ll do your dirty work for you.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'If you don’t get drunk after a raid, then why have a raid?'
-			}
+				description: 'If you don’t get drunk after a raid, then why have a raid?',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'By order of the baron? You can keep your fancy titles and lands. I give the orders around here!'
+				description:
+					'By order of the baron? You can keep your fancy titles and lands. I give the orders around here!',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'Only the weak whine for justice. The strong make their own rules.'
+				description: 'Only the weak whine for justice. The strong make their own rules.',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'Listen, I don’t care what happens when I’m gone. I want my followers shouting my name now, not in a hundred years.'
+				description:
+					'Listen, I don’t care what happens when I’m gone. I want my followers shouting my name now, not in a hundred years.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'In times of peace, if you pick up a silver coin that’s not yours, the sheriff comes knocking on your door. In war, whole caravans disappear and nobody blinks. Give me war.'
-			}
+				description:
+					'In times of peace, if you pick up a silver coin that’s not yours, the sheriff comes knocking on your door. In war, whole caravans disappear and nobody blinks. Give me war.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static knight: Negotiation = {
+	static knight: NegotiationInterface = {
 		id: 'negotiation-knight',
 		name: 'Knight',
 		description: `
@@ -68,44 +74,49 @@ The knight archetype can be used for any other local authority, such as a villag
 		motivations: [
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'That’s above my pay grade. If my superiors sign off on it, then so do I.'
+				description: 'That’s above my pay grade. If my superiors sign off on it, then so do I.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'Thank you for bringing this to my attention. I agree, this must be put right. The only question is how.'
+				description:
+					'Thank you for bringing this to my attention. I agree, this must be put right. The only question is how.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'People like us, we fight so that the common folk don’t have to. If I must, I’ll draw the sword again to keep the peace.'
+				description:
+					'People like us, we fight so that the common folk don’t have to. If I must, I’ll draw the sword again to keep the peace.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'Every agreement should be sealed with a toast. Huzzah!'
-			}
+				description: 'Every agreement should be sealed with a toast. Huzzah!',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'These people don’t need charity, they need order. Let them go to the town hall and they’ll get a full belly in exchange for an honest day’s work.'
+				description:
+					'These people don’t need charity, they need order. Let them go to the town hall and they’ll get a full belly in exchange for an honest day’s work.',
 			},
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'None of us are free, from the lowliest servant on up. Even a monarch has a duty to their people.'
+				description:
+					'None of us are free, from the lowliest servant on up. Even a monarch has a duty to their people.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'My power comes to me through my lawful oath, not by some dirty deal made in secret.'
+				description: 'My power comes to me through my lawful oath, not by some dirty deal made in secret.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'I believe in law, not vengeance, and law is decided by higher courts. I’m just a functionary.'
-			}
+				description:
+					'I believe in law, not vengeance, and law is decided by higher courts. I’m just a functionary.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static guildmaster: Negotiation = {
+	static guildmaster: NegotiationInterface = {
 		id: 'negotiation-guildmaster',
 		name: 'Guildmaster',
 		description: `
@@ -119,44 +130,52 @@ The guildmaster archetype can be used for any other local information broker, su
 		motivations: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'The people can’t take care of themselves. Somebody’s got to look after them, the poor lambs.'
+				description:
+					'The people can’t take care of themselves. Somebody’s got to look after them, the poor lambs.',
 			},
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'It would be highly unethical for you to show me those schematics you obtained from a rival guild. Likewise, it would be highly unethical for me to slide you this bag of gold.'
+				description:
+					'It would be highly unethical for you to show me those schematics you obtained from a rival guild. Likewise, it would be highly unethical for me to slide you this bag of gold.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'Who do you think will be in charge in the next age? The nobles? Pah! They still count their wealth in cows. Whoever controls the information will rule the world—and I intend for it to be us.'
+				description:
+					'Who do you think will be in charge in the next age? The nobles? Pah! They still count their wealth in cows. Whoever controls the information will rule the world—and I intend for it to be us.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'We have rivals—hungry opportunists who will stop at nothing. If I want to protect my guild, I’ve got to do unto them before they do unto us.'
-			}
+				description:
+					'We have rivals—hungry opportunists who will stop at nothing. If I want to protect my guild, I’ve got to do unto them before they do unto us.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'My loyalty is to the guild—not the burgomaster, not the king, not Ajax himself. But don’t tell them I said that.'
+				description:
+					'My loyalty is to the guild—not the burgomaster, not the king, not Ajax himself. But don’t tell them I said that.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'We’re reshaping the world here. Of course, some people who can’t adapt are going to find themselves on the bottom. Buy why should anyone blame us for that.'
+				description:
+					'We’re reshaping the world here. Of course, some people who can’t adapt are going to find themselves on the bottom. Buy why should anyone blame us for that.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'Conflict isn’t bad in and of itself. It drives innovation. The key is not to be on the losing side.'
+				description:
+					'Conflict isn’t bad in and of itself. It drives innovation. The key is not to be on the losing side.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'I don’t have time for this foolishness. Come talk to me again when you have something of value to show me.'
-			}
+				description:
+					'I don’t have time for this foolishness. Come talk to me again when you have something of value to show me.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static warlord: Negotiation = {
+	static warlord: NegotiationInterface = {
 		id: 'negotiation-warlord',
 		name: 'Warlord',
 		description: `
@@ -170,44 +189,50 @@ The warlord archetype can be used for any other local-level threat, such as a va
 		motivations: [
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'I’m not paying a coin to some weakling liege lord for the privilege of being told what to do. I’ve raised my banner. I defy anyone to pull it down.'
+				description:
+					'I’m not paying a coin to some weakling liege lord for the privilege of being told what to do. I’ve raised my banner. I defy anyone to pull it down.',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'Did you see that young captain out there putting the fear of the gods into her troops? That’s my kid, but she earned her title. Someday this will all be hers.'
+				description:
+					'Did you see that young captain out there putting the fear of the gods into her troops? That’s my kid, but she earned her title. Someday this will all be hers.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'Look around you. Everywhere you look — weakness, corruption, waste. Peace is a noble goal, but we won’t have peace until the current regime is swept away.'
+				description:
+					'Look around you. Everywhere you look — weakness, corruption, waste. Peace is a noble goal, but we won’t have peace until the current regime is swept away.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'Have you suffered like I have at the hands of that accursed villain? If so, then I’ll gladly call you friend.'
-			}
+				description:
+					'Have you suffered like I have at the hands of that accursed villain? If so, then I’ll gladly call you friend.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'Go back to your street corner and beg for alms if that’s what you’re after. You’ll get nothing from me.'
+				description:
+					'Go back to your street corner and beg for alms if that’s what you’re after. You’ll get nothing from me.',
 			},
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'What does that have to do with me? I’m a soldier, not a scholar.'
+				description: 'What does that have to do with me? I’m a soldier, not a scholar.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'You dare call me unjust? I make the laws here. Justice is mine to give or take away!'
+				description: 'You dare call me unjust? I make the laws here. Justice is mine to give or take away!',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'I’m not some sniveling coward who begs for protection, and neither are my troops. Anyone who asks for safety doesn’t deserve it.'
-			}
+				description:
+					'I’m not some sniveling coward who begs for protection, and neither are my troops. Anyone who asks for safety doesn’t deserve it.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static burgomaster: Negotiation = {
+	static burgomaster: NegotiationInterface = {
 		id: 'negotiation-burgomaster',
 		name: 'Burgomaster',
 		description: `
@@ -221,44 +246,51 @@ The burgomaster archetype can be used for any other local ruler, such as a baron
 		motivations: [
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Keep talking. I’m sure we can come to an agreement that benefits all parties. A rising tide and all that.'
+				description:
+					'Keep talking. I’m sure we can come to an agreement that benefits all parties. A rising tide and all that.',
 			},
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'No one can accuse me of being disloyal. What my duty demands, I do—but let’s determine the most sensible way to go about it.'
+				description:
+					'No one can accuse me of being disloyal. What my duty demands, I do—but let’s determine the most sensible way to go about it.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'The rule of law must be preserved. If you have evidence of crimes, those responsible must be punished.'
+				description:
+					'The rule of law must be preserved. If you have evidence of crimes, those responsible must be punished.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'The weak, the helpless—they depend upon me. And, to a lesser extent, civic-minded heroes like yourselves. Together, we’ll make sure the people come to no harm.'
-			}
+				description:
+					'The weak, the helpless—they depend upon me. And, to a lesser extent, civic-minded heroes like yourselves. Together, we’ll make sure the people come to no harm.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'Trust me. No good is going to come from poking that particular beehive.'
+				description: 'Trust me. No good is going to come from poking that particular beehive.',
 			},
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'Freedom, eh? What’s next, freedom from taxes? No one is born free except the gods, and only fools believe otherwise.'
+				description:
+					'Freedom, eh? What’s next, freedom from taxes? No one is born free except the gods, and only fools believe otherwise.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'Put that bottle away. I’m a public figure! I can’t be seen carousing and gallivanting and who knows what else.'
+				description:
+					'Put that bottle away. I’m a public figure! I can’t be seen carousing and gallivanting and who knows what else.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'In politics, you have to have a short memory. Your enemy today may be your ally tomorrow. There’s no need to make things personal.'
-			}
+				description:
+					'In politics, you have to have a short memory. Your enemy today may be your ally tomorrow. There’s no need to make things personal.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static virtuoso: Negotiation = {
+	static virtuoso: NegotiationInterface = {
 		id: 'negotiation-virtuoso',
 		name: 'Virtuoso',
 		description: `
@@ -272,44 +304,50 @@ The virtuoso archetype can be used for any other local celebrity, such as a mast
 		motivations: [
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'I follow my muse, my only master. Who would dare put handcuffs on art?'
+				description: 'I follow my muse, my only master. Who would dare put handcuffs on art?',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'Castles will crumble. Empires will fall. But if I can only produce a work worthy of my talents, my name will live forever.'
+				description:
+					'Castles will crumble. Empires will fall. But if I can only produce a work worthy of my talents, my name will live forever.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'In war, bronze statues are melted down for armor. Money is wasted on ballistae instead of ballads. War is a crime against the god of art.'
+				description:
+					'In war, bronze statues are melted down for armor. Money is wasted on ballistae instead of ballads. War is a crime against the god of art.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'Yes, tonight let us celebrate! Inspiration looks down kindly on those who drink life to the dregs.'
-			}
+				description:
+					'Yes, tonight let us celebrate! Inspiration looks down kindly on those who drink life to the dregs.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'You offer me money? Money comes to geniuses—it is our due. I can get it from a thousand admirers.'
+				description:
+					'You offer me money? Money comes to geniuses—it is our due. I can get it from a thousand admirers.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: ' I have no ambitions beyond this opera house. For me to leave this place, even for a palace or a throne … it would be an exile for me.'
+				description:
+					' I have no ambitions beyond this opera house. For me to leave this place, even for a palace or a throne … it would be an exile for me.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'I’m not afraid. The god of music will look after her own.'
+				description: 'I’m not afraid. The god of music will look after her own.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'Perhaps there are some who hate me—those who think I stand in their way, or whose accomplishments I have eclipsed. But I hate no one and am jealous of no one.'
-			}
+				description:
+					'Perhaps there are some who hate me—those who think I stand in their way, or whose accomplishments I have eclipsed. But I hate no one and am jealous of no one.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static highPriest: Negotiation = {
+	static highPriest: NegotiationInterface = {
 		id: 'negotiation-high-priest',
 		name: 'High Priest',
 		description: `
@@ -323,44 +361,49 @@ The high priest archetype can be used for any other national authority, such as 
 		motivations: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'We are agreed on this matter. If this threat puts people in danger, we must come to their rescue.'
+				description:
+					'We are agreed on this matter. If this threat puts people in danger, we must come to their rescue.',
 			},
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'Why, yes ... I would be interested in looking at that document further. Surely no harm can come from being aware of the snares and dangers in the world.'
+				description:
+					'Why, yes ... I would be interested in looking at that document further. Surely no harm can come from being aware of the snares and dangers in the world.',
 			},
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'Indeed, my appointed duty is to serve all folk—whether it be my deity, my liege, or the poorest person crying out in need.'
+				description:
+					'Indeed, my appointed duty is to serve all folk—whether it be my deity, my liege, or the poorest person crying out in need.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'Rest assured, the good will receive their just reward, and the evil will be punished. I will see to it.'
-			}
+				description:
+					'Rest assured, the good will receive their just reward, and the evil will be punished. I will see to it.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Don’t offer that to me. Donate it to the faith if you have no need of it.'
+				description: 'Don’t offer that to me. Donate it to the faith if you have no need of it.',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'Me? I am no one. My good deeds I might have accomplished are to my deity’s credit, not my own.'
+				description:
+					'Me? I am no one. My good deeds I might have accomplished are to my deity’s credit, not my own.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'My current responsibilities are quite enough. I have no desire for more.'
+				description: 'My current responsibilities are quite enough. I have no desire for more.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'For shame! Do you boast of doing evil and expect me to join you in it?'
-			}
+				description: 'For shame! Do you boast of doing evil and expect me to join you in it?',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static duke: Negotiation = {
+	static duke: NegotiationInterface = {
 		id: 'negotiation-duke',
 		name: 'Duke',
 		description: `
@@ -374,44 +417,48 @@ The duke archetype can be used for any other royal counselor, such as an archmag
 		motivations: [
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'My agents have brought me many whispers, but this is news to me. Who else knows of this?'
+				description: 'My agents have brought me many whispers, but this is news to me. Who else knows of this?',
 			},
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'I must do as my liege commands. So tell me how you seek to serve them as well.'
+				description: 'I must do as my liege commands. So tell me how you seek to serve them as well.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'We must have stability. I will sacrifice anything—and anyone—for this.'
+				description: 'We must have stability. I will sacrifice anything—and anyone—for this.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'There is one—I will not speak their name—who thinks I have forgotten what they did to me. Someday they will discover that I have a long memory.'
-			}
+				description:
+					'There is one—I will not speak their name—who thinks I have forgotten what they did to me. Someday they will discover that I have a long memory.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'Do you think I act because I love my fellow people? Half of them are worthless, and the other half are villains. But without them, I’d be the Duke of Nothing, so I must preserve them.'
+				description:
+					'Do you think I act because I love my fellow people? Half of them are worthless, and the other half are villains. But without them, I’d be the Duke of Nothing, so I must preserve them.',
 			},
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Put away your gold. I’m far too busy to spend it.'
+				description: 'Put away your gold. I’m far too busy to spend it.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'Right and wrong? There is no right, except what strengthens the kingdom, and there is no wrong except what hurts it.'
+				description:
+					'Right and wrong? There is no right, except what strengthens the kingdom, and there is no wrong except what hurts it.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'I don’t care about saving lives. We’re all doomed to die. The question is, what will live on after us?'
-			}
+				description:
+					'I don’t care about saving lives. We’re all doomed to die. The question is, what will live on after us?',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static dragon: Negotiation = {
+	static dragon: NegotiationInterface = {
 		id: 'negotiation-dragon',
 		name: 'Dragon',
 		description: `
@@ -425,44 +472,45 @@ The dragon archetype can be used for any other kingdom-level threat, such as a f
 		motivations: [
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'Yes, my ambitions have been bound to the earth far too long. It’s time I took flight.'
+				description: 'Yes, my ambitions have been bound to the earth far too long. It’s time I took flight.',
 			},
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Bring me tribute now, and when I rule, I will not forget you.'
+				description: 'Bring me tribute now, and when I rule, I will not forget you.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'My people have been mistreated for centuries. It ends now!'
+				description: 'My people have been mistreated for centuries. It ends now!',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'This land, these people, their treasures, rightfully mine. Stolen from me!'
-			}
+				description: 'This land, these people, their treasures, rightfully mine. Stolen from me!',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'No heir will outlive me, no legend will remember my past glory ... for I shall never die!'
+				description:
+					'No heir will outlive me, no legend will remember my past glory ... for I shall never die!',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'You want to make peace? When there are still things in the world that are not yet mine?'
+				description: 'You want to make peace? When there are still things in the world that are not yet mine?',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'How can *you* possibly offer *me* power?'
+				description: 'How can *you* possibly offer *me* power?',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'My pleasures are as far beyond your comprehension as yours are to a worm.'
-			}
+				description: 'My pleasures are as far beyond your comprehension as yours are to a worm.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static monarch: Negotiation = {
+	static monarch: NegotiationInterface = {
 		id: 'negotiation-monarch',
 		name: 'Monarch',
 		description: `
@@ -476,44 +524,47 @@ The monarch archetype can be used for any other kingdom-level ruler, such as a t
 		motivations: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'It’s not for nothing I’m called “the Good.”'
+				description: 'It’s not for nothing I’m called “the Good.”',
 			},
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Your offer intrigues me. In truth, our coffers are not as full as I should like.'
+				description: 'Your offer intrigues me. In truth, our coffers are not as full as I should like.',
 			},
 			{
 				trait: NegotiationTrait.Justice,
-				description: 'Ah, do the villains ignore my laws? They must be punished!'
+				description: 'Ah, do the villains ignore my laws? They must be punished!',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: ' If I should die, promise me this: you will serve my heir as loyally as you have served me.'
-			}
+				description:
+					' If I should die, promise me this: you will serve my heir as loyally as you have served me.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'Keep your secrets to yourself. I’m a monarch, not a spymaster.'
+				description: 'Keep your secrets to yourself. I’m a monarch, not a spymaster.',
 			},
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'Freedom? Some of my disloyal subjects speak that word a little too often for my liking. I hope you’re not one of them.'
+				description:
+					'Freedom? Some of my disloyal subjects speak that word a little too often for my liking. I hope you’re not one of them.',
 			},
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'You dare give orders to me? Never forget, no matter who sent you, I rule here!'
+				description: 'You dare give orders to me? Never forget, no matter who sent you, I rule here!',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'Revenge is an exciting sport. Sadly, it’s one I’ve had to give up. It’s policy, not revenge, that rules here.'
-			}
+				description:
+					'Revenge is an exciting sport. Sadly, it’s one I’ve had to give up. It’s policy, not revenge, that rules here.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static lich: Negotiation = {
+	static lich: NegotiationInterface = {
 		id: 'negotiation-lich',
 		name: 'Lich',
 		description: `
@@ -529,44 +580,47 @@ The lich archetype can be used for any other world-shaking threat, such as a wou
 		motivations: [
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'Give me that book at once! Your very touch corrupts it.'
+				description: 'Give me that book at once! Your very touch corrupts it.',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'Yes … yes … power! Ahahahaha! Bring me this power and you will be rewarded.'
+				description: 'Yes … yes … power! Ahahahaha! Bring me this power and you will be rewarded.',
 			},
 			{
 				trait: NegotiationTrait.Revelry,
-				description: 'Join my court for the coming feast! We shall know such entertainments as were never seen in this world before.'
+				description:
+					'Join my court for the coming feast! We shall know such entertainments as were never seen in this world before.',
 			},
 			{
 				trait: NegotiationTrait.Vengeance,
-				description: 'The world despised me … banished me … forgot me. The world shall regret it.'
-			}
+				description: 'The world despised me … banished me … forgot me. The world shall regret it.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'Do you ask the farmer to pity the wheat before it’s harvested?'
+				description: 'Do you ask the farmer to pity the wheat before it’s harvested?',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'I don’t care what the common people think of me. The less they think of me, the better—as long as they obey my commands.'
+				description:
+					'I don’t care what the common people think of me. The less they think of me, the better—as long as they obey my commands.',
 			},
 			{
 				trait: NegotiationTrait.Peace,
-				description: 'Yes, yes, peace will come … but not now.'
+				description: 'Yes, yes, peace will come … but not now.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'If you’re so intent on saving lives, then save your own by bowing down before me! No harm will come to my servants.'
-			}
+				description:
+					'If you’re so intent on saving lives, then save your own by bowing down before me! No harm will come to my servants.',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 
-	static deity: Negotiation = {
+	static deity: NegotiationInterface = {
 		id: 'negotiation-deity',
 		name: 'Deity',
 		description: `
@@ -580,40 +634,45 @@ The deity archetype can be used for any other world-transcending power, such as 
 		motivations: [
 			{
 				trait: NegotiationTrait.Benevolence,
-				description: 'Worry not, for I have sent champions to save the world. Perhaps these champions … are closer than you think.'
+				description:
+					'Worry not, for I have sent champions to save the world. Perhaps these champions … are closer than you think.',
 			},
 			{
 				trait: NegotiationTrait.Legacy,
-				description: 'When that blessed day arrives, all shall come before me to pray, and I shall offer my blessings to the world!'
+				description:
+					'When that blessed day arrives, all shall come before me to pray, and I shall offer my blessings to the world!',
 			},
 			{
 				trait: NegotiationTrait.Power,
-				description: 'Although I am all-powerful on the spiritual realm, my hands are bound in such worldly matters. But if you act for me, I can offer a little assistance.'
+				description:
+					'Although I am all-powerful on the spiritual realm, my hands are bound in such worldly matters. But if you act for me, I can offer a little assistance.',
 			},
 			{
 				trait: NegotiationTrait.Protection,
-				description: 'Have faith, little one … none will be forgotten or left behind.'
-			}
+				description: 'Have faith, little one … none will be forgotten or left behind.',
+			},
 		],
 		pitfalls: [
 			{
 				trait: NegotiationTrait.Discovery,
-				description: 'Mortal, what can you tell me that I do not know?'
+				description: 'Mortal, what can you tell me that I do not know?',
 			},
 			{
 				trait: NegotiationTrait.Freedom,
-				description: 'True freedom lies in service to me. Surrender your freedom and I shall raise you up high.'
+				description:
+					'True freedom lies in service to me. Surrender your freedom and I shall raise you up high.',
 			},
 			{
 				trait: NegotiationTrait.Greed,
-				description: 'Fool! Do you seek to offer me what is mine?'
+				description: 'Fool! Do you seek to offer me what is mine?',
 			},
 			{
 				trait: NegotiationTrait.HigherAuthority,
-				description: 'Who do you speak of? Who is beyond me, who is above me? Who will live to see me die, and who drew breath before I gave it? Let them come forth and say their name!'
-			}
+				description:
+					'Who do you speak of? Who is beyond me, who is above me? Who will live to see me die, and who drew breath before I gave it? Let them come forth and say their name!',
+			},
 		],
 		languages: [],
-		outcomes: [ '', '', '', '', '', '' ]
+		outcomes: ['', '', '', '', '', ''],
 	};
 }

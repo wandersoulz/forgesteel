@@ -1,11 +1,9 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
-import { Size } from '../../core/models/size';
-import { TerrainRole } from '../../core/models/terrain';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
+import { SizeInterface } from '../../core/models/size';
 
-export interface Fixture extends Element {
-	role: TerrainRole;
+export interface FixtureInterface extends ElementInterface {
 	baseStamina: number;
-	size: Size;
-	featuresByLevel: { level: number, features: Feature[] }[]
+	size: SizeInterface;
+	featuresByLevel: { level: number; features: FeatureInterface[] }[];
 }

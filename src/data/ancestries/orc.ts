@@ -1,71 +1,84 @@
 import { EnvironmentData, OrganizationData, UpbringingData } from '../../data/culture-data';
-import { Ancestry } from '../../core/models/ancestry';
+import { AncestryInterface } from '../../core/models/ancestry';
 import { ConditionType } from '../../core/enums/condition-type';
 import { CultureType } from '../../core/enums/culture-type';
-import { FactoryLogic } from '../../core/logic/factory-logic';
+import { ElementFactory } from '../../core/factory/element-factory';
 import { FeatureField } from '../../core/enums/feature-field';
 
-export const orc: Ancestry = {
+export const orc: AncestryInterface = {
 	id: 'ancestry-orc',
 	name: 'Orc',
-	description: 'An anger that cannot be hidden. A fury that drives them in battle. Orcs are famed throughout the world as consummate warriors - a reputation that the peace-loving orcs find distasteful.',
+	description:
+		'An anger that cannot be hidden. A fury that drives them in battle. Orcs are famed throughout the world as consummate warriors - a reputation that the peace-loving orcs find distasteful.',
 	features: [
-		FactoryLogic.feature.create({
+		ElementFactory.FeatureFactory.create({
 			id: 'orc-feature-1',
 			name: 'Relentless',
-			description: 'Whenever a creature deals damage to you that leaves you dying, you can make a free strike against any creature. If the creature is reduced to 0 Stamina by your strike, you can spend a Recovery.'
+			description:
+				'Whenever a creature deals damage to you that leaves you dying, you can make a free strike against any creature. If the creature is reduced to 0 Stamina by your strike, you can spend a Recovery.',
 		}),
-		FactoryLogic.feature.createChoice({
+		ElementFactory.FeatureFactory.createChoice({
 			id: 'orc-feature-2',
 			name: 'Orc Traits',
 			options: [
 				{
-					feature: FactoryLogic.feature.create({
+					feature: ElementFactory.FeatureFactory.create({
 						id: 'orc-feature-2-1',
 						name: 'Bloodfire Rush',
-						description: 'The magic coursing through your veins makes you run faster in the heat of battle. The first time in any combat round that you take damage, you gain a +2 bonus to speed until the end of the round.'
+						description:
+							'The magic coursing through your veins makes you run faster in the heat of battle. The first time in any combat round that you take damage, you gain a +2 bonus to speed until the end of the round.',
 					}),
-					value: 1
+					value: 1,
 				},
 				{
-					feature: FactoryLogic.feature.createBonus({
+					feature: ElementFactory.FeatureFactory.createBonus({
 						id: 'orc-feature-2-2',
 						name: 'Grounded',
 						description: 'The magic in your blood makes it difficult for others to move you.',
 						field: FeatureField.Stability,
-						value: 1
+						value: 1,
 					}),
-					value: 1
+					value: 1,
 				},
 				{
-					feature: FactoryLogic.feature.create({
+					feature: ElementFactory.FeatureFactory.create({
 						id: 'orc-feature-2-3',
 						name: 'Passionate Artisan',
-						description: 'When you are stirred by passion for creation, your bloodfire allows you to work longer and harder. When you gain your initial skills from your career, culture, class, or other source, choose two skills from the crafting skill group, whether you have those skills or not. Whenever you make a project roll for a crafting project that uses these skills, you gain a +2 bonus to the roll.'
+						description:
+							'When you are stirred by passion for creation, your bloodfire allows you to work longer and harder. When you gain your initial skills from your career, culture, class, or other source, choose two skills from the crafting skill group, whether you have those skills or not. Whenever you make a project roll for a crafting project that uses these skills, you gain a +2 bonus to the roll.',
 					}),
-					value: 1
+					value: 1,
 				},
 				{
-					feature: FactoryLogic.feature.create({
+					feature: ElementFactory.FeatureFactory.create({
 						id: 'orc-feature-2-4',
 						name: 'Glowing Recovery',
-						description: 'Your bloodfire allows you to regain your strength quicker than others. Whenever you use the Catch Breath maneuver, you can spend as many Recoveries as you like.'
+						description:
+							'Your bloodfire allows you to regain your strength quicker than others. Whenever you use the Catch Breath maneuver, you can spend as many Recoveries as you like.',
 					}),
-					value: 2
+					value: 2,
 				},
 				{
-					feature: FactoryLogic.feature.createConditionImmunity({
+					feature: ElementFactory.FeatureFactory.createConditionImmunity({
 						id: 'orc-feature-2-5',
 						name: 'Nonstop',
 						description: 'Your bloodfire supplies you with a constant rush of adrenaline.',
-						conditions: [ ConditionType.Slowed ]
+						conditions: [ConditionType.Slowed],
 					}),
-					value: 2
-				}
+					value: 2,
+				},
 			],
-			count: 'ancestry'
-		})
+			count: 'ancestry',
+		}),
 	],
 	ancestryPoints: 3,
-	culture: FactoryLogic.createCulture('Orc', 'Wilderness, communal, creative.', CultureType.Ancestral, EnvironmentData.wilderness, OrganizationData.communal, UpbringingData.creative, 'Kalliac')
+	culture: ElementFactory.createCulture(
+		'Orc',
+		'Wilderness, communal, creative.',
+		CultureType.Ancestral,
+		EnvironmentData.wilderness,
+		OrganizationData.communal,
+		UpbringingData.creative,
+		'Kalliac'
+	),
 };

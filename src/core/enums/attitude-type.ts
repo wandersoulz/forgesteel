@@ -4,5 +4,5 @@ export enum AttitudeType {
 	Open = 'Open',
 	Neutral = 'Neutral',
 	Suspicious = 'Suspicious',
-	Hostile = 'Hostile'
-};
+	Hostile = 'Hostile',
+}

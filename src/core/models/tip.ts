@@ -1,5 +1,5 @@
-export interface Tip {
+export interface TipInterface {
 	content: string;
 	image: string;
 	isNew: boolean;
-};
+}

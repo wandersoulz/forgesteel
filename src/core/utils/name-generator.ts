@@ -177,7 +177,7 @@ export class NameGenerator {
 			'wrayt',
 			'yash',
 			'yeng',
-			'zash'
+			'zash',
 		];
 
 		const ends = [
@@ -345,13 +345,10 @@ export class NameGenerator {
 			'yne',
 			'ynn',
 			'za',
-			'zar'
+			'zar',
 		];
 
-		const separators = [
-			'-',
-			'\''
-		];
+		const separators = ['-', "'"];
 
 		switch (Random.randomNumber(6, rng)) {
 			case 0:

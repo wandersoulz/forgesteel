@@ -1,35 +1,39 @@
-import { AbilityLogic } from '../../core/logic/ability-logic';
 import { FeatureType } from '../../core/enums/feature-type';
-import { Hero } from '../../core/models/hero';
-import { Modifier } from '../../core/models/damage-modifier';
+import { Hero } from '../../core/impl/hero';
+import { ModifierInterface } from '../../core/models/damage-modifier';
 import { ModifierLogic } from '../../core/logic/modifier-logic';
-import { Monster } from '../../core/models/monster';
-import { MonsterLogic } from '../../core/logic/monster-logic';
+import { Monster } from '../../core/impl/monster';
 import { CoreUtils } from '../../core/utils/core-utils';
+import { Ability } from '../impl/ability';
 
 export class SummonLogic {
 	static getSummonedMonster = (monster: Monster, controller: Hero) => {
-		const copy = CoreUtils.copy(monster);
+		const copy = new Monster(CoreUtils.copy(monster));
 
-		const handleModifier = (mod: Modifier) => {
-			return mod.valueFromController || (mod.valueCharacteristics.length > 0) || (mod.valuePerEchelon > 0) || (mod.valuePerLevel > 0);
+		const handleModifier = (mod: ModifierInterface) => {
+			return (
+				mod.valueFromController ||
+				mod.valueCharacteristics.length > 0 ||
+				mod.valuePerEchelon > 0 ||
+				mod.valuePerLevel > 0
+			);
 		};
 
-		MonsterLogic.getFeatures(copy).forEach(f => {
+		copy.getFeatures().forEach((f) => {
 			switch (f.type) {
 				case FeatureType.Ability:
-					f.data.ability.sections.forEach(s => {
+					f.data.ability.sections.forEach((s) => {
 						switch (s.type) {
 							case 'field':
-								s.effect = AbilityLogic.getTextEffect(s.effect, controller);
+								s.effect = Ability.getTextEffect(s.effect, controller);
 								break;
 							case 'roll':
-								s.roll.tier1 = AbilityLogic.getTextEffect(s.roll.tier1, controller);
-								s.roll.tier2 = AbilityLogic.getTextEffect(s.roll.tier2, controller);
-								s.roll.tier3 = AbilityLogic.getTextEffect(s.roll.tier3, controller);
+								s.roll.tier1 = Ability.getTextEffect(s.roll.tier1, controller);
+								s.roll.tier2 = Ability.getTextEffect(s.roll.tier2, controller);
+								s.roll.tier3 = Ability.getTextEffect(s.roll.tier3, controller);
 								break;
 							case 'text':
-								s.text = AbilityLogic.getTextEffect(s.text, controller);
+								s.text = Ability.getTextEffect(s.text, controller);
 								break;
 						}
 					});
@@ -46,7 +50,7 @@ export class SummonLogic {
 					}
 					break;
 				case FeatureType.DamageModifier:
-					f.data.modifiers.forEach(dm => {
+					f.data.modifiers.forEach((dm) => {
 						if (handleModifier(dm)) {
 							const value = ModifierLogic.calculateModifierValue(dm, controller);
 							dm.value = value;
@@ -59,7 +63,7 @@ export class SummonLogic {
 					});
 					break;
 				case FeatureType.Text:
-					f.description = AbilityLogic.getTextEffect(f.description, controller);
+					f.description = Ability.getTextEffect(f.description, controller);
 					break;
 			}
 		});

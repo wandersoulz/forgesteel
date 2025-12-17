@@ -1,8 +1,8 @@
 import { Characteristic } from '../../core/enums/characteristic';
 import { FollowerType } from '../../core/enums/follower-type';
 import { SkillList } from '../../core/enums/skill-list';
-import { Sourcebook } from '../../core/models/sourcebook';
-import { SourcebookLogic } from '../../core/logic/sourcebook-logic';
+import { SourcebookInterface } from '../../core/models/sourcebook';
+import { ActiveSourcebooks } from '../impl/sourcebook';
 
 export class FollowerLogic {
 	static getCharacteristicArrays = (type: FollowerType) => {
@@ -14,15 +14,15 @@ export class FollowerLogic {
 						{ characteristic: Characteristic.Agility, value: 0 },
 						{ characteristic: Characteristic.Reason, value: 1 },
 						{ characteristic: Characteristic.Intuition, value: 0 },
-						{ characteristic: Characteristic.Presence, value: 0 }
+						{ characteristic: Characteristic.Presence, value: 0 },
 					],
 					[
 						{ characteristic: Characteristic.Might, value: 0 },
 						{ characteristic: Characteristic.Agility, value: 1 },
 						{ characteristic: Characteristic.Reason, value: 1 },
 						{ characteristic: Characteristic.Intuition, value: 0 },
-						{ characteristic: Characteristic.Presence, value: 0 }
-					]
+						{ characteristic: Characteristic.Presence, value: 0 },
+					],
 				];
 			case FollowerType.Sage:
 				return [
@@ -31,13 +31,13 @@ export class FollowerLogic {
 						{ characteristic: Characteristic.Agility, value: 0 },
 						{ characteristic: Characteristic.Reason, value: 1 },
 						{ characteristic: Characteristic.Intuition, value: 1 },
-						{ characteristic: Characteristic.Presence, value: 0 }
-					]
+						{ characteristic: Characteristic.Presence, value: 0 },
+					],
 				];
 		}
 	};
 
-	static getSkillOptions = (type: FollowerType, sourcebooks: Sourcebook[]) => {
+	static getSkillOptions = (type: FollowerType, sourcebooks: SourcebookInterface[]) => {
 		const lists: SkillList[] = [];
 		switch (type) {
 			case FollowerType.Artisan:
@@ -48,10 +48,14 @@ export class FollowerLogic {
 				break;
 		}
 
-		return SourcebookLogic.getSkills(sourcebooks).filter(s => lists.includes(s.list));
+		return ActiveSourcebooks.getInstance()
+			.getSkills()
+			.filter((s) => lists.includes(s.list));
 	};
 
-	static getLanguageOptions = (sourcebooks: Sourcebook[]) => {
-		return SourcebookLogic.getLanguages(sourcebooks).filter(l => l.name !== 'Caelian');
+	static getLanguageOptions = (sourcebooks: SourcebookInterface[]) => {
+		return ActiveSourcebooks.getInstance()
+			.getLanguages()
+			.filter((l) => l.name !== 'Caelian');
 	};
 }

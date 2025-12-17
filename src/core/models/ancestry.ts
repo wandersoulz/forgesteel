@@ -1,9 +1,9 @@
-import { Culture } from '../../core/models/culture';
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { CultureInterface } from '../../core/models/culture';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 
-export interface Ancestry extends Element {
-	features: Feature[];
+export interface AncestryInterface extends ElementInterface {
+	features: FeatureInterface[];
 	ancestryPoints: number;
-	culture?: Culture
+	culture?: CultureInterface;
 }

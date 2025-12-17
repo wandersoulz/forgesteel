@@ -1,9 +1,9 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { ElementInterface } from './element';
+import { FeatureInterface } from './feature';
 
-export interface Title extends Element {
+export interface TitleInterface extends ElementInterface {
 	echelon: number;
 	prerequisites: string;
-	features: Feature[];
+	features: FeatureInterface[];
 	selectedFeatureID: string;
 }

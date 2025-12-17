@@ -1,19 +1,19 @@
-import { AbilitySheet } from '../../../core/models/classic-sheets/ability-sheet';
-import { CharacteristicsSheet } from '../../../core/models/classic-sheets/classic-sheets';
-import { Condition } from '../../../core/models/condition';
+import { AbilitySheetInterface } from '../../../core/models/classic-sheets/ability-sheet';
+import { CharacteristicsSheetInterface } from '../../../core/models/classic-sheets/classic-sheets';
+import { ConditionInterface } from '../../../core/models/condition';
 import { ConditionType } from '../../../core/enums/condition-type';
-import { Culture } from '../../../core/models/culture';
-import { Element } from '../../../core/models/element';
-import { Feature } from '../../../core/models/feature';
-import { Hero } from '../../../core/models/hero';
-import { Item } from '../../../core/models/item';
-import { MonsterSheet } from '../../../core/models/classic-sheets/monster-sheet';
-import { Perk } from '../../../core/models/perk';
-import { Title } from '../../../core/models/title';
+import { CultureInterface } from '../../../core/models/culture';
+import { ElementInterface } from '../../../core/models/element';
+import { FeatureInterface } from '../../../core/models/feature';
+import { HeroInterface } from '../../../core/models/hero';
+import { ItemInterface } from '../../../core/models/item';
+import { MonsterSheetInterface } from '../../../core/models/classic-sheets/monster-sheet';
+import { PerkInterface } from '../../../core/models/perk';
+import { TitleInterface } from '../../../core/models/title';
 
 // #region Character
-export interface HeroSheet {
-	hero: Hero,
+export interface HeroSheetInterface {
+	hero: HeroInterface;
 	name?: string;
 	ancestryName?: string;
 	className?: string;
@@ -26,7 +26,7 @@ export interface HeroSheet {
 	renown?: number;
 	xp?: number;
 
-	inventory?: ItemSheet[];
+	inventory?: ItemSheetInterface[];
 
 	might?: number;
 	agility?: number;
@@ -39,8 +39,8 @@ export interface HeroSheet {
 	disengage?: number;
 	stability?: number;
 
-	stamina: StaminaSheet;
-	recoveries: RecoveriesSheet;
+	stamina: StaminaSheetInterface;
+	recoveries: RecoveriesSheetInterface;
 
 	heroicResourceName?: string;
 	heroicResourceCurrent?: number;
@@ -74,11 +74,11 @@ export interface HeroSheet {
 	modifierRangedDamageT2?: number;
 	modifierRangedDamageT3?: number;
 
-	modifierBenefits?: Feature[];
+	modifierBenefits?: FeatureInterface[];
 
 	// Immunities and Weaknesses
-	immunities: { damageType: string, value: number }[];
-	weaknesses: { damageType: string, value: number }[];
+	immunities: { damageType: string; value: number }[];
+	weaknesses: { damageType: string; value: number }[];
 	conditionImmunities?: ConditionType[];
 
 	// Potencies
@@ -87,63 +87,63 @@ export interface HeroSheet {
 	potencyWeak?: number;
 
 	// Conditions
-	conditions?: Condition[];
+	conditions?: ConditionInterface[];
 	condition1Name?: string;
 	condition2Name?: string;
 	saveTarget?: number;
 	saveBonus?: number;
 
 	// Class Features
-	classFeatures?: Feature[];
+	classFeatures?: FeatureInterface[];
 
 	// Ancestry Traits
-	ancestryTraits?: Feature[];
+	ancestryTraits?: FeatureInterface[];
 
 	// Career
-	career?: CareerSheet;
+	career?: CareerSheetInterface;
 
 	// Complication
-	complication?: ComplicationSheet;
+	complication?: ComplicationSheetInterface;
 
 	// Skills
 	allSkills?: Map<string, string[]>;
 	skills?: string[];
 
-	// Culture
-	culture?: Culture;
+	// CultureInterface
+	culture?: CultureInterface;
 
 	languages?: string[];
 
 	// Perks & Titles
-	perks?: Perk[];
-	titles?: Title[];
+	perks?: PerkInterface[];
+	titles?: TitleInterface[];
 
 	// Ancestry & Perks combined
-	ancestryTraitsPerksCombined?: Feature[];
+	ancestryTraitsPerksCombined?: FeatureInterface[];
 
 	// Projects
-	projects: ProjectSheet[];
+	projects: ProjectSheetInterface[];
 
 	// Abilities
-	abilities: AbilitySheet[];
-	standardAbilities: AbilitySheet[];
+	abilities: AbilitySheetInterface[];
+	standardAbilities: AbilitySheetInterface[];
 
 	// Followers
-	followers: FollowerSheet[];
+	followers: FollowerSheetInterface[];
 	// companions: FollowerSheet[];
-	summons: MonsterSheet[];
+	summons: MonsterSheetInterface[];
 
 	// Other Features and Reference
 	featuresReferenceOther: {
-		feature: Feature,
-		source: string
+		feature: FeatureInterface;
+		source: string;
 	}[];
 
 	extraReferenceItems: {
-		title: string,
-		content: string,
-		wide: boolean,
-		section: string
+		title: string;
+		content: string;
+		wide: boolean;
+		section: string;
 	}[];
 
 	notes: string;
@@ -151,7 +151,7 @@ export interface HeroSheet {
 // #endregion
 
 // #region Sub-sheets
-export interface StaminaSheet {
+export interface StaminaSheetInterface {
 	max?: number;
 	current?: number;
 	temp?: number;
@@ -159,58 +159,58 @@ export interface StaminaSheet {
 	deadAt?: number;
 }
 
-export interface RecoveriesSheet {
+export interface RecoveriesSheetInterface {
 	max?: number;
 	value?: number;
 	current?: number;
 }
 
-export interface CareerSheet {
+export interface CareerSheetInterface {
 	id: string;
 	name: string;
-	benefits: Feature[];
-	incitingIncident?: Element;
+	benefits: FeatureInterface[];
+	incitingIncident?: ElementInterface;
 }
 
-export interface ComplicationSheet {
+export interface ComplicationSheetInterface {
 	id: string;
 	name: string;
 	description: string;
-	benefits: Feature[];
-	drawbacks: Feature[];
+	benefits: FeatureInterface[];
+	drawbacks: FeatureInterface[];
 }
 
-export interface ProjectSheet {
+export interface ProjectSheetInterface {
 	id: string;
 	name: string;
-	description: string,
+	description: string;
 	assignee: string;
 	characteristic: string;
-	prerequisites: string,
-	havePrerequisites: boolean,
-	source: string,
-	haveSource: boolean,
+	prerequisites: string;
+	havePrerequisites: boolean;
+	source: string;
+	haveSource: boolean;
 	pointsGoal: number;
 	pointsCurrent?: number;
 }
 
-export interface ItemSheet {
+export interface ItemSheetInterface {
 	id: string;
-	item: Item;
+	item: ItemInterface;
 	effect: string;
-	features?: Feature[];
+	features?: FeatureInterface[];
 }
 // #endregion
 
 // #region Follower, Retainer, & Companion
-export interface FollowerSheet {
+export interface FollowerSheetInterface {
 	id: string;
 	name: string;
 	classification: string;
 	type: string;
 	role: string;
 
-	characteristics: CharacteristicsSheet;
+	characteristics: CharacteristicsSheetInterface;
 
 	skills?: string[];
 	languages?: string[];
@@ -226,16 +226,16 @@ export interface FollowerSheet {
 	weakness?: string;
 	movement?: string;
 
-	stamina?: StaminaSheet;
-	recoveries?: RecoveriesSheet;
+	stamina?: StaminaSheetInterface;
+	recoveries?: RecoveriesSheetInterface;
 
-	features?: Feature[];
-	abilities?: AbilitySheet[];
+	features?: FeatureInterface[];
+	abilities?: AbilitySheetInterface[];
 
 	advancement?: {
-		level: number,
-		ability?: AbilitySheet,
-		features?: Feature[]
+		level: number;
+		ability?: AbilitySheetInterface;
+		features?: FeatureInterface[];
 	}[];
-};
+}
 // #endregion

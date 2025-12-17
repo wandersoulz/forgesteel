@@ -1,11 +1,15 @@
-import { FeatureAddOn, FeatureMalice, FeatureMaliceAbility } from '../../core/models/feature';
-import { Element } from '../../core/models/element';
-import { Monster } from '../../core/models/monster';
+import {
+	FeatureAddOnInterface,
+	FeatureMaliceInterface,
+	FeatureMaliceAbilityInterface,
+} from '../../core/models/feature';
+import { ElementInterface } from '../../core/models/element';
+import { MonsterInterface } from '../../core/models/monster';
 
-export interface MonsterGroup extends Element {
+export interface MonsterGroupInterface extends ElementInterface {
 	picture: string | null;
-	information: Element[];
-	malice: (FeatureMalice | FeatureMaliceAbility)[];
-	monsters: Monster[];
-	addOns: FeatureAddOn[];
-};
+	information: ElementInterface[];
+	malice: (FeatureMaliceInterface | FeatureMaliceAbilityInterface)[];
+	monsters: MonsterInterface[];
+	addOns: FeatureAddOnInterface[];
+}

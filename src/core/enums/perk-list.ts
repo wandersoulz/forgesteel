@@ -5,5 +5,5 @@ export enum PerkList {
 	Intrigue = 'Intrigue',
 	Lore = 'Lore',
 	Supernatural = 'Supernatural',
-	Special = 'Special'
+	Special = 'Special',
 }

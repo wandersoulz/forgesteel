@@ -1,84 +1,83 @@
-import { Ability } from '../../models/ability';
 import { AbilityKeyword } from '../../enums/ability-keyword';
-import { AbilityLogic } from '../../logic/ability-logic';
-import { AbilitySheet } from '../../models/classic-sheets/ability-sheet';
+import { AbilitySheetInterface } from '../../models/classic-sheets/ability-sheet';
 import { AbilityUsage } from '../../enums/ability-usage';
 import { Characteristic } from '../../enums/characteristic';
-import { CharacteristicsSheet } from '../../models/classic-sheets/classic-sheets';
-import { ClassicSheetLogic } from '../../logic/classic-sheet/classic-sheet-logic';
-import { CreatureLogic } from '../../logic/creature-logic';
+import { CharacteristicsSheetInterface } from '../../models/classic-sheets/classic-sheets';
+import { CreatureLogic } from '../creature-logic';
 import { DamageModifierType } from '../../enums/damage-modifier-type';
-import { FeatureLogic } from '../../logic/feature-logic';
+import { FeatureLogic } from '../feature-logic';
 import { FeatureType } from '../../enums/feature-type';
-import { Follower } from '../../models/follower';
+import { FollowerInterface } from '../../models/follower';
 import { Format } from '../../utils/format';
-import { FormatLogic } from '../../logic/format-logic';
-import { Hero } from '../../models/hero';
-import { HeroLogic } from '../../logic/hero-logic';
-import { Item } from '../../models/item';
-import { ItemSheet } from '../../models/classic-sheets/hero-sheet';
+import { FormatLogic } from '../format-logic';
+import { ItemInterface } from '../../models/item';
+import { ItemSheetInterface } from '../../models/classic-sheets/hero-sheet';
 import { ItemType } from '../../enums/item-type';
-import { Monster } from '../../models/monster';
-import { MonsterLogic } from '../../logic/monster-logic';
 import { MonsterRoleType } from '../../enums/monster-role-type';
-import { MonsterSheet } from '../../models/classic-sheets/monster-sheet';
-import { Options } from '../../models/options';
-import { SheetFormatter } from '../../logic/classic-sheet/sheet-formatter';
-import { Summon } from '../../models/summon';
+import { MonsterSheetInterface } from '../../models/classic-sheets/monster-sheet';
+import { SheetFormatter } from './sheet-formatter';
+import { SummonInterface } from '../../models/summon';
+import { Hero } from '../../impl/hero';
+import { Monster } from '../../impl/monster';
+import { Ability } from '../../impl/ability';
 
 export class ClassicSheetBuilder {
-	static buildCharacteristicsSheet = (creature: Hero | Monster | Follower | undefined): CharacteristicsSheet => {
+	static buildCharacteristicsSheet = (
+		creature: Hero | Monster | FollowerInterface | undefined
+	): CharacteristicsSheetInterface => {
 		if (!creature) {
 			return {
 				might: 0,
 				agility: 0,
 				reason: 0,
 				intuition: 0,
-				presence: 0
+				presence: 0,
 			};
 		} else if (CreatureLogic.isHero(creature)) {
 			return {
-				might: HeroLogic.getCharacteristic(creature, Characteristic.Might),
-				agility: HeroLogic.getCharacteristic(creature, Characteristic.Agility),
-				reason: HeroLogic.getCharacteristic(creature, Characteristic.Reason),
-				intuition: HeroLogic.getCharacteristic(creature, Characteristic.Intuition),
-				presence: HeroLogic.getCharacteristic(creature, Characteristic.Presence)
+				might: creature.getCharacteristic(Characteristic.Might),
+				agility: creature.getCharacteristic(Characteristic.Agility),
+				reason: creature.getCharacteristic(Characteristic.Reason),
+				intuition: creature.getCharacteristic(Characteristic.Intuition),
+				presence: creature.getCharacteristic(Characteristic.Presence),
 			};
 		} else if (CreatureLogic.isMonster(creature)) {
 			return {
-				might: MonsterLogic.getCharacteristic(creature, Characteristic.Might),
-				agility: MonsterLogic.getCharacteristic(creature, Characteristic.Agility),
-				reason: MonsterLogic.getCharacteristic(creature, Characteristic.Reason),
-				intuition: MonsterLogic.getCharacteristic(creature, Characteristic.Intuition),
-				presence: MonsterLogic.getCharacteristic(creature, Characteristic.Presence)
+				might: creature.getCharacteristic(Characteristic.Might),
+				agility: creature.getCharacteristic(Characteristic.Agility),
+				reason: creature.getCharacteristic(Characteristic.Reason),
+				intuition: creature.getCharacteristic(Characteristic.Intuition),
+				presence: creature.getCharacteristic(Characteristic.Presence),
 			};
 		} else {
-			const follower = creature as Follower;
+			const follower = creature as FollowerInterface;
 			return {
-				might: follower.characteristics.find(c => c.characteristic === Characteristic.Might)?.value || 0,
-				agility: follower.characteristics.find(c => c.characteristic === Characteristic.Agility)?.value || 0,
-				reason: follower.characteristics.find(c => c.characteristic === Characteristic.Reason)?.value || 0,
-				intuition: follower.characteristics.find(c => c.characteristic === Characteristic.Intuition)?.value || 0,
-				presence: follower.characteristics.find(c => c.characteristic === Characteristic.Presence)?.value || 0
+				might: follower.characteristics.find((c) => c.characteristic === Characteristic.Might)?.value || 0,
+				agility: follower.characteristics.find((c) => c.characteristic === Characteristic.Agility)?.value || 0,
+				reason: follower.characteristics.find((c) => c.characteristic === Characteristic.Reason)?.value || 0,
+				intuition:
+					follower.characteristics.find((c) => c.characteristic === Characteristic.Intuition)?.value || 0,
+				presence:
+					follower.characteristics.find((c) => c.characteristic === Characteristic.Presence)?.value || 0,
 			};
 		}
 	};
 
-	// #region Monster Sheet
-	static buildMonsterSheet = (monster: Monster): MonsterSheet => {
-		const level = MonsterLogic.getMonsterLevel(monster);
+	// #region MonsterInterface Sheet
+	static buildMonsterSheet = (monster: Monster): MonsterSheetInterface => {
+		const level = monster.getLevel();
 		let monsterType = `Lvl ${level} ${monster.role.organization}`;
 		if (monster.role.type !== MonsterRoleType.NoRole) {
 			monsterType += ` ${monster.role.type}`;
 		}
 
-		const speed = MonsterLogic.getSpeed(monster);
-		const immunities = MonsterLogic.getDamageModifiers(monster, DamageModifierType.Immunity);
-		const weaknesses = MonsterLogic.getDamageModifiers(monster, DamageModifierType.Weakness);
+		const speed = monster.getSpeed();
+		const immunities = monster.getDamageModifiers(DamageModifierType.Immunity);
+		const weaknesses = monster.getDamageModifiers(DamageModifierType.Weakness);
 
-		const sheet: MonsterSheet = {
+		const sheet: MonsterSheetInterface = {
 			id: monster.id,
-			name: MonsterLogic.getMonsterName(monster),
+			name: monster.getMonsterName(),
 			type: monsterType,
 			role: monster.role.type,
 
@@ -87,33 +86,37 @@ export class ClassicSheetBuilder {
 			keywords: monster.keywords.join(', '),
 			size: FormatLogic.getSize(monster.size),
 			speed: speed.value,
-			stamina: MonsterLogic.getStamina(monster),
+			stamina: monster.getStamina(),
 			stability: monster.stability,
-			freeStrike: MonsterLogic.getFreeStrikeDamage(monster),
-			immunity: immunities.map(mod => `${mod.damageType} ${mod.value}`).join(', '),
-			weakness: weaknesses.map(mod => `${mod.damageType} ${mod.value}`).join(', '),
-			movement: speed.modes.map(m => Format.capitalize(m)).join(', '),
-			withCaptain: monster.withCaptain
+			freeStrike: monster.getFreeStrikeDamage(),
+			immunity: immunities.map((mod) => `${mod.damageType} ${mod.value}`).join(', '),
+			weakness: weaknesses.map((mod) => `${mod.damageType} ${mod.value}`).join(', '),
+			movement: speed.modes.map((m) => Format.capitalize(m)).join(', '),
+			withCaptain: monster.withCaptain,
 		};
 
-		sheet.features = MonsterLogic.getFeatures(monster)
-			.filter(f => [ FeatureType.Text, FeatureType.AddOn ].includes(f.type));
+		sheet.features = monster.getFeatures().filter((f) => [FeatureType.Text, FeatureType.AddOn].includes(f.type));
 
-		const abilities = MonsterLogic.getFeatures(monster)
-			.filter(f => f.type === FeatureType.Ability)
-			.map(f => f.data.ability);
-		sheet.abilities = abilities.map(a => ClassicSheetBuilder.buildAbilitySheet(a, monster));
+		const abilities = monster
+			.getFeatures()
+			.filter((f) => f.type === FeatureType.Ability)
+			.map((f) => new Ability(f.data.ability));
+		sheet.abilities = abilities.map((a) => ClassicSheetBuilder.buildAbilitySheet(a, monster));
 
 		return sheet;
 	};
 	// #endregion
 
-	// #region Ability Sheet
-	static buildAbilitySheet = (ability: Ability, creature: Hero | Monster | Summon | undefined, summoner?: Hero, options?: Options): AbilitySheet => {
+	// #region AbilityInterface Sheet
+	static buildAbilitySheet = (
+		ability: Ability,
+		creature?: Hero | Monster | SummonInterface,
+		summoner?: Hero
+	): AbilitySheetInterface => {
 		const isMonster = CreatureLogic.isMonster(creature);
 		const isHero = CreatureLogic.isHero(creature);
 		const isSummon = CreatureLogic.isSummon(creature);
-		const sheet: AbilitySheet = {
+		const sheet: AbilitySheetInterface = {
 			id: ability.id,
 			abilityType: ability.type.usage.toString(),
 			name: ability.name,
@@ -125,7 +128,7 @@ export class ClassicSheetBuilder {
 			keywords: ability.keywords.join(', '),
 			target: ability.target,
 			trigger: ability.type.trigger,
-			hasPowerRoll: false
+			hasPowerRoll: false,
 		};
 
 		sheet.name = sheet.name.replace(/\s*Benefit and Drawback\s*/, '').trim();
@@ -133,9 +136,9 @@ export class ClassicSheetBuilder {
 		if (isHero) {
 			if (ability.cost === 'signature') {
 				sheet.isSignature = true;
-				sheet.abilityType = 'Signature Ability';
+				sheet.abilityType = 'Signature AbilityInterface';
 			} else if (ability.cost > 0) {
-				sheet.abilityType = 'Heroic Ability';
+				sheet.abilityType = 'Heroic AbilityInterface';
 			} else if (ability.type.usage === AbilityUsage.Trigger) {
 				sheet.abilityType = 'Triggered Action';
 			} else if (ability.type.usage === AbilityUsage.FreeStrike) {
@@ -161,7 +164,7 @@ export class ClassicSheetBuilder {
 
 		if (isMonster || isSummon) {
 			if (ability.cost === 'signature') {
-				sheet.abilityType = 'Signature Ability';
+				sheet.abilityType = 'Signature AbilityInterface';
 			} else if (ability.cost > 0) {
 				sheet.abilityType = `${ability.cost} Malice`;
 			} else if (isMonster && creature.retainer?.level) {
@@ -187,50 +190,48 @@ export class ClassicSheetBuilder {
 
 		let refCreature = undefined;
 		if (isSummon) {
-			refCreature = creature.monster;
+			refCreature = new Monster(creature.monster);
 		} else {
 			refCreature = creature;
 		}
 
 		if (ability.distance.length) {
-			sheet.distance = ability.distance.map(d => AbilityLogic.getDistanceCreature(d, ability, refCreature)).join(', ');
+			sheet.distance = ability.getAllDistancesCreature(refCreature).join(', ');
 		}
 
-		const effectSections = ability.sections.filter(s => s.type !== 'roll');
+		const effectSections = ability.sections.filter((s) => s.type !== 'roll');
 		let effectText = SheetFormatter.abilitySections(effectSections, refCreature).trim();
 
 		// Kind of hacky, but this is a one-off at the moment
-		if (CreatureLogic.isHero(creature)
-				&& ([ 'grab', 'knockback' ].includes(ability.id))
-				&& HeroLogic.getFeatures(creature as Hero).find(f => f.feature.id === 'null-1-8')) { // Psionic Martial Arts id
+		if (
+			CreatureLogic.isHero(creature) &&
+			['grab', 'knockback'].includes(ability.id) &&
+			(creature as Hero).getFeatures().find((f) => f.feature.id === 'null-1-8')
+		) {
+			// Psionic Martial Arts id
 			effectText = effectText.replace(/your Might/g, 'your Intuition');
 		}
 		sheet.effect = effectText;
 
-		const rollSections = ability.sections.filter(s => s.type === 'roll');
+		const rollSections = ability.sections.filter((s) => s.type === 'roll');
 		if (rollSections.length) {
 			sheet.hasPowerRoll = true;
 			const rollSection = rollSections[0];
-			if (rollSections.length > 1) {
-				// console.warn('More than one roll section!', ability.name, rollSections);
-			}
-			const rollAutoCalc = options?.showPowerRollCalculation ?? true;
-
-			if (rollAutoCalc) {
-				if (isSummon) {
-					sheet.rollPower = AbilityLogic.getPowerRollBonusValue(ability, summoner).toString();
-				} else {
-					sheet.rollPower = AbilityLogic.getPowerRollBonusValue(ability, refCreature).toString();
-				}
+			if (isSummon) {
+				sheet.rollPower = ability.getPowerRollBonusValue(summoner).toString();
 			} else {
-				const characteristics = AbilityLogic.getPowerRollCharacteristics(ability, undefined).sort(SheetFormatter.sortCharacteristics);
-				const allCharacteristics = Object.values(Characteristic).sort(SheetFormatter.sortCharacteristics);
-				const isAllCharacteristics = allCharacteristics.every((c, i) => characteristics[i] === c);
-				if (isAllCharacteristics) {
-					sheet.rollPower = 'Highest Characteristic';
-				} else {
-					sheet.rollPower = SheetFormatter.joinCommasOr(characteristics.map(c => c.toString().slice(0, 1)));
-				}
+				sheet.rollPower = ability.getPowerRollBonusValue(refCreature).toString();
+			}
+
+			const characteristics = ability
+				.getPowerRollCharacteristics(undefined)
+				.sort(SheetFormatter.sortCharacteristics);
+			const allCharacteristics = Object.values(Characteristic).sort(SheetFormatter.sortCharacteristics);
+			const isAllCharacteristics = allCharacteristics.every((c, i) => characteristics[i] === c);
+			if (isAllCharacteristics) {
+				sheet.rollPower = 'Highest Characteristic';
+			} else {
+				sheet.rollPower = SheetFormatter.joinCommasOr(characteristics.map((c) => c.toString().slice(0, 1)));
 			}
 
 			sheet.rollT1Effect = SheetFormatter.formatAbilityTier(rollSection.roll.tier1, 1, ability, refCreature);
@@ -238,54 +239,51 @@ export class ClassicSheetBuilder {
 			sheet.rollT3Effect = SheetFormatter.formatAbilityTier(rollSection.roll.tier3, 3, ability, refCreature);
 
 			if (CreatureLogic.isHero(creature)) {
-				const isMelee = ability.keywords.includes(AbilityKeyword.Melee) && ability.keywords.includes(AbilityKeyword.Weapon);
-				const isRanged = ability.keywords.includes(AbilityKeyword.Ranged) && ability.keywords.includes(AbilityKeyword.Weapon);
+				const isMelee =
+					ability.keywords.includes(AbilityKeyword.Melee) && ability.keywords.includes(AbilityKeyword.Weapon);
+				const isRanged =
+					ability.keywords.includes(AbilityKeyword.Ranged) &&
+					ability.keywords.includes(AbilityKeyword.Weapon);
 
-				const meleeKits = HeroLogic
-					.getKitDamageBonuses(creature)
-					.filter(dmg => dmg.type === 'melee');
+				const meleeKits = creature.getKitDamageBonuses().filter((dmg) => dmg.type === 'melee');
 
-				const rangedKits = HeroLogic
-					.getKitDamageBonuses(creature)
-					.filter(dmg => dmg.type === 'ranged');
+				const rangedKits = creature.getKitDamageBonuses().filter((dmg) => dmg.type === 'ranged');
 
 				if (isMelee && meleeKits.length > 1) {
-					const bestT1 = Math.max(...meleeKits.map(k => k.tier1));
-					const bestT2 = Math.max(...meleeKits.map(k => k.tier2));
-					const bestT3 = Math.max(...meleeKits.map(k => k.tier3));
+					const bestT1 = Math.max(...meleeKits.map((k) => k.tier1));
+					const bestT2 = Math.max(...meleeKits.map((k) => k.tier2));
+					const bestT3 = Math.max(...meleeKits.map((k) => k.tier3));
 
 					const meleeBonuses = meleeKits
-						.filter(k => k.tier1 >= bestT1 || k.tier2 >= bestT2 || k.tier3 >= bestT3)
-						.map(k => {
+						.filter((k) => k.tier1 >= bestT1 || k.tier2 >= bestT2 || k.tier3 >= bestT3)
+						.map((k) => {
 							return {
 								name: k.name,
 								type: k.type,
 								tier1: SheetFormatter.addSign(k.tier1) || '',
 								tier2: SheetFormatter.addSign(k.tier2) || '',
-								tier3: SheetFormatter.addSign(k.tier3) || ''
+								tier3: SheetFormatter.addSign(k.tier3) || '',
 							};
 						});
-					if (meleeBonuses.length > 1)
-						sheet.rollBonuses = (sheet.rollBonuses ?? []).concat(meleeBonuses);
+					if (meleeBonuses.length > 1) sheet.rollBonuses = (sheet.rollBonuses ?? []).concat(meleeBonuses);
 				}
 				if (isRanged && rangedKits.length > 1) {
-					const bestT1 = Math.max(...rangedKits.map(k => k.tier1));
-					const bestT2 = Math.max(...rangedKits.map(k => k.tier2));
-					const bestT3 = Math.max(...rangedKits.map(k => k.tier3));
+					const bestT1 = Math.max(...rangedKits.map((k) => k.tier1));
+					const bestT2 = Math.max(...rangedKits.map((k) => k.tier2));
+					const bestT3 = Math.max(...rangedKits.map((k) => k.tier3));
 
 					const rangedBonuses = rangedKits
-						.filter(k => k.tier1 >= bestT1 || k.tier2 >= bestT2 || k.tier3 >= bestT3)
-						.map(k => {
+						.filter((k) => k.tier1 >= bestT1 || k.tier2 >= bestT2 || k.tier3 >= bestT3)
+						.map((k) => {
 							return {
 								name: k.name,
 								type: k.type,
 								tier1: SheetFormatter.addSign(k.tier1) || '',
 								tier2: SheetFormatter.addSign(k.tier2) || '',
-								tier3: SheetFormatter.addSign(k.tier3) || ''
+								tier3: SheetFormatter.addSign(k.tier3) || '',
 							};
 						});
-					if (rangedBonuses.length > 1)
-						sheet.rollBonuses = (sheet.rollBonuses ?? []).concat(rangedBonuses);
+					if (rangedBonuses.length > 1) sheet.rollBonuses = (sheet.rollBonuses ?? []).concat(rangedBonuses);
 				}
 			}
 		}
@@ -294,21 +292,20 @@ export class ClassicSheetBuilder {
 	};
 	// #endregion
 
-	// #region Item Sheet
-	static buildItemSheet = (item: Item, hero: Hero, options: Options): ItemSheet => {
-		const features = FeatureLogic.getFeaturesFromItem(item, hero)
-			.map(f => f.feature)
-			.filter(f => ClassicSheetLogic.includeFeature(f, options));
+	// #region ItemInterface Sheet
+	static buildItemSheet = (item: ItemInterface, heroLevel: number): ItemSheetInterface => {
+		const features = FeatureLogic.getFeaturesFromItem(item, heroLevel).map((f) => f.feature);
 		// console.log(features);
-		const sheet: ItemSheet = {
+		const sheet: ItemSheetInterface = {
 			id: item.id,
 			item: item,
 			effect: SheetFormatter.enhanceMarkdown(item.effect),
-			features: FeatureLogic.reduceFeatures(features)
+			features: FeatureLogic.reduceFeatures(features),
 		};
 
 		if (item.imbuements.length) {
-			sheet.effect = item.imbuements.map(imbuement => imbuement.feature)
+			sheet.effect = item.imbuements
+				.map((imbuement) => imbuement.feature)
 				.reduce((effect, feature) => {
 					if (feature.type === FeatureType.Text) {
 						if (feature.description) {
@@ -325,11 +322,13 @@ export class ClassicSheetBuilder {
 		}
 
 		if (item.type === ItemType.Artifact) {
-			sheet.effect = SheetFormatter.enhanceMarkdown(features.find(f => f.id === item.id)?.description ?? sheet.effect);
+			sheet.effect = SheetFormatter.enhanceMarkdown(
+				features.find((f) => f.id === item.id)?.description ?? sheet.effect
+			);
 		}
 
 		if (!sheet.effect.length) {
-			sheet.effect = features.find(f => f.id === item.id)?.description ?? '';
+			sheet.effect = features.find((f) => f.id === item.id)?.description ?? '';
 		}
 
 		return sheet;

@@ -1,9 +1,9 @@
-import { Condition } from '../../core/models/condition';
-import { EncounterSlot } from '../../core/models/encounter-slot';
-import { Item } from '../../core/models/item';
-import { Project } from '../../core/models/project';
+import { ConditionInterface } from '../../core/models/condition';
+import { EncounterSlotInterface } from '../../core/models/encounter-slot';
+import { ItemInterface } from '../../core/models/item';
+import { ProjectInterface } from '../../core/models/project';
 
-export interface HeroState {
+export interface HeroStateInterface {
 	staminaDamage: number;
 	staminaTemp: number;
 	recoveriesUsed: number;
@@ -14,10 +14,10 @@ export interface HeroState {
 	renown: number;
 	wealth: number;
 	projectPoints: number;
-	conditions: Condition[];
-	inventory: Item[];
-	projects: Project[];
-	controlledSlots: EncounterSlot[];
+	conditions: ConditionInterface[];
+	inventory: ItemInterface[];
+	projects: ProjectInterface[];
+	controlledSlots: EncounterSlotInterface[];
 	notes: string;
 	hidden: boolean;
 	encounterState: 'ready' | 'current' | 'finished';

@@ -1,4 +1,4 @@
-export interface MontageSheet {
+export interface MontageSheetInterface {
 	id: string;
 	name?: string;
 	difficulty?: string;
@@ -12,4 +12,4 @@ export interface MontageSheet {
 	};
 	hazards: string;
 	eventsNotes: string;
-};
+}

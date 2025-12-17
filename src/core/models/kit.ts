@@ -1,15 +1,15 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 import { KitArmor } from '../../core/enums/kit-armor';
 import { KitWeapon } from '../../core/enums/kit-weapon';
 
-export interface KitDamageBonus {
+export interface KitDamageBonusInterface {
 	tier1: number;
 	tier2: number;
 	tier3: number;
-};
+}
 
-export interface Kit extends Element {
+export interface KitInterface extends ElementInterface {
 	type: string;
 	armor: KitArmor[];
 	weapon: KitWeapon[];
@@ -18,10 +18,10 @@ export interface Kit extends Element {
 	speed: number;
 	stability: number;
 	disengage: number;
-	meleeDamage: KitDamageBonus | null;
-	rangedDamage: KitDamageBonus | null;
+	meleeDamage: KitDamageBonusInterface | null;
+	rangedDamage: KitDamageBonusInterface | null;
 	meleeDistance: number;
 	rangedDistance: number;
 
-	features: Feature[];
-};
+	features: FeatureInterface[];
+}

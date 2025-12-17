@@ -1,8 +1,8 @@
-import { FactoryLogic } from '../../core/logic/factory-logic';
-import { MonsterGroup } from '../../core/models/monster-group';
+import { ElementFactory } from '../../core/factory/element-factory';
+import { MonsterGroupInterface } from '../../core/models/monster-group';
 import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
 
-export const civilian: MonsterGroup = {
+export const civilian: MonsterGroupInterface = {
 	id: 'monster-group-civilian',
 	name: 'Civilian',
 	description: '',
@@ -10,21 +10,21 @@ export const civilian: MonsterGroup = {
 	information: [],
 	malice: [],
 	monsters: [
-		FactoryLogic.createMonster({
+		ElementFactory.createMonster({
 			id: 'civilian-1',
 			name: 'Civilian',
 			level: 0,
-			role: FactoryLogic.createMonsterRole(MonsterOrganizationType.NoOrganization),
-			keywords: [ 'Humanoid or Animal' ],
+			role: ElementFactory.createMonsterRole(MonsterOrganizationType.NoOrganization),
+			keywords: ['Humanoid or Animal'],
 			encounterValue: 0,
-			size: FactoryLogic.createSize(1, 'M'),
-			speed: FactoryLogic.createSpeed(5),
+			size: ElementFactory.createSize(1, 'M'),
+			speed: ElementFactory.createSpeed(5),
 			stamina: 8,
 			stability: 0,
 			freeStrikeDamage: 1,
-			characteristics: FactoryLogic.createCharacteristics(0, 0, 0, 0, 0),
-			features: []
-		})
+			characteristics: ElementFactory.createCharacteristics(0, 0, 0, 0, 0),
+			features: [],
+		}),
 	],
-	addOns: []
+	addOns: [],
 };

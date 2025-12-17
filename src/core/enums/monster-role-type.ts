@@ -8,5 +8,5 @@ export enum MonsterRoleType {
 	Harrier = 'Harrier',
 	Hexer = 'Hexer',
 	Mount = 'Mount',
-	Support = 'Support'
-};
+	Support = 'Support',
+}

@@ -48,5 +48,5 @@ export enum AbilityKeyword {
 	Waist = 'Waist',
 	Wand = 'Wand',
 	Water = 'Water',
-	Weapon = 'Weapon'
+	Weapon = 'Weapon',
 }

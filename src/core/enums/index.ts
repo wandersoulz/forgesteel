@@ -27,11 +27,6 @@ export * from './panel-width';
 export * from './perk-list';
 export * from './roll-state';
 export * from './rules-page';
-
 export * from './skill-list';
 export * from './sourcebook-type';
 export * from './stat-block-icon';
-export * from './tactical-map-display-type';
-export * from './tactical-map-edit-mode';
-export * from './terrain-category';
-export * from './terrain-role-type';

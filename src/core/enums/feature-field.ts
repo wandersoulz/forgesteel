@@ -9,5 +9,5 @@ export enum FeatureField {
 	Speed = 'Speed',
 	Stability = 'Stability',
 	Stamina = 'Stamina',
-	Wealth = 'Wealth'
-};
+	Wealth = 'Wealth',
+}

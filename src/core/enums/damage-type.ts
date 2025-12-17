@@ -8,5 +8,5 @@ export enum DamageType {
 	Lightning = 'Lightning',
 	Poison = 'Poison',
 	Psychic = 'Psychic',
-	Sonic = 'Sonic'
+	Sonic = 'Sonic',
 }

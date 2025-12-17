@@ -1,9 +1,9 @@
 import { AbilityDistanceType } from '../../core/enums/abiity-distance-type';
 import { AbilityUsage } from '../../core/enums/ability-usage';
-import { Element } from '../../core/models/element';
-import { PowerRoll } from '../../core/models/power-roll';
+import { ElementInterface } from '../../core/models/element';
+import { PowerRollInterface } from '../../core/models/power-roll';
 
-export interface AbilityType {
+export interface AbilityTypeInterface {
 	usage: AbilityUsage;
 	free: boolean;
 	trigger: string;
@@ -13,7 +13,7 @@ export interface AbilityType {
 	order?: number;
 }
 
-export interface AbilityDistance {
+export interface AbilityDistanceInterface {
 	type: AbilityDistanceType;
 	value: number;
 	value2: number;
@@ -22,12 +22,12 @@ export interface AbilityDistance {
 	qualifier: string;
 }
 
-export interface AbilitySectionText {
+export interface AbilitySectionTextInterface {
 	type: 'text';
 	text: string;
 }
 
-export interface AbilitySectionField {
+export interface AbilitySectionFieldInterface {
 	type: 'field';
 	name: string;
 	value: number;
@@ -35,63 +35,28 @@ export interface AbilitySectionField {
 	effect: string;
 }
 
-export interface AbilitySectionRoll {
-	type: 'roll'
-	roll: PowerRoll;
+export interface AbilitySectionRollInterface {
+	type: 'roll';
+	roll: PowerRollInterface;
 }
 
-export interface AbilitySectionPackage {
+export interface AbilitySectionPackageInterface {
 	type: 'package';
 	tag: string;
 }
 
-export interface Ability extends Element {
-	type: AbilityType;
+export interface AbilityInterface extends ElementInterface {
+	type: AbilityTypeInterface;
 	keywords: string[];
-	distance: AbilityDistance[];
+	distance: AbilityDistanceInterface[];
 	target: string;
 	cost: number | 'signature';
 	repeatable: boolean;
 	minLevel: number;
-	sections: (AbilitySectionText | AbilitySectionField | AbilitySectionRoll | AbilitySectionPackage)[];
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	preEffect: string;
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	powerRoll: PowerRoll | null,
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	test: PowerRoll | null,
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	effect: string;
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	strained: string;
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	alternateEffects: string[];
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	spend: { name: string, value: number, repeatable: boolean, effect: string }[];
-
-	/**
-	 * @deprecated This field has been subsumed into the sections field.
-	 */
-	persistence: { value: number, effect: string }[];
+	sections: (
+		| AbilitySectionTextInterface
+		| AbilitySectionFieldInterface
+		| AbilitySectionRollInterface
+		| AbilitySectionPackageInterface
+	)[];
 }

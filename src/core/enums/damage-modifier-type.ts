@@ -1,4 +1,4 @@
 export enum DamageModifierType {
 	Immunity = 'Immunity',
-	Weakness = 'Weakness'
+	Weakness = 'Weakness',
 }

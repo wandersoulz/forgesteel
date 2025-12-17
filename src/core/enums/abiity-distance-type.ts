@@ -8,5 +8,5 @@ export enum AbilityDistanceType {
 	Line = 'Line',
 	Wall = 'Wall',
 	Summoner = 'Summoner Range',
-	Special = 'Special'
+	Special = 'Special',
 }

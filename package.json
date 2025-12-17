@@ -12,11 +12,12 @@
 		".": "./dist/index.js"
 	},
 	"scripts": {
-		"lint": "eslint \"src/**/*.ts\"",
-		"fix": "eslint \"src/**/*.ts\" --fix",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"fix": "eslint . --fix",
 		"test": "vitest",
 		"check": "npm run lint && tsc && vitest run",
-		"build": "tsc",
+		"build": "npm run lint && tsc",
 		"prepare": "npm run build"
 	},
 	"devDependencies": {
@@ -24,7 +25,10 @@
 		"@stylistic/eslint-plugin": "^5.6.1",
 		"@vitest/coverage-v8": "^4.0.15",
 		"eslint": "^9.39.2",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
 		"globals": "^16.5.0",
+		"prettier": "^3.7.4",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0",
 		"vitest": "^4.0.15"

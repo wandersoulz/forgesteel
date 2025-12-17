@@ -8,5 +8,5 @@ export enum MonsterOrganizationType {
 	Retainer = 'Retainer',
 	Champion = 'Champion',
 	Companion = 'Companion',
-	NoOrganization = 'No Organization'
-};
+	NoOrganization = 'No Organization',
+}

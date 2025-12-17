@@ -41,5 +41,5 @@ export enum FeatureType {
 	SummonChoice = 'Summon Choice',
 	TaggedFeature = 'Tagged Feature',
 	TaggedFeatureChoice = 'Tagged Feature Choice',
-	TitleChoice = 'Title'
+	TitleChoice = 'Title',
 }

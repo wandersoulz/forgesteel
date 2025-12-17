@@ -3,5 +3,5 @@ export enum RollState {
 	Edge = 'Edge',
 	Standard = 'Standard Roll',
 	Bane = 'Bane',
-	DoubleBane = 'Double Bane'
+	DoubleBane = 'Double Bane',
 }

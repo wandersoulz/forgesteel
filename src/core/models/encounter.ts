@@ -1,36 +1,26 @@
-import { Element } from '../../core/models/element';
-import { EncounterSlot } from '../../core/models/encounter-slot';
-import { Hero } from '../../core/models/hero';
-import { Terrain } from '../../core/models/terrain';
+import { ElementInterface } from '../../core/models/element';
+import { EncounterSlotInterface } from '../../core/models/encounter-slot';
+import { HeroInterface } from '../../core/models/hero';
 
-export interface EncounterGroup {
+export interface EncounterGroupInterface {
 	id: string;
 	name: string;
-	slots: EncounterSlot[];
+	slots: EncounterSlotInterface[];
 	encounterState: 'ready' | 'current' | 'finished';
 }
 
-export interface TerrainSlot {
-	id: string;
-	terrainID: string;
-	upgradeIDs: string[];
-	count: number;
-	terrain: Terrain[];
-}
-
-export interface EncounterObjective extends Element {
+export interface EncounterObjectiveInterface extends ElementInterface {
 	difficultyModifier: string;
 	successCondition: string;
 	failureCondition: string;
 	victories: string;
-};
+}
 
-export interface Encounter extends Element {
-	groups: EncounterGroup[];
-	terrain: TerrainSlot[];
-	heroes: Hero[];
-	objective: EncounterObjective | null;
-	notes: Element[];
+export interface EncounterInterface extends ElementInterface {
+	groups: EncounterGroupInterface[];
+	heroes: HeroInterface[];
+	objective: EncounterObjectiveInterface | null;
+	notes: ElementInterface[];
 	initiative: 'heroes' | 'monsters' | undefined;
 	round: number;
 	malice: number;

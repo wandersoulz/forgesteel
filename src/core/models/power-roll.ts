@@ -1,6 +1,6 @@
 import type { Characteristic } from '../../core/enums/characteristic';
 
-export interface PowerRoll {
+export interface PowerRollInterface {
 	characteristic: Characteristic[];
 	bonus: number;
 	tier1: string;

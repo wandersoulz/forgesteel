@@ -1,11 +1,11 @@
 import { LeveledImplementData } from '../../../data/items/leveled-implement-data';
-import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookInterface } from '../../../core/models/sourcebook';
 import { SourcebookType } from '../../../core/enums/sourcebook-type';
 import { TitleData } from '../../../data/title-data';
 import { TrinketData } from '../../../data/items/trinket-data';
 import { summoner } from '../../../data/classes/summoner/summoner';
 
-export const summonerSourcebook: Sourcebook = {
+export const summonerSourcebook: SourcebookInterface = {
 	id: 'summoner',
 	name: 'The Summoner',
 	description: 'Contains the Summoner class, items, and titles.',
@@ -13,9 +13,7 @@ export const summonerSourcebook: Sourcebook = {
 	adventures: [],
 	ancestries: [],
 	careers: [],
-	classes: [
-		summoner
-	],
+	classes: [summoner],
 	complications: [],
 	cultures: [],
 	domains: [],
@@ -39,7 +37,7 @@ export const summonerSourcebook: Sourcebook = {
 		LeveledImplementData.fieldCommandersBaton,
 		LeveledImplementData.rexScepter,
 		LeveledImplementData.sanctuaryHorn,
-		LeveledImplementData.wandOfTheUnheardOrchestra
+		LeveledImplementData.wandOfTheUnheardOrchestra,
 	],
 	kits: [],
 	monsterGroups: [],
@@ -48,16 +46,14 @@ export const summonerSourcebook: Sourcebook = {
 	perks: [],
 	projects: [],
 	subclasses: [],
-	tacticalMaps: [],
-	terrain: [],
 	titles: [
 		TitleData.safeguarded,
 		TitleData.sigilwright,
 		TitleData.summonerSuccessor,
 		TitleData.ringleader,
 		TitleData.delegator,
-		TitleData.highSummoner
+		TitleData.highSummoner,
 	],
 	skills: [],
-	languages: []
+	languages: [],
 };

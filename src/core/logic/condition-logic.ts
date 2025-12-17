@@ -1,5 +1,5 @@
 import { ConditionEndType, ConditionType } from '../../core/enums/condition-type';
-import { Condition } from '../../core/models/condition';
+import { ConditionInterface } from '../../core/models/condition';
 import { ConditionData } from '../../data/condition-data';
 
 export class ConditionLogic {
@@ -30,7 +30,7 @@ export class ConditionLogic {
 		}
 	};
 
-	static getFullDescription = (condition: Condition) => {
+	static getFullDescription = (condition: ConditionInterface) => {
 		let type = '';
 		switch (condition.type) {
 			case ConditionType.Custom:

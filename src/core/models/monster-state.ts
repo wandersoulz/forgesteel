@@ -1,12 +1,12 @@
-import { Condition } from '../../core/models/condition';
+import { ConditionInterface } from '../../core/models/condition';
 
-export interface MonsterState {
+export interface MonsterStateInterface {
 	staminaDamage: number;
 	staminaTemp: number;
 	recoveriesUsed: number;
-	conditions: Condition[];
+	conditions: ConditionInterface[];
 	reactionUsed: boolean;
 	hidden: boolean;
 	defeated: boolean;
 	captainID: string | undefined;
-};
+}

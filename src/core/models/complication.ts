@@ -1,6 +1,6 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 
-export interface Complication extends Element {
-	features: Feature[];
+export interface ComplicationInterface extends ElementInterface {
+	features: FeatureInterface[];
 }

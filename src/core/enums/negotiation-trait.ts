@@ -10,5 +10,5 @@ export enum NegotiationTrait {
 	Power = 'Power',
 	Protection = 'Protection',
 	Revelry = 'Revelry',
-	Vengeance = 'Vengeance'
+	Vengeance = 'Vengeance',
 }

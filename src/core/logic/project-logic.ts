@@ -1,7 +1,7 @@
-import { Project } from '../../core/models/project';
+import { ProjectInterface } from '../../core/models/project';
 
 export class ProjectLogic {
-	static getPrerequisitesMet = (project: Project) => {
+	static getPrerequisitesMet = (project: ProjectInterface) => {
 		if (project.itemPrerequisites && project.progress && !project.progress.prerequisites) {
 			return false;
 		}
@@ -13,20 +13,20 @@ export class ProjectLogic {
 		return true;
 	};
 
-	static getStatus = (project: Project) => {
+	static getStatus = (project: ProjectInterface) => {
 		if (!ProjectLogic.getPrerequisitesMet(project)) {
 			return 'Preparing';
 		}
 
-		if ((project.goal > 0) && project.progress) {
+		if (project.goal > 0 && project.progress) {
 			if (project.progress.points >= project.goal) {
 				return 'Finished';
 			}
 
-			const pc = 100 * project.progress.points / project.goal;
+			const pc = (100 * project.progress.points) / project.goal;
 			return `${Math.round(pc || 0)}%`;
 		}
 
 		return 'In progress';
 	};
-};
+}

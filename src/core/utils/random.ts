@@ -34,7 +34,7 @@ export class Random {
 		return {
 			r: r,
 			g: g,
-			b: b
+			b: b,
 		};
 	};
 
@@ -58,12 +58,7 @@ export class Random {
 			h3 = Math.imul(h1 ^ (h3 >>> 17), 951274213);
 			h4 = Math.imul(h2 ^ (h4 >>> 19), 2716044179);
 
-			return [
-				(h1 ^ h2 ^ h3 ^ h4) >>> 0,
-				(h2 ^ h1) >>> 0,
-				(h3 ^ h1) >>> 0,
-				(h4 ^ h1) >>> 0
-			];
+			return [(h1 ^ h2 ^ h3 ^ h4) >>> 0, (h2 ^ h1) >>> 0, (h3 ^ h1) >>> 0, (h4 ^ h1) >>> 0];
 		};
 
 		const getRNG = (a: number, b: number, c: number, d: number) => {
@@ -75,7 +70,7 @@ export class Random {
 
 				let t = (a + b) | 0;
 				a = (b ^ b) >>> 9;
-				b = c + (c << 3) | 0;
+				b = (c + (c << 3)) | 0;
 				c = (c << 21) | (c >>> 11);
 				d = (d + 1) | 0;
 				t = (t + d) | 0;

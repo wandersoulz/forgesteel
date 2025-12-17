@@ -1,4 +1,4 @@
-export interface Speed {
+export interface SpeedInterface {
 	value: number;
 	modes: string[];
-};
+}

@@ -3,23 +3,19 @@ import { Collections } from '../../core/utils/collections';
 import { DamageModifierType } from '../../core/enums/damage-modifier-type';
 import { FeatureField } from '../../core/enums/feature-field';
 import { FeatureType } from '../../core/enums/feature-type';
-import { Hero } from '../../core/models/hero';
-import { HeroLogic } from '../../core/logic/hero-logic';
 import { ModifierLogic } from '../../core/logic/modifier-logic';
-import { Monster } from '../../core/models/monster';
-import { MonsterLogic } from '../../core/logic/monster-logic';
+import { MonsterInterface } from '../../core/models/monster';
 import { MonsterOrganizationType } from '../../core/enums/monster-organization-type';
-import { Summon } from '../../core/models/summon';
+import { SummonInterface } from '../../core/models/summon';
+import { Hero } from '../impl/hero';
+import { Monster } from '../impl/monster';
 
 export class CreatureLogic {
 	static getCharacteristic = (creature: Hero | Monster | undefined, characteristic: Characteristic) => {
 		if (!creature) {
 			return 0;
-		} else if (CreatureLogic.isMonster(creature)) {
-			return MonsterLogic.getCharacteristic(creature, characteristic);
-		} else {
-			return HeroLogic.getCharacteristic(creature, characteristic);
 		}
+		return creature.getCharacteristic(characteristic);
 	};
 
 	static getField = (creature: Hero | Monster | undefined, field: FeatureField) => {
@@ -28,14 +24,14 @@ export class CreatureLogic {
 		} else if (CreatureLogic.isMonster(creature)) {
 			switch (field) {
 				case FeatureField.Stamina:
-					return MonsterLogic.getStamina(creature);
+					return creature.getStamina();
 				default:
 					return 0;
 			}
 		} else {
 			switch (field) {
 				case FeatureField.Stamina:
-					return HeroLogic.getStamina(creature);
+					return creature.getStamina();
 				default:
 					return 0;
 			}
@@ -43,33 +39,33 @@ export class CreatureLogic {
 	};
 
 	static isMonster = (creature: unknown): creature is Monster => {
-		return creature !== undefined
-			&& creature !== null
-			&& typeof creature === 'object'
-			&& 'withCaptain' in creature;
+		return creature !== undefined && creature !== null && typeof creature === 'object' && 'withCaptain' in creature;
 	};
 
 	static isHero = (creature: unknown): creature is Hero => {
-		return creature !== undefined
-			&& creature !== null
-			&& typeof creature === 'object'
-			&& 'complication' in creature;
+		return (
+			creature !== undefined && creature !== null && typeof creature === 'object' && 'complication' in creature
+		);
 	};
 
-	static isSummon = (creature: unknown): creature is Summon => {
-		return creature !== undefined
-			&& creature !== null
-			&& typeof creature === 'object'
-			&& 'monster' in creature
-			&& (creature.monster as Monster).role.organization === MonsterOrganizationType.Minion;
+	static isSummon = (creature: unknown): creature is SummonInterface => {
+		return (
+			creature !== undefined &&
+			creature !== null &&
+			typeof creature === 'object' &&
+			'monster' in creature &&
+			(creature.monster as MonsterInterface).role.organization === MonsterOrganizationType.Minion
+		);
 	};
 
-	static isCompanion = (creature: unknown): creature is Summon => {
-		return creature !== undefined
-			&& creature !== null
-			&& typeof creature === 'object'
-			&& 'monster' in creature
-			&& (creature.monster as Monster).role.organization === MonsterOrganizationType.Companion;
+	static isCompanion = (creature: unknown): creature is SummonInterface => {
+		return (
+			creature !== undefined &&
+			creature !== null &&
+			typeof creature === 'object' &&
+			'monster' in creature &&
+			(creature.monster as MonsterInterface).role.organization === MonsterOrganizationType.Companion
+		);
 	};
 
 	static getEchelon = (level: number) => {
@@ -93,30 +89,31 @@ export class CreatureLogic {
 		return 1;
 	};
 
-	static getSummonDamageModifiers = (summon: Summon, summoner: Hero, type: DamageModifierType) => {
-		const modifiers: { damageType: string, value: number }[] = [];
-		const monster = summon.monster;
+	static getSummonDamageModifiers = (summon: SummonInterface, summoner: Hero, type: DamageModifierType) => {
+		const modifiers: { damageType: string; value: number }[] = [];
+		const monster = new Monster(summon.monster);
 		// Collate from features
-		MonsterLogic.getFeatures(monster)
-			.filter(f => f.type === FeatureType.DamageModifier)
-			.forEach(f => {
+		monster
+			.getFeatures()
+			.filter((f) => f.type === FeatureType.DamageModifier)
+			.forEach((f) => {
 				f.data.modifiers
-					.filter(dm => dm.type === type)
-					.forEach(dm => {
+					.filter((dm) => dm.type === type)
+					.forEach((dm) => {
 						const value = ModifierLogic.calculateModifierValue(dm, summoner);
 
-						const existing = modifiers.find(x => x.damageType === dm.damageType);
+						const existing = modifiers.find((x) => x.damageType === dm.damageType);
 						if (existing) {
 							existing.value += dm.value;
 						} else {
 							modifiers.push({
 								damageType: dm.damageType,
-								value: value
+								value: value,
 							});
 						}
 					});
 			});
 
-		return Collections.sort(modifiers, dm => dm.damageType);
+		return Collections.sort(modifiers, (dm) => dm.damageType);
 	};
 }

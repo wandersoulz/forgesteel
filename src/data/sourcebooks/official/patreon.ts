@@ -1,10 +1,10 @@
 import { KitData } from '../../../data/kit-data';
 import { PerkData } from '../../../data/perk-data';
-import { Sourcebook } from '../../../core/models/sourcebook';
+import { SourcebookInterface } from '../../../core/models/sourcebook';
 import { SourcebookType } from '../../../core/enums/sourcebook-type';
 import { beastheart } from '../../../data/classes/beastheart/beastheart';
 
-export const patreon: Sourcebook = {
+export const patreon: SourcebookInterface = {
 	id: 'patreon',
 	name: 'Patreon Content',
 	description: 'Playtest content for Patreon subscribers.',
@@ -12,21 +12,14 @@ export const patreon: Sourcebook = {
 	adventures: [],
 	ancestries: [],
 	careers: [],
-	classes: [
-		beastheart
-	],
+	classes: [beastheart],
 	complications: [],
 	cultures: [],
 	domains: [],
 	encounters: [],
 	imbuements: [],
 	items: [],
-	kits: [
-		KitData.outrider,
-		KitData.predator,
-		KitData.stormcrow,
-		KitData.warBeast
-	],
+	kits: [KitData.outrider, KitData.predator, KitData.stormcrow, KitData.warBeast],
 	monsterGroups: [],
 	montages: [],
 	negotiations: [],
@@ -38,13 +31,11 @@ export const patreon: Sourcebook = {
 		PerkData.peopleSense,
 		PerkData.voiceOfTheWild,
 		PerkData.youCanPetThem,
-		PerkData.trainedThief
+		PerkData.trainedThief,
 	],
 	projects: [],
 	subclasses: [],
-	tacticalMaps: [],
-	terrain: [],
 	titles: [],
 	skills: [],
-	languages: []
+	languages: [],
 };

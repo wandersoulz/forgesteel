@@ -1,18 +1,18 @@
-import { Monster } from '../../core/models/monster';
-import { MonsterState } from '../../core/models/monster-state';
+import { MonsterInterface } from '../../core/models/monster';
+import { MonsterStateInterface } from '../../core/models/monster-state';
 
-export interface EncounterSlotCustomization {
+export interface EncounterSlotCustomizationInterface {
 	addOnIDs: string[];
 	itemIDs: string[];
 	levelAdjustment: number;
 	convertToSolo: boolean;
 }
 
-export interface EncounterSlot {
+export interface EncounterSlotInterface {
 	id: string;
 	monsterID: string;
 	count: number;
-	customization: EncounterSlotCustomization;
-	monsters: Monster[];
-	state: MonsterState;
+	customization: EncounterSlotCustomizationInterface;
+	monsters: MonsterInterface[];
+	state: MonsterStateInterface;
 }

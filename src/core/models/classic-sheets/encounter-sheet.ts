@@ -1,9 +1,8 @@
-import { FeatureMalice, FeatureMaliceAbility } from '../../../core/models/feature';
-import { Monster } from '../../../core/models/monster';
-import { MonsterSheet } from '../../../core/models/classic-sheets/monster-sheet';
-import { Terrain } from '../../../core/models/terrain';
+import { FeatureMaliceInterface, FeatureMaliceAbilityInterface } from '../../../core/models/feature';
+import { MonsterInterface } from '../../../core/models/monster';
+import { MonsterSheetInterface } from '../../../core/models/classic-sheets/monster-sheet';
 
-export interface EncounterSheet {
+export interface EncounterSheetInterface {
 	id: string;
 	name: string;
 	description: string;
@@ -22,23 +21,22 @@ export interface EncounterSheet {
 	successCondition?: string;
 	failureCondition?: string;
 
-	malice?: { monster: string, malice: (FeatureMalice | FeatureMaliceAbility)[] }[];
-	groups?: EncounterGroupSheet[];
+	malice?: { monster: string; malice: (FeatureMaliceInterface | FeatureMaliceAbilityInterface)[] }[];
+	groups?: EncounterGroupSheetInterface[];
 
-	terrain?: Terrain[];
-	monsters?: MonsterSheet[];
+	monsters?: MonsterSheetInterface[];
 }
 
 // #region Encounter Group
-export interface EncounterGroupSheet {
+export interface EncounterGroupSheetInterface {
 	id: string;
 	name: string;
-	slots: EncounterSlotSheet[];
+	slots: EncounterSlotSheetInterface[];
 }
 
-export interface EncounterSlotSheet {
+export interface EncounterSlotSheetInterface {
 	id: string;
-	monster: Monster;
+	monster: MonsterInterface;
 	count: number;
 	isMinion: boolean;
 }

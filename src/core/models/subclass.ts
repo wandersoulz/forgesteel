@@ -1,13 +1,13 @@
-import { Ability } from '../../core/models/ability';
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
+import { AbilityInterface } from '../../core/models/ability';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
 
-export interface SubClass extends Element {
+export interface SubClassInterface extends ElementInterface {
 	featuresByLevel: {
 		level: number;
-		features: Feature[];
+		features: FeatureInterface[];
 	}[];
-	abilities: Ability[];
+	abilities: AbilityInterface[];
 
 	selected: boolean;
 }

@@ -1,4 +1,4 @@
-export interface NegotiationSheet {
+export interface NegotiationSheetInterface {
 	id: string;
 	name: string;
 	attitude: string;
@@ -9,6 +9,6 @@ export interface NegotiationSheet {
 	outcomes: string[];
 
 	languages: string[];
-	motivations: { trait: string, description: string }[];
-	pitfalls: { trait: string, description: string }[];
-};
+	motivations: { trait: string; description: string }[];
+	pitfalls: { trait: string; description: string }[];
+}

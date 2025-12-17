@@ -1,4 +1,4 @@
-export interface Element {
+export interface ElementInterface {
 	id: string;
 	name: string;
 	description: string;

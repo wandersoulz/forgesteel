@@ -3,5 +3,5 @@ export enum FeatureAddOnType {
 	Defensive = 'Defensive',
 	Offensive = 'Offensive',
 	Supernatural = 'Supernatural',
-	Ancestry = 'Ancestry'
-};
+	Ancestry = 'Ancestry',
+}

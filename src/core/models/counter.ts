@@ -1,5 +1,5 @@
-import { Element } from '../../core/models/element';
+import { ElementInterface } from '../../core/models/element';
 
-export interface Counter extends Element {
+export interface CounterInterface extends ElementInterface {
 	value: number;
 }

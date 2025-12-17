@@ -1,54 +1,70 @@
-import { Adventure } from '../../core/models/adventure';
-import { Ancestry } from '../../core/models/ancestry';
-import { Career } from '../../core/models/career';
-import { Complication } from '../../core/models/complication';
-import { Culture } from '../../core/models/culture';
-import { Domain } from '../../core/models/domain';
-import { Element } from '../../core/models/element';
-import { Encounter } from '../../core/models/encounter';
-import { HeroClass } from '../../core/models/class';
-import { Imbuement } from '../../core/models/imbuement';
-import { Item } from '../../core/models/item';
-import { Kit } from '../../core/models/kit';
-import { Language } from '../../core/models/language';
-import { MonsterGroup } from '../../core/models/monster-group';
-import { Montage } from '../../core/models/montage';
-import { Negotiation } from '../../core/models/negotiation';
-import { Perk } from '../../core/models/perk';
-import { Project } from '../../core/models/project';
-import { Skill } from '../../core/models/skill';
+import { AdventureInterface } from '../../core/models/adventure';
+import { AncestryInterface } from '../../core/models/ancestry';
+import { CareerInterface } from '../../core/models/career';
+import { ComplicationInterface } from '../../core/models/complication';
+import { CultureInterface } from '../../core/models/culture';
+import { DomainInterface } from '../../core/models/domain';
+import { ElementInterface } from '../../core/models/element';
+import { EncounterInterface } from '../../core/models/encounter';
+import { HeroClassInterface } from '../../core/models/class';
+import { ImbuementInterface } from '../../core/models/imbuement';
+import { ItemInterface } from '../../core/models/item';
+import { KitInterface } from '../../core/models/kit';
+import { LanguageInterface } from '../../core/models/language';
+import { MonsterGroupInterface } from '../../core/models/monster-group';
+import { MontageInterface } from '../../core/models/montage';
+import { NegotiationInterface } from '../../core/models/negotiation';
+import { PerkInterface } from '../../core/models/perk';
+import { ProjectInterface } from '../../core/models/project';
+import { SkillInterface } from '../../core/models/skill';
 import { SourcebookType } from '../../core/enums/sourcebook-type';
-import { SubClass } from '../../core/models/subclass';
-import { TacticalMap } from '../../core/models/tactical-map';
-import { Terrain } from '../../core/models/terrain';
-import { Title } from '../../core/models/title';
+import { SubClassInterface } from '../../core/models/subclass';
+import { TitleInterface } from '../../core/models/title';
 
-export interface Sourcebook extends Element {
+export interface SourcebookInterface extends ElementInterface {
 	type: SourcebookType;
 
-	adventures: Adventure[];
-	ancestries: Ancestry[];
-	careers: Career[];
-	classes: HeroClass[];
-	complications: Complication[];
-	cultures: Culture[];
-	domains: Domain[];
-	encounters: Encounter[];
-	imbuements: Imbuement[];
-	items: Item[];
-	kits: Kit[];
-	monsterGroups: MonsterGroup[];
-	montages: Montage[];
-	negotiations: Negotiation[];
-	perks: Perk[];
-	projects: Project[];
-	subclasses: SubClass[];
-	tacticalMaps: TacticalMap[];
-	terrain: Terrain[];
-	titles: Title[];
+	adventures: AdventureInterface[];
+	ancestries: AncestryInterface[];
+	careers: CareerInterface[];
+	classes: HeroClassInterface[];
+	complications: ComplicationInterface[];
+	cultures: CultureInterface[];
+	domains: DomainInterface[];
+	encounters: EncounterInterface[];
+	imbuements: ImbuementInterface[];
+	items: ItemInterface[];
+	kits: KitInterface[];
+	monsterGroups: MonsterGroupInterface[];
+	montages: MontageInterface[];
+	negotiations: NegotiationInterface[];
+	perks: PerkInterface[];
+	projects: ProjectInterface[];
+	subclasses: SubClassInterface[];
+	titles: TitleInterface[];
 
-	skills: Skill[];
-	languages: Language[];
+	skills: SkillInterface[];
+	languages: LanguageInterface[];
 }
 
-export type SourcebookElementKind = 'adventure' | 'ancestry' | 'career' | 'class' | 'complication' | 'culture' | 'domain' | 'encounter' | 'imbuement' | 'item' | 'kit' | 'monster-group' | 'montage' | 'negotiation' | 'perk' | 'project' | 'subclass' | 'tactical-map' | 'terrain' | 'title';
+export type SourcebookElementKindInterface =
+	| 'adventure'
+	| 'ancestry'
+	| 'career'
+	| 'class'
+	| 'complication'
+	| 'culture'
+	| 'domain'
+	| 'encounter'
+	| 'imbuement'
+	| 'item'
+	| 'kit'
+	| 'monster-group'
+	| 'montage'
+	| 'negotiation'
+	| 'perk'
+	| 'project'
+	| 'subclass'
+	| 'tactical-map'
+	| 'terrain'
+	| 'title';

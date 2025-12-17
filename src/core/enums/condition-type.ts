@@ -9,11 +9,11 @@ export enum ConditionType {
 	Restrained = 'Restrained',
 	Slowed = 'Slowed',
 	Taunted = 'Taunted',
-	Weakened = 'Weakened'
+	Weakened = 'Weakened',
 }
 
 export enum ConditionEndType {
 	EndOfTurn = 'End of turn',
 	SaveEnds = 'Save ends',
-	UntilRemoved = 'Until removed'
+	UntilRemoved = 'Until removed',
 }

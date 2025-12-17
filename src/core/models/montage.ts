@@ -1,29 +1,29 @@
 import { Characteristic } from '../../core/enums/characteristic';
-import { Element } from '../../core/models/element';
+import { ElementInterface } from '../../core/models/element';
 import { EncounterDifficulty } from '../../core/enums/encounter-difficulty';
 
-export interface MontageChallenge extends Element {
+export interface MontageChallengeInterface extends ElementInterface {
 	characteristics: Characteristic[];
 	skills: string;
 	abilities: string;
 	uses: number;
 	successes: number;
 	failures: number;
-};
+}
 
-export interface MontageSection extends Element {
-	challenges: MontageChallenge[];
+export interface MontageSectionInterface extends ElementInterface {
+	challenges: MontageChallengeInterface[];
 	twistInfo: string;
-	twists: MontageChallenge[];
-};
+	twists: MontageChallengeInterface[];
+}
 
-export interface Montage extends Element {
-	difficulty: EncounterDifficulty
+export interface MontageInterface extends ElementInterface {
+	difficulty: EncounterDifficulty;
 	scene: string;
-	sections: MontageSection[];
+	sections: MontageSectionInterface[];
 	outcomes: {
 		totalSuccess: string;
 		partialSuccess: string;
 		totalFailure: string;
-	}
-};
+	};
+}

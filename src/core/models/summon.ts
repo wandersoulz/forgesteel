@@ -1,17 +1,17 @@
-import { Element } from '../../core/models/element';
-import { Feature } from '../../core/models/feature';
-import { Monster } from '../../core/models/monster';
+import { ElementInterface } from '../../core/models/element';
+import { FeatureInterface } from '../../core/models/feature';
+import { MonsterInterface } from '../../core/models/monster';
 
-export interface SummoningInfo {
+export interface SummoningInfoInterface {
 	isSignature: boolean;
 	cost: number;
 	count: number;
-	level3: Feature[];
-	level6: Feature[];
-	level10: Feature[];
-};
+	level3: FeatureInterface[];
+	level6: FeatureInterface[];
+	level10: FeatureInterface[];
+}
 
-export interface Summon extends Element {
-	monster: Monster;
-	info: SummoningInfo;
-};
+export interface SummonInterface extends ElementInterface {
+	monster: MonsterInterface;
+	info: SummoningInfoInterface;
+}
