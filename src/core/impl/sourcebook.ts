@@ -50,9 +50,9 @@ export class ActiveSourcebooks {
 		return new ActiveSourcebooks();
 	}
 
-	async getSourcebooks(activeIDs: string[]): Promise<SourcebookInterface[]> {
-		const promises = activeIDs
-			.filter((id) => this.registry[id])
+	async getSourcebooks(excludedBooks?: string[]): Promise<SourcebookInterface[]> {
+		const promises = Object.keys(this.registry)
+			.filter((id) => !excludedBooks || !excludedBooks.find((bookId) => id == bookId))
 			.map(async (id) => {
 				const module = await this.registry[id].loader();
 				this.registry[id].bookContents = Object.values(module)[0];
