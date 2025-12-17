@@ -29,17 +29,11 @@ import {
 	ItemType,
 } from '../enums';
 import { SummonLogic, ModifierLogic, CreatureLogic } from '../logic';
-import {
-	AbilityInterface,
-	LanguageInterface,
-	SkillInterface,
-	SizeInterface,
-	KitInterface,
-	ItemInterface,
-} from '../models';
+import { LanguageInterface, SkillInterface, SizeInterface, KitInterface, ItemInterface } from '../models';
 import { Monster } from './monster';
 import { ActiveSourcebooks } from './sourcebook';
 import { ElementFactory } from '../factory/element-factory';
+import { Ability } from './ability';
 
 export class Hero implements HeroInterface {
 	id: string;
@@ -131,13 +125,16 @@ export class Hero implements HeroInterface {
 		});
 	}
 
-	getAbilities(standardAbilityIDs: string[]) {
-		const choices: { ability: AbilityInterface; source: string }[] = [];
+	getAbilities(standardAbilityIDs: string[]): { ability: Ability; source: string }[] {
+		const choices: { ability: Ability; source: string }[] = [];
 
 		this.getFeatures()
 			.filter((f) => f.feature.type === FeatureType.Ability)
 			.forEach((f) => {
-				choices.push({ ability: (f.feature as FeatureAbilityInterface).data.ability, source: f.source });
+				choices.push({
+					ability: new Ability((f.feature as FeatureAbilityInterface).data.ability),
+					source: f.source,
+				});
 			});
 
 		this.getFeatures()
@@ -164,7 +161,7 @@ export class Hero implements HeroInterface {
 					feature.data.selectedIDs.forEach((abilityID) => {
 						const ability = abilities.find((a) => a.id === abilityID);
 						if (ability) {
-							choices.push({ ability: ability, source: f.source });
+							choices.push({ ability: new Ability(ability), source: f.source });
 						}
 					});
 				}
@@ -813,7 +810,7 @@ export class Hero implements HeroInterface {
 		return result;
 	};
 
-	getFeatureDamageBonuses = (ability: AbilityInterface, distance: AbilityDistanceType | undefined) => {
+	getFeatureDamageBonuses = (ability: Ability, distance: AbilityDistanceType | undefined) => {
 		const array: { feature: string; value: number; type: DamageType }[] = [];
 
 		this.getFeatures()
@@ -853,7 +850,7 @@ export class Hero implements HeroInterface {
 		return array;
 	};
 
-	getDistanceBonus = (ability: AbilityInterface) => {
+	getDistanceBonus = (ability: Ability) => {
 		let value = 0;
 
 		const kitBonuses: number[] = [];
