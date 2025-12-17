@@ -25,7 +25,7 @@ import { SkillList } from '../../../core/enums/skill-list';
 import { SourcebookInterface } from '../../../core/models/sourcebook';
 import { SourcebookType } from '../../../core/enums/sourcebook-type';
 import { TrinketData } from '../../items/trinket-data';
-import { TitleData } from 'src/data/title-data';
+import { TitleData } from '../../title-data';
 
 export const core: SourcebookInterface = {
 	id: 'core',
