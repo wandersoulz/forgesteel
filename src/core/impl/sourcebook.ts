@@ -44,10 +44,10 @@ export class ActiveSourcebooks {
 	};
 
 	static getInstance() {
-		if (this.instance) {
-			return this.instance;
+		if (!ActiveSourcebooks.instance) {
+			ActiveSourcebooks.instance = new ActiveSourcebooks();
 		}
-		return new ActiveSourcebooks();
+		return ActiveSourcebooks.instance;
 	}
 
 	async getSourcebooks(excludedBooks?: string[]): Promise<SourcebookInterface[]> {
