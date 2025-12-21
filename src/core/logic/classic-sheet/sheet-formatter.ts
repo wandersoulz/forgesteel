@@ -537,7 +537,6 @@ export class SheetFormatter {
 			}
 		}
 		size = +size.toFixed(1);
-		// console.log('###### FeatureInterface', f.name, f.id, size);
 		return size;
 	};
 

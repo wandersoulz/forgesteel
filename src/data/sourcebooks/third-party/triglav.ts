@@ -551,7 +551,7 @@ Additionally, when your Stamina reaches the negative of your winded value, you b
 				{
 					feature: ElementFactory.FeatureFactory.createPerk({
 						id: 'vampire-ancestry-5j',
-						name: 'Vampire PerkInterface',
+						name: 'Vampire Perk',
 						lists: [PerkList.Special],
 					}),
 					value: 2,

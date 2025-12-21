@@ -212,7 +212,7 @@ export class FeatureFactory {
 	}): FeatureAncestryFeatureChoiceInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'Ancestry FeatureInterface',
+			name: data.name || 'Ancestry Feature',
 			description: data.description || '',
 			type: FeatureType.AncestryFeatureChoice,
 			data: {
@@ -307,7 +307,7 @@ export class FeatureFactory {
 	}): FeatureClassAbilityInterface => {
 		return {
 			id: data.id,
-			name: data.name || `${data.cost === 'signature' ? 'Signature' : `${data.cost}pt`} AbilityInterface`,
+			name: data.name || `${data.cost === 'signature' ? 'Signature' : `${data.cost}pt`} Ability`,
 			description: data.description || '',
 			type: FeatureType.ClassAbility,
 			data: {
@@ -436,7 +436,7 @@ export class FeatureFactory {
 	}): FeatureFollowerInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'FollowerInterface',
+			name: data.name || 'Follower',
 			description: data.description || '',
 			type: FeatureType.Follower,
 			data: {
@@ -639,8 +639,8 @@ export class FeatureFactory {
 	}): FeatureMultipleInterface => {
 		return {
 			id: data.id,
-			name: data.name || data.features.map((f) => f.name || 'Unnamed FeatureInterface').join(', '),
-			description: data.description || data.features.map((f) => f.name || 'Unnamed FeatureInterface').join(', '),
+			name: data.name || data.features.map((f) => f.name || 'Unnamed Feature').join(', '),
+			description: data.description || data.features.map((f) => f.name || 'Unnamed Feature').join(', '),
 			type: FeatureType.Multiple,
 			data: {
 				features: data.features,
@@ -692,7 +692,7 @@ export class FeatureFactory {
 
 		return {
 			id: data.id,
-			name: data.name || (count > 1 ? `${prefix}Perks` : `${prefix}PerkInterface`),
+			name: data.name || (count > 1 ? `${prefix}Perks` : `${prefix}Perk`),
 			description: data.description || '',
 			type: FeatureType.Perk,
 			data: {
@@ -920,7 +920,7 @@ export class FeatureFactory {
 	}): FeatureTaggedFeatureChoiceInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'Tagged FeatureInterface',
+			name: data.name || 'Tagged Feature',
 			description: data.description || '',
 			type: FeatureType.TaggedFeatureChoice,
 			data: {

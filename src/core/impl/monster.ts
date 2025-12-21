@@ -83,7 +83,7 @@ export class Monster implements MonsterInterface {
 			return `${group.name} ${this.role.type}`;
 		}
 
-		return 'Unnamed MonsterInterface';
+		return 'Unnamed Monster';
 	}
 
 	getLevel() {

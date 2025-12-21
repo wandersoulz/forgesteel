@@ -9,7 +9,11 @@
 		"dist"
 	],
 	"exports": {
-		".": "./dist/index.js"
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/forgesteel.js",
+			"require": "./dist/forgesteel.umd.cjs"
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
@@ -17,7 +21,7 @@
 		"fix": "eslint . --fix",
 		"test": "vitest",
 		"check": "npm run lint && tsc && vitest run",
-		"build": "npm run lint && tsc",
+		"build": "npm run lint && tsc --noEmit && vite build",
 		"prepare": "npm run build"
 	},
 	"devDependencies": {
@@ -31,6 +35,9 @@
 		"prettier": "^3.7.4",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0",
+		"vite": "^7.2.4",
+		"vite-plugin-dts": "^4.5.4",
+		"vite-plugin-dynamic-import": "^1.6.0",
 		"vitest": "^4.0.15"
 	}
 }

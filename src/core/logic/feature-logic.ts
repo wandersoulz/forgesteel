@@ -88,7 +88,7 @@ export class FeatureLogic {
 		features.push({
 			feature: ElementFactory.FeatureFactory.create({
 				id: `${culture.name.toLocaleLowerCase().replaceAll(' ', '-')}-culture-lore-influence`,
-				name: `${culture.name} CultureInterface`.trim(),
+				name: `${culture.name} Culture`.trim(),
 				description:
 					'You gain an edge on tests made to recall lore about your culture, and on tests made to influence and interact with people of your culture.',
 			}),

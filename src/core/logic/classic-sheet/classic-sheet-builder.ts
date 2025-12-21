@@ -136,9 +136,9 @@ export class ClassicSheetBuilder {
 		if (isHero) {
 			if (ability.cost === 'signature') {
 				sheet.isSignature = true;
-				sheet.abilityType = 'Signature AbilityInterface';
+				sheet.abilityType = 'Signature Ability';
 			} else if (ability.cost > 0) {
-				sheet.abilityType = 'Heroic AbilityInterface';
+				sheet.abilityType = 'Heroic Ability';
 			} else if (ability.type.usage === AbilityUsage.Trigger) {
 				sheet.abilityType = 'Triggered Action';
 			} else if (ability.type.usage === AbilityUsage.FreeStrike) {
@@ -164,7 +164,7 @@ export class ClassicSheetBuilder {
 
 		if (isMonster || isSummon) {
 			if (ability.cost === 'signature') {
-				sheet.abilityType = 'Signature AbilityInterface';
+				sheet.abilityType = 'Signature Ability';
 			} else if (ability.cost > 0) {
 				sheet.abilityType = `${ability.cost} Malice`;
 			} else if (isMonster && creature.retainer?.level) {
