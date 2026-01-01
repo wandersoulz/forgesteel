@@ -465,7 +465,7 @@ export class SheetFormatter {
 						.map((f) => `\n#### ${f.name}:\n${f.description}`)
 						.join('\n');
 				} else if (creature !== undefined) {
-					// console.warn('AbilityInterface package in NON-HERO!', section, creature);
+					// console.warn('Ability package in NON-HERO!', section, creature);
 				}
 				break;
 		}

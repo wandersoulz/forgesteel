@@ -445,9 +445,9 @@ export class Monster implements MonsterInterface {
 			case MonsterOrganizationType.Minion:
 				return 'Minions are weaker enemies who are made to die fast and threaten heroes en masse.';
 			case MonsterOrganizationType.Horde:
-				return 'MonsterInterface bands are hardier and work in smaller groups than minions, but it still takes multiple of these creatures to effectively threaten a single hero of the same level.';
+				return 'Monster bands are hardier and work in smaller groups than minions, but it still takes multiple of these creatures to effectively threaten a single hero of the same level.';
 			case MonsterOrganizationType.Platoon:
-				return 'MonsterInterface platoons are highly organized and usually self- sufficient armies.';
+				return 'Monster platoons are highly organized and usually self- sufficient armies.';
 			case MonsterOrganizationType.Elite:
 				return 'Troops are the functional opposite of minions. A creature under the troop organization is hardy and can usually stand up to two heroes of the same level on their own.';
 			case MonsterOrganizationType.Leader:

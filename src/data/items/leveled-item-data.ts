@@ -308,7 +308,7 @@ export class LeveledItemData {
 					ElementFactory.FeatureFactory.createAbility({
 						ability: ElementFactory.createAbility({
 							id: 'item-thief-of-joy-1a',
-							name: 'ItemInterface Ability',
+							name: 'Item Ability',
 							type: ElementFactory.AbilityTypeFactory.createTrigger(
 								'A creature within 10 squares of you deals damage to another creature'
 							),

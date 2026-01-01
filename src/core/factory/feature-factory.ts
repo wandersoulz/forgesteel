@@ -100,7 +100,7 @@ export class FeatureFactory {
 	}): FeatureAbilityCostInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'AbilityInterface cost modifier',
+			name: data.name || 'Ability cost modifier',
 			description: data.description || '',
 			type: FeatureType.AbilityCost,
 			data: {
@@ -125,7 +125,7 @@ export class FeatureFactory {
 	}): FeatureAbilityDamageInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'AbilityInterface damage modifier',
+			name: data.name || 'Ability damage modifier',
 			description: data.description || '',
 			type: FeatureType.AbilityDamage,
 			data: {
@@ -155,7 +155,7 @@ export class FeatureFactory {
 	}): FeatureAbilityDistanceInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'AbilityInterface distance modifier',
+			name: data.name || 'Ability distance modifier',
 			description: data.description || '',
 			type: FeatureType.AbilityDistance,
 			data: {
@@ -869,7 +869,7 @@ export class FeatureFactory {
 	}): FeatureSummonInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'SummonInterface Choice',
+			name: data.name || 'Summon Choice',
 			description: data.description || '',
 			type: FeatureType.Summon,
 			data: {
@@ -887,7 +887,7 @@ export class FeatureFactory {
 	}): FeatureSummonChoiceInterface => {
 		return {
 			id: data.id,
-			name: data.name || 'SummonInterface Choice',
+			name: data.name || 'Summon Choice',
 			description: data.description || '',
 			type: FeatureType.SummonChoice,
 			data: {
