@@ -13,6 +13,11 @@
 			"types": "./dist/index.d.ts",
 			"import": "./dist/forgesteel.js",
 			"require": "./dist/forgesteel.umd.cjs"
+		},
+		"./data": {
+			"types": "./dist/data/index.d.ts",
+			"import": "./dist/data.js",
+			"require": "./dist/data.umd.cjs"
 		}
 	},
 	"scripts": {

@@ -8,10 +8,10 @@ export default defineConfig({
   build: {
     lib: {
       // Entry point for your library
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'forgesteel',
-      // The name of the output files
-      fileName: 'forgesteel',
+      entry: {
+        forgesteel: resolve(__dirname, 'src/index.ts'),
+        data: resolve(__dirname, 'src/data/index.ts')
+      }
     },
   },
 })
