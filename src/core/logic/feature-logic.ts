@@ -174,36 +174,14 @@ export class FeatureLogic {
 			.filter((lvl) => lvl.level <= heroLevel)
 			.forEach((lvl) => {
 				lvl.features.forEach((f) => {
-					if (f.type === FeatureType.Text) {
-						if (f.description) {
-							if (f.name) {
-								ft.description += '\n\n';
-								ft.description += `**${f.name}**`;
-							}
-							ft.description += '\n\n';
-							ft.description += f.description;
-						}
-					} else {
-						features.push({ feature: f, source: item.name });
-					}
+					features.push({ feature: f, source: item.name });
 				});
 			});
 
 		item.imbuements
 			.map((imbuement) => imbuement.feature)
 			.forEach((feature) => {
-				if (feature.type === FeatureType.Text) {
-					if (feature.description) {
-						if (feature.name) {
-							ft.description += '\n\n';
-							ft.description += `**${feature.name}**`;
-						}
-						ft.description += '\n\n';
-						ft.description += feature.description;
-					}
-				} else {
-					features.push({ feature: feature, source: item.name });
-				}
+				features.push({ feature: feature, source: item.name });
 			});
 
 		const hasLvl1 = item.imbuements.filter((lvl) => lvl.level === 1).length > 0;
