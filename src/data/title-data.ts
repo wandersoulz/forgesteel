@@ -2290,4 +2290,20 @@ If your champion would die while taking your place, you lose access to your Retu
 		],
 		selectedFeatureID: '',
 	};
+
+	static violetsSavior: TitleInterface = {
+		id: 'title-violetsSavior',
+		name: 'Violet’s Savior',
+		description: 'There’s the hero of Broadhurst!',
+		echelon: 1,
+		prerequisites: 'You freed Violet and ended the ritual draining her life.',
+		features: [
+			ElementFactory.FeatureFactory.create({
+				id: 'title-violetsSavior-1',
+				name: '',
+				description: 'You have an edge on tests made to influence people from Broadhurst.'
+			}),
+		],
+		selectedFeatureID: '',
+	}
 }
