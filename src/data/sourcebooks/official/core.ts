@@ -702,6 +702,7 @@ export const core: SourcebookInterface = {
 		TitleData.savedForAWorseFate,
 		TitleData.shipCaptain,
 		TitleData.troupeTactics,
+		TitleData.violetsSavior,
 		TitleData.wantedDeadOrAlive,
 		TitleData.zombieSlayer,
 		// Echelon 2
